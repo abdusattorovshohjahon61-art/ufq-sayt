@@ -249,7 +249,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
   background: var(--glass); border: 1px solid var(--glass-line); border-radius: 28px;
   -webkit-backdrop-filter: blur(22px) saturate(1.5); backdrop-filter: blur(22px) saturate(1.5);
 }
-.dash { display: grid; grid-template-columns: 236px minmax(0, 1fr); min-height: 720px; overflow: hidden; }
+.dash { display: grid; grid-template-columns: 236px minmax(0, 1fr); min-height: 720px; overflow: hidden; background: rgba(16, 28, 66, 0.46); }
 .dash__side { display: flex; flex-direction: column; gap: 6px; padding: 22px 16px; border-right: 1px solid var(--glass-line); background: rgba(255, 255, 255, 0.05); }
 .dash__group { font-size: var(--step-small); color: var(--glass-muted); padding: 14px 12px 4px; }
 .tab {
@@ -349,8 +349,39 @@ td input { width: 120px; min-height: 38px; }
 .seg { display: inline-flex; gap: 4px; padding: 4px; border-radius: 12px; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); }
 .seg button { min-height: 34px; min-width: 44px; padding: 0 10px; border: 0; border-radius: 9px; background: none; color: var(--glass-ink); cursor: pointer; font-weight: 600; font-size: 13px; }
 .seg button[aria-pressed="true"] { background: var(--glass-ink); color: #14213f; }
-.count { float: right; font-size: 12px; color: var(--glass-muted); }
+.count { font-size: 12px; color: var(--glass-muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .count.bad { color: var(--bad); }
+
+/* Settings & SEO panel: two cards per view, the live preview on the right */
+.seg--sub { margin-bottom: 18px; }
+.seg--sub button { min-height: 40px; padding: 0 16px; font-size: var(--step-small); }
+.setgrid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 18px; align-items: start; }
+.setcard { display: grid; gap: 18px; min-width: 0; padding: 22px; border-radius: 22px; background: rgba(8, 16, 40, 0.42); border: 1px solid rgba(255, 255, 255, 0.16); }
+.setcard--preview { position: sticky; top: 90px; gap: 14px; }
+.setcard__head h4 { font: 600 1.25rem/1.2 var(--display); }
+.setcard__head p { margin-top: 4px; font-size: var(--step-small); color: var(--glass-muted); max-width: 48ch; }
+.setcard__head--row { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.setcard .form { grid-template-columns: 1fr 1fr; gap: 16px; }
+.setcard__foot { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; padding-top: 6px; border-top: 1px solid rgba(255, 255, 255, 0.12); padding-top: 16px; }
+.setcard__foot .toast { margin: 0; }
+.label-row { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.label-row label { font-size: var(--step-small); color: var(--glass-muted); }
+.meter { height: 4px; border-radius: 4px; background: rgba(255, 255, 255, 0.14); overflow: hidden; }
+.meter i { display: block; height: 100%; width: 0; border-radius: 4px; background: var(--ok); transition: width 200ms ease, background-color 200ms ease; }
+.meter i.warn { background: var(--warn); }
+.meter i.bad { background: var(--bad); }
+.hint { font-size: 12.5px; line-height: 1.4; color: var(--glass-muted); }
+.pv-label { font-size: var(--step-small); color: var(--glass-muted); margin-bottom: -6px; }
+.pv-contact { display: grid; gap: 8px; padding: 20px; border-radius: 18px; background: #0f1f4d; border: 1px solid rgba(214, 170, 82, 0.4); color: #f6efe0; font-size: var(--step-small); }
+.pv-brand { display: flex; align-items: center; gap: 8px; font: 600 1.2rem/1.2 var(--display); }
+.pv-brand svg { width: 22px; height: 22px; color: #d6aa52; flex: none; }
+.pv-phone { font: 700 1.7rem/1.1 var(--display); color: #d6aa52; }
+.og--row { display: grid; grid-template-columns: 120px minmax(0, 1fr); }
+.og--row img { width: 120px; height: 100%; min-height: 96px; aspect-ratio: auto; object-fit: cover; }
+.og--row > div { min-width: 0; }
+.og--row span { font-size: 12.5px; line-height: 1.4; color: #65676b; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.setcard .checks { gap: 6px; padding: 12px 14px; border-radius: 14px; background: rgba(255, 255, 255, 0.05); }
+.setcard .note { margin: 0; }
 .serp { padding: 18px; border-radius: 18px; background: #fff; color: #202124; font-family: Arial, sans-serif; }
 .serp__url { font-size: 13px; color: #4d5156; overflow-wrap: anywhere; }
 .serp__title { font-size: 19px; line-height: 1.3; color: #1a0dab; margin: 4px 0; overflow-wrap: anywhere; }
@@ -497,7 +528,8 @@ td input { width: 120px; min-height: 38px; }
   .tab { width: auto; flex: none; white-space: nowrap; }
   .me { display: none; }
   .tiles--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .book, .seo { grid-template-columns: 1fr; }
+  .book, .seo, .setgrid { grid-template-columns: 1fr; }
+  .setcard--preview { position: static; }
   .summary { position: static; }
   .steps ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .bar nav { display: none; }
@@ -534,7 +566,8 @@ td input { width: 120px; min-height: 38px; }
   .bar .btn { padding: 0 14px; }
   .mode { padding: 0 10px; }
   .mode span { display: none; }
-  .setbox .form { grid-template-columns: 1fr; }
+  .setbox .form, .setcard .form { grid-template-columns: 1fr; }
+  .setcard { padding: 18px; }
 }
 @media (max-width: 430px) {
   .bar .btn { display: none; }
@@ -723,44 +756,64 @@ td input { width: 120px; min-height: 38px; }
           </div>
 
           <div class="panel" id="p-seo" role="tabpanel" hidden>
-            <div class="seo">
-              <div>
-                <div class="setbox">
-                  <h4 data-i="info_h">Agentlik ma’lumotlari</h4>
-                  <form class="form" id="info-form">
-                    <div class="field"><label for="i-name" data-i="i_name">Agentlik nomi</label><input id="i-name" maxlength="40"></div>
-                    <div class="field"><label for="i-phone" data-i="i_phone">Telefon</label><input id="i-phone" type="tel" maxlength="20" placeholder="+998 XX XXX XX XX"></div>
-                    <div class="field"><label for="i-address" data-i="i_address">Manzil</label><input id="i-address" maxlength="80"></div>
-                    <div class="field"><label for="i-hours" data-i="i_hours">Ish vaqti</label><input id="i-hours" maxlength="60"></div>
-                    <div class="field full"><label for="i-tg" data-i="i_tg">Telegram (username, @ belgisiz)</label><input id="i-tg" maxlength="40" placeholder="ufq_tour"></div>
-                    <p class="err full" id="i-err" role="alert"></p>
-                    <div class="full ctrls"><button class="btn" type="submit" data-i="save_info">Ma’lumotlarni saqlash</button><p class="toast" id="info-toast" role="status"></p></div>
-                  </form>
+            <div class="seg seg--sub" role="group" id="set-tabs" data-i-al="set_al" aria-label="Sozlamalar bo‘limi">
+              <button type="button" data-set="info" aria-pressed="true" data-i="set_info">Agentlik ma’lumotlari</button>
+              <button type="button" data-set="seo" aria-pressed="false" data-i="set_seo">SEO</button>
+            </div>
+
+            <div class="setgrid" id="set-info">
+              <section class="setcard">
+                <header class="setcard__head"><h4 data-i="info_h">Agentlik ma’lumotlari</h4><p data-i="info_sub"></p></header>
+                <form class="form" id="info-form">
+                  <div class="field"><label for="i-name" data-i="i_name">Agentlik nomi</label><input id="i-name" maxlength="40" placeholder="Ufq"></div>
+                  <div class="field"><label for="i-phone" data-i="i_phone">Telefon</label><input id="i-phone" type="tel" maxlength="20" placeholder="+998 XX XXX XX XX"></div>
+                  <div class="field full"><label for="i-address" data-i="i_address">Manzil</label><input id="i-address" maxlength="80" data-i-ph="addr_default"></div>
+                  <div class="field"><label for="i-hours" data-i="i_hours">Ish vaqti</label><input id="i-hours" maxlength="60" data-i-ph="hours_default"></div>
+                  <div class="field"><label for="i-tg" data-i="i_tg">Telegram</label><input id="i-tg" maxlength="40" placeholder="ufq_tour"><small class="hint" data-i="hint_tg"></small></div>
+                  <p class="err full" id="i-err" role="alert"></p>
+                  <div class="full setcard__foot"><button class="btn" type="submit" data-i="save_info">Ma’lumotlarni saqlash</button><p class="toast" id="info-toast" role="status"></p></div>
+                </form>
+              </section>
+              <aside class="setcard setcard--preview">
+                <header class="setcard__head"><h4 data-i="pv_h">Saytda shunday ko‘rinadi</h4></header>
+                <div class="pv-contact">
+                  <div class="pv-brand"><svg aria-hidden="true"><use href="#i-star"/></svg><b id="pv-name">Ufq</b></div>
+                  <b class="pv-phone num" id="pv-phone"></b>
+                  <span id="pv-address"></span>
+                  <span id="pv-hours"></span>
+                  <span id="pv-tg"></span>
                 </div>
-                <div class="setbox">
-                  <div class="ctrls" style="justify-content:space-between"><h4 data-i="seo_h">SEO matni</h4>
-                    <div class="seg" role="group" id="seo-langs" data-i-al="seo_lang_al" aria-label="SEO tili"><button type="button" data-sl="uz" aria-pressed="true">UZ</button><button type="button" data-sl="ru" aria-pressed="false">RU</button><button type="button" data-sl="en" aria-pressed="false">EN</button></div></div>
-                  <form class="form" id="seo-form" style="grid-template-columns:1fr">
-                    <div class="field"><label for="seo-title"><span data-i="seo_title">Sahifa sarlavhasi</span> <span class="count" id="c-title"></span></label><input id="seo-title" maxlength="90"></div>
-                    <div class="field"><label for="seo-desc"><span data-i="seo_desc">Meta tavsif</span> <span class="count" id="c-desc"></span></label><textarea id="seo-desc" maxlength="300"></textarea></div>
-                    <div class="field"><label for="seo-key" data-i="seo_key">Asosiy kalit so‘z</label><input id="seo-key" maxlength="60"></div>
-                    <div class="field"><label for="seo-keys" data-i="seo_keys">Qo‘shimcha kalit so‘zlar, vergul bilan</label><input id="seo-keys" maxlength="300"></div>
-                    <div class="field"><label for="seo-url" data-i="seo_url">Sayt manzili</label><input id="seo-url" type="url" placeholder="https://" maxlength="120"></div>
-                    <div class="field"><label for="seo-img" data-i="seo_img">Ijtimoiy tarmoqlar uchun rasm</label><select id="seo-img"></select></div>
-                    <div class="ctrls"><button class="btn" type="submit" data-i="seo_save">SEO sozlamalarini saqlash</button><button class="btn btn--ghost" type="button" id="seo-copy" data-i="seo_copy">Meta teglarni nusxalash</button></div>
-                    <p class="toast" id="seo-toast" role="status"></p>
-                  </form>
-                </div>
-              </div>
-              <div style="display:grid;gap:16px">
-                <div class="score"><div class="ring" id="ring"><span id="ring-n">0</span></div><div><b style="font:600 1.2rem var(--display)" data-i="seo_score">SEO bahosi</b><div class="tour__meta" id="ring-t"></div></div></div>
-                <div><div class="tour__meta" style="margin-bottom:8px" data-i="serp_h">Google qidiruvida shunday ko‘rinadi</div>
-                  <div class="serp"><div class="serp__url" id="serp-url"></div><div class="serp__title" id="serp-title"></div><div class="serp__desc" id="serp-desc"></div></div></div>
-                <div><div class="tour__meta" style="margin-bottom:8px" data-i="og_h">Telegram va Facebook’da ulashganda</div>
-                  <div class="og"><img id="og-img" alt="" width="960" height="720"><div><small id="og-host"></small><b id="og-title"></b></div></div></div>
+                <p class="note" data-i="pv_note"></p>
+              </aside>
+            </div>
+
+            <div class="setgrid" id="set-seo" hidden>
+              <section class="setcard">
+                <header class="setcard__head setcard__head--row">
+                  <div><h4 data-i="seo_h">SEO matni</h4><p data-i="seo_sub"></p></div>
+                  <div class="seg" role="group" id="seo-langs" data-i-al="seo_lang_al" aria-label="SEO tili"><button type="button" data-sl="uz" aria-pressed="true">UZ</button><button type="button" data-sl="ru" aria-pressed="false">RU</button><button type="button" data-sl="en" aria-pressed="false">EN</button></div>
+                </header>
+                <form class="form" id="seo-form">
+                  <div class="field full"><div class="label-row"><label for="seo-title" data-i="seo_title">Sahifa sarlavhasi</label><span class="count" id="c-title"></span></div>
+                    <input id="seo-title" maxlength="90"><div class="meter" aria-hidden="true"><i id="m-title"></i></div><small class="hint" data-i="hint_title"></small></div>
+                  <div class="field full"><div class="label-row"><label for="seo-desc" data-i="seo_desc">Meta tavsif</label><span class="count" id="c-desc"></span></div>
+                    <textarea id="seo-desc" maxlength="300"></textarea><div class="meter" aria-hidden="true"><i id="m-desc"></i></div><small class="hint" data-i="hint_desc"></small></div>
+                  <div class="field"><label for="seo-key" data-i="seo_key">Asosiy kalit so‘z</label><input id="seo-key" maxlength="60"></div>
+                  <div class="field"><label for="seo-img" data-i="seo_img">Ijtimoiy tarmoqlar uchun rasm</label><select id="seo-img"></select></div>
+                  <div class="field full"><label for="seo-keys" data-i="seo_keys">Qo‘shimcha kalit so‘zlar</label><input id="seo-keys" maxlength="300"><small class="hint" data-i="hint_keys"></small></div>
+                  <div class="field full"><label for="seo-url" data-i="seo_url">Sayt manzili</label><input id="seo-url" type="url" placeholder="https://" maxlength="120"><small class="hint" data-i="hint_url"></small></div>
+                  <div class="full setcard__foot"><button class="btn" type="submit" data-i="seo_save">SEO sozlamalarini saqlash</button><button class="btn btn--ghost" type="button" id="seo-copy" data-i="seo_copy">Meta teglarni nusxalash</button><p class="toast" id="seo-toast" role="status"></p></div>
+                </form>
+              </section>
+              <aside class="setcard setcard--preview">
+                <div class="score"><div class="ring" id="ring"><span id="ring-n">0</span></div><div><b data-i="seo_score">SEO bahosi</b><div class="tour__meta" id="ring-t"></div></div></div>
                 <ul class="checks" id="checks"></ul>
-                <p class="note" style="margin:0" data-i="seo_note">Bu sahifa claude.ai ichida turgani uchun Google uni indekslamaydi.</p>
-              </div>
+                <div class="pv-label" data-i="serp_h">Google qidiruvida shunday ko‘rinadi</div>
+                <div class="serp"><div class="serp__url" id="serp-url"></div><div class="serp__title" id="serp-title"></div><div class="serp__desc" id="serp-desc"></div></div>
+                <div class="pv-label" data-i="og_h">Telegram va Facebook’da ulashganda</div>
+                <div class="og og--row"><img id="og-img" alt="" width="960" height="720"><div><small id="og-host"></small><b id="og-title"></b><span id="og-desc"></span></div></div>
+                <p class="note" data-i="seo_note"></p>
+              </aside>
             </div>
           </div>
           <p class="toast" id="dash-status" role="status"></p>
@@ -881,7 +934,13 @@ td input { width: 120px; min-height: 38px; }
       from: '{price} dan',
       kab_h: 'Sayohat kabineti', kab_p: 'Turlar bilan tanishing, narxlarni solishtiring va shu yerning o‘zida bron qiling. Bronlaringiz holatini “Bronlarim” bo‘limida kuzatasiz.',
       tab_turlar: 'Turlar', tab_narxlar: 'Narxlar', tab_bron: 'Bron qilish', tab_mening: 'Bronlarim', grp_admin: 'Boshqaruv',
-      tab_bronlar: 'Kelgan bronlar', tab_tahrir: 'Narx tahriri', tab_seo: 'Sozlamalar va SEO', me: 'Siz',
+      tab_bronlar: 'Kelgan bronlar', tab_tahrir: 'Narx tahriri', tab_seo: 'Sozlamalar', title_seo: 'Sozlamalar va SEO', me: 'Siz',
+      set_al: 'Sozlamalar bo‘limi', set_info: 'Agentlik ma’lumotlari', set_seo: 'SEO',
+      info_sub: 'Saytning sarlavhasi, aloqa bo‘limi va tugmalarida ko‘rinadi. Bo‘sh qoldirilgan maydon o‘rniga saytda kulrang namunadagi matn chiqadi.',
+      pv_h: 'Saytda shunday ko‘rinadi', pv_note: 'Saqlaganingizdan keyin sarlavha, aloqa bo‘limi va “Qo‘ng‘iroq qilish”, “Telegram’da yozish” tugmalari darhol yangilanadi.',
+      hint_tg: '@ belgisiz, masalan ufq_tour', seo_sub: 'Har bir til uchun alohida yoziladi. Google shu matnni qidiruv natijasida ko‘rsatadi.',
+      hint_title: 'Tavsiya: 30–60 belgi. Asosiy kalit so‘zni boshiga yaqin yozing.', hint_desc: 'Tavsiya: 120–160 belgi. Nimani taklif qilishingiz va bron qilishga chaqiruv.',
+      hint_keys: '3–10 ta, vergul bilan ajrating.', hint_url: 'Domen olganingizda yozing, masalan https://sizning-domeningiz.uz',
       month_al: 'Sayohat oyi', people_al: 'Kishilar soni', minus_al: 'Bir kishi kam', plus_al: 'Bir kishi ko‘p',
       tile_month: 'Tanlangan oy', tile_month_sub: '{p} uchun narxlar', tile_best: 'Havosi eng qulay', tile_best_sub: 'kunduzi {t}°, {word}',
       tile_cheap: 'Eng arzon tur', tile_cheap_sub: '{name}, kishi boshiga',
@@ -920,7 +979,7 @@ td input { width: 120px; min-height: 38px; }
       db_lost: 'Ma’lumotlar bazasi bilan aloqa uzildi. Sahifani yangilang.',
       th_f: 'Yo‘l, so‘m', th_h: 'Bir tun, so‘m', th_n: 'Tunlar', th_on: 'Saytda', shown: 'ko‘rinadi', save_prices: 'Narxlarni saqlash',
       prices_saved: 'Narxlar saqlandi. Sayt hamma uchun yangilandi.', one_tour: 'Kamida bitta tur saytda ko‘rinsin.', save_fail: 'Saqlab bo‘lmadi: {code}',
-      info_h: 'Agentlik ma’lumotlari', i_name: 'Agentlik nomi', i_phone: 'Telefon', i_address: 'Manzil', i_hours: 'Ish vaqti', i_tg: 'Telegram (username, @ belgisiz)',
+      info_h: 'Agentlik ma’lumotlari', i_name: 'Agentlik nomi', i_phone: 'Telefon', i_address: 'Manzil', i_hours: 'Ish vaqti', i_tg: 'Telegram',
       save_info: 'Ma’lumotlarni saqlash', info_saved: 'Ma’lumotlar saqlandi va saytda yangilandi.', bad_phone: 'Telefonni +998 XX XXX XX XX ko‘rinishida yozing yoki bo‘sh qoldiring.',
       bad_tg: 'Telegram username faqat lotin harflari, raqam va _ dan iborat bo‘ladi.',
       seo_h: 'SEO matni', seo_lang_al: 'SEO tili', seo_title: 'Sahifa sarlavhasi', seo_desc: 'Meta tavsif', seo_key: 'Asosiy kalit so‘z',
@@ -964,7 +1023,13 @@ td input { width: 120px; min-height: 38px; }
       from: 'от {price}',
       kab_h: 'Кабинет путешественника', kab_p: 'Выбирайте туры, сравнивайте цены и бронируйте прямо здесь. Статус брони видно в разделе «Мои брони».',
       tab_turlar: 'Туры', tab_narxlar: 'Цены', tab_bron: 'Бронирование', tab_mening: 'Мои брони', grp_admin: 'Управление',
-      tab_bronlar: 'Входящие брони', tab_tahrir: 'Редактор цен', tab_seo: 'Настройки и SEO', me: 'Вы',
+      tab_bronlar: 'Входящие брони', tab_tahrir: 'Редактор цен', tab_seo: 'Настройки', title_seo: 'Настройки и SEO', me: 'Вы',
+      set_al: 'Раздел настроек', set_info: 'Данные агентства', set_seo: 'SEO',
+      info_sub: 'Видны в шапке сайта, в контактах и на кнопках. Если поле пустое, на сайте показывается серый пример.',
+      pv_h: 'Так это выглядит на сайте', pv_note: 'После сохранения шапка, контакты и кнопки «Позвонить» и «Написать в Telegram» обновятся сразу.',
+      hint_tg: 'Без @, например ufq_tour', seo_sub: 'Для каждого языка свой текст. Google показывает его в результатах поиска.',
+      hint_title: 'Рекомендуется 30–60 символов. Ключевое слово ближе к началу.', hint_desc: 'Рекомендуется 120–160 символов. Что вы предлагаете и призыв забронировать.',
+      hint_keys: '3–10 слов через запятую.', hint_url: 'Укажите, когда появится домен, например https://vash-domen.uz',
       month_al: 'Месяц поездки', people_al: 'Число людей', minus_al: 'На одного меньше', plus_al: 'На одного больше',
       tile_month: 'Выбранный месяц', tile_month_sub: 'цены для {p}', tile_best: 'Лучшая погода', tile_best_sub: 'днём {t}°, {word}',
       tile_cheap: 'Самый доступный тур', tile_cheap_sub: '{name}, за человека',
@@ -1003,7 +1068,7 @@ td input { width: 120px; min-height: 38px; }
       db_lost: 'Связь с базой данных прервалась. Обновите страницу.',
       th_f: 'Дорога, сум', th_h: 'Ночь, сум', th_n: 'Ночей', th_on: 'На сайте', shown: 'показан', save_prices: 'Сохранить цены',
       prices_saved: 'Цены сохранены и обновлены на сайте.', one_tour: 'На сайте должен остаться хотя бы один тур.', save_fail: 'Не удалось сохранить: {code}',
-      info_h: 'Данные агентства', i_name: 'Название агентства', i_phone: 'Телефон', i_address: 'Адрес', i_hours: 'Часы работы', i_tg: 'Telegram (username без @)',
+      info_h: 'Данные агентства', i_name: 'Название агентства', i_phone: 'Телефон', i_address: 'Адрес', i_hours: 'Часы работы', i_tg: 'Telegram',
       save_info: 'Сохранить данные', info_saved: 'Данные сохранены и обновлены на сайте.', bad_phone: 'Укажите телефон в формате +998 XX XXX XX XX или оставьте поле пустым.',
       bad_tg: 'Username в Telegram состоит из латинских букв, цифр и _.',
       seo_h: 'SEO-текст', seo_lang_al: 'Язык SEO', seo_title: 'Заголовок страницы', seo_desc: 'Мета-описание', seo_key: 'Главное ключевое слово',
@@ -1047,7 +1112,13 @@ td input { width: 120px; min-height: 38px; }
       from: 'from {price}',
       kab_h: 'Travel dashboard', kab_p: 'Browse tours, compare prices and book right here. Track your bookings under “My bookings”.',
       tab_turlar: 'Tours', tab_narxlar: 'Prices', tab_bron: 'Book', tab_mening: 'My bookings', grp_admin: 'Management',
-      tab_bronlar: 'Incoming bookings', tab_tahrir: 'Price editor', tab_seo: 'Settings & SEO', me: 'You',
+      tab_bronlar: 'Incoming bookings', tab_tahrir: 'Price editor', tab_seo: 'Settings', title_seo: 'Settings & SEO', me: 'You',
+      set_al: 'Settings section', set_info: 'Agency details', set_seo: 'SEO',
+      info_sub: 'Shown in the site header, the contact section and the buttons. An empty field shows the grey example on the site.',
+      pv_h: 'How it looks on the site', pv_note: 'After saving, the header, contacts and the “Call” and “Message on Telegram” buttons update at once.',
+      hint_tg: 'Without @, for example ufq_tour', seo_sub: 'One text per language. Google shows it in search results.',
+      hint_title: 'Aim for 30–60 characters. Put the focus keyword near the start.', hint_desc: 'Aim for 120–160 characters. Say what you offer and invite people to book.',
+      hint_keys: '3–10, separated by commas.', hint_url: 'Add it once you have a domain, for example https://your-domain.uz',
       month_al: 'Travel month', people_al: 'Number of travellers', minus_al: 'One fewer', plus_al: 'One more',
       tile_month: 'Selected month', tile_month_sub: 'prices for {p}', tile_best: 'Best weather', tile_best_sub: '{t}° by day, {word}',
       tile_cheap: 'Lowest price', tile_cheap_sub: '{name}, per person',
@@ -1086,7 +1157,7 @@ td input { width: 120px; min-height: 38px; }
       db_lost: 'Lost the connection to the database. Reload the page.',
       th_f: 'Travel, UZS', th_h: 'Per night, UZS', th_n: 'Nights', th_on: 'On site', shown: 'shown', save_prices: 'Save prices',
       prices_saved: 'Prices saved and updated on the site.', one_tour: 'Keep at least one tour on the site.', save_fail: 'Couldn’t save: {code}',
-      info_h: 'Agency details', i_name: 'Agency name', i_phone: 'Phone', i_address: 'Address', i_hours: 'Opening hours', i_tg: 'Telegram (username without @)',
+      info_h: 'Agency details', i_name: 'Agency name', i_phone: 'Phone', i_address: 'Address', i_hours: 'Opening hours', i_tg: 'Telegram',
       save_info: 'Save details', info_saved: 'Details saved and updated on the site.', bad_phone: 'Enter the phone as +998 XX XXX XX XX or leave it empty.',
       bad_tg: 'A Telegram username has Latin letters, digits and _ only.',
       seo_h: 'SEO text', seo_lang_al: 'SEO language', seo_title: 'Page title', seo_desc: 'Meta description', seo_key: 'Focus keyword',
@@ -1257,9 +1328,10 @@ td input { width: 120px; min-height: 38px; }
     if (!LANGS.includes(l) || l === lang) return;
     lang = l; state.seoLang = l;
     try { localStorage.setItem('ufq-lang', l); } catch (e) {}
-    applyStatic(); rerenderAll(); renderAdmin(); seoForm(); renderSeo();
-    $('panel-title').textContent = t('tab_' + state.tab);
+    applyStatic(); rerenderAll(); renderAdmin(); seoForm(); renderSeo(); renderInfoPreview();
+    $('panel-title').textContent = panelTitle(state.tab);
   }
+  const panelTitle = tab => t(I18N.uz['title_' + tab] ? 'title_' + tab : 'tab_' + tab);
   $('langs').addEventListener('click', e => { const b = e.target.closest('[data-lang]'); if (b) setLang(b.dataset.lang); });
 
   const MODE_KEY = 'ufq-mode';
@@ -1327,7 +1399,7 @@ td input { width: 120px; min-height: 38px; }
     state.tab = tab;
     document.querySelectorAll('.tab').forEach(b => b.setAttribute('aria-selected', String(b.dataset.tab === tab)));
     document.querySelectorAll('.panel').forEach(p => p.hidden = p.id !== 'p-' + tab);
-    $('panel-title').textContent = t('tab_' + tab);
+    $('panel-title').textContent = panelTitle(tab);
     $('global-ctrls').hidden = !['turlar', 'narxlar'].includes(tab);
     if (tab === 'bronlar') markSeen();
     if (focus) document.querySelector(`.tab[data-tab="${tab}"]`).focus();
@@ -1695,10 +1767,26 @@ td input { width: 120px; min-height: 38px; }
   });
 
   /* ---------- Owner: agency details ---------- */
+  $('set-tabs').addEventListener('click', e => {
+    const b = e.target.closest('[data-set]'); if (!b) return;
+    document.querySelectorAll('#set-tabs [data-set]').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    $('set-info').hidden = b.dataset.set !== 'info'; $('set-seo').hidden = b.dataset.set !== 'seo';
+  });
   function infoForm() {
     $('i-name').value = info.name || ''; $('i-phone').value = info.phone ? fmtPhone(info.phone) : '';
     $('i-address').value = info.address || ''; $('i-hours').value = info.hours || ''; $('i-tg').value = info.telegram || '';
+    renderInfoPreview();
   }
+  // Live preview of the contact block while the owner types, before anything is saved
+  function renderInfoPreview() {
+    const d = $('i-phone').value.replace(/\D/g, ''), tg = $('i-tg').value.trim().replace(/^@/, '');
+    $('pv-name').textContent = $('i-name').value.trim() || 'Ufq';
+    $('pv-phone').textContent = d.length === 12 || d.length === 9 ? fmtPhone(d.length === 9 ? '998' + d : d) : (d ? $('i-phone').value : t('phone_soon'));
+    $('pv-address').textContent = $('i-address').value.trim() || t('addr_default');
+    $('pv-hours').textContent = $('i-hours').value.trim() || t('hours_default');
+    $('pv-tg').textContent = tg ? 'Telegram: @' + tg : '';
+  }
+  $('info-form').addEventListener('input', renderInfoPreview);
   $('info-form').addEventListener('submit', async e => {
     e.preventDefault();
     if (!isOwner || !db) return;
@@ -1753,6 +1841,12 @@ td input { width: 120px; min-height: 38px; }
     $('checks').innerHTML = checks.map(([pass, label, hint]) => `<li class="${pass ? '' : 'no'}"><span>${esc(label)}${!pass && hint ? `<em>${esc(hint)}</em>` : ''}</span></li>`).join('');
     $('c-title').textContent = tl + ' / 60'; $('c-title').classList.toggle('bad', tl > 60 || tl < 30);
     $('c-desc').textContent = dl + ' / 160'; $('c-desc').classList.toggle('bad', dl > 160 || dl < 120);
+    const meter = (el, len, lo, hi) => {
+      el.style.width = Math.min(100, Math.round(len / hi * 100)) + '%';
+      el.className = len > hi ? 'bad' : len < lo ? 'warn' : '';
+    };
+    meter($('m-title'), tl, 30, 60); meter($('m-desc'), dl, 120, 160);
+    $('og-desc').textContent = v.description;
     let host = 'example.uz'; try { if (seoDraft.url) host = new URL(seoDraft.url).host; } catch (e) {}
     $('serp-url').textContent = host + ' › ' + state.seoLang;
     $('serp-title').textContent = tl > 60 ? v.title.slice(0, 58) + '…' : v.title || t('no_title');
