@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://abdusattorovshohjahon61-art.github.io/ufq-sayt/sitemap.xml
