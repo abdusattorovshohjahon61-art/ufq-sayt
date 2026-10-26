@@ -2005,6 +2005,11 @@ td input { width: 120px; min-height: 38px; }
     renderMine();
     // The settings and SEO panel is for the artifact's owner alone, not for editors it is shared with
     document.querySelectorAll('[data-owner]').forEach(el => el.hidden = !isOwner);
+    // Direct links for the owner: #sozlamalar opens agency details, #seo opens the SEO view
+    if (isOwner && /^#(seo|sozlamalar)$/.test(location.hash)) {
+      goKabinet('seo');
+      if (location.hash === '#seo') document.querySelector('#set-tabs [data-set="seo"]').click();
+    }
     if (isAdmin) {
       document.querySelectorAll('[data-admin]').forEach(el => el.hidden = false);
       db.collection('bookings').onSnapshot(onBookings, onErr);
