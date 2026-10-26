@@ -184,6 +184,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .langs button[aria-pressed="true"] { background: var(--gold); color: #14213f; }
 .mode { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 12px; border: 1px solid var(--bar-line); border-radius: 999px; background: none; color: inherit; cursor: pointer; font-size: var(--step-small); }
 .mode svg { width: 18px; height: 18px; color: var(--gold); }
+.seo-btn { border-color: var(--gold); font-weight: 600; }
 @media (hover: hover) { .langs button:not([aria-pressed="true"]):hover, .mode:hover { background: rgba(127, 127, 127, 0.14); } }
 
 /* ---------- Hero: peshtoq ---------- */
@@ -566,6 +567,7 @@ td input { width: 120px; min-height: 38px; }
   .bar .btn { padding: 0 14px; }
   .mode { padding: 0 10px; }
   .mode span { display: none; }
+  .mode.seo-btn span { display: inline; }
   .setbox .form, .setcard .form { grid-template-columns: 1fr; }
   .setcard { padding: 18px; }
 }
@@ -612,6 +614,7 @@ td input { width: 120px; min-height: 38px; }
   </div>
   <button class="mode" type="button" id="mode"><svg aria-hidden="true"><use href="#i-moon"/></svg><span>Tun</span></button>
   <a class="btn" href="#kabinet" data-open="bron" data-i="btn_book">Bron qilish</a>
+  <button class="mode seo-btn" type="button" id="seo-btn" data-owner hidden data-i-al="seo_btn_al" aria-label="SEO va sozlamalar"><svg aria-hidden="true"><use href="#i-gear"/></svg><span>SEO</span></button>
 </header>
 
 <main>
@@ -924,7 +927,7 @@ td input { width: 120px; min-height: 38px; }
   const I18N = {
     uz: {
       nav_dest: 'Manzillar', nav_kab: 'Kabinet', nav_faq: 'Savollar', nav_contact: 'Aloqa', btn_book: 'Bron qilish',
-      lang_label: 'Til', mode_day: 'Kun', mode_night: 'Tun', mode_to_day: 'Kun rejimiga o‘tish', mode_to_night: 'Tun rejimiga o‘tish',
+      seo_btn_al: 'SEO va sozlamalar', lang_label: 'Til', mode_day: 'Kun', mode_night: 'Tun', mode_to_day: 'Kun rejimiga o‘tish', mode_to_night: 'Tun rejimiga o‘tish',
       h1a: 'O‘zbekiston bo‘ylab', h1b: 'sayohatlar',
       hero_lead: 'Toshkentdan Samarqand, Buxoro, Xiva va yana beshta manzilga ichki turlar. Poyezd, mehmonxona, gid va muzey chiptalari bitta narxda.',
       search_al: 'Tur qidirish', s_where: 'Qayerga', s_when: 'Qachon', s_people: 'Necha kishi', s_all: 'Hammasi', s_btn: 'Turlarni ko‘rish',
@@ -1013,7 +1016,7 @@ td input { width: 120px; min-height: 38px; }
     },
     ru: {
       nav_dest: 'Направления', nav_kab: 'Кабинет', nav_faq: 'Вопросы', nav_contact: 'Контакты', btn_book: 'Забронировать',
-      lang_label: 'Язык', mode_day: 'День', mode_night: 'Ночь', mode_to_day: 'Включить дневной режим', mode_to_night: 'Включить ночной режим',
+      seo_btn_al: 'SEO и настройки', lang_label: 'Язык', mode_day: 'День', mode_night: 'Ночь', mode_to_day: 'Включить дневной режим', mode_to_night: 'Включить ночной режим',
       h1a: 'Путешествия по', h1b: 'Узбекистану',
       hero_lead: 'Туры из Ташкента в Самарканд, Бухару, Хиву и ещё пять мест. Поезд, отель, гид и билеты в музеи по одной цене.',
       search_al: 'Поиск тура', s_where: 'Куда', s_when: 'Когда', s_people: 'Человек', s_all: 'Все направления', s_btn: 'Показать туры',
@@ -1102,7 +1105,7 @@ td input { width: 120px; min-height: 38px; }
     },
     en: {
       nav_dest: 'Destinations', nav_kab: 'Dashboard', nav_faq: 'FAQ', nav_contact: 'Contact', btn_book: 'Book now',
-      lang_label: 'Language', mode_day: 'Day', mode_night: 'Night', mode_to_day: 'Switch to day mode', mode_to_night: 'Switch to night mode',
+      seo_btn_al: 'SEO & settings', lang_label: 'Language', mode_day: 'Day', mode_night: 'Night', mode_to_day: 'Switch to day mode', mode_to_night: 'Switch to night mode',
       h1a: 'Travel across', h1b: 'Uzbekistan',
       hero_lead: 'Tours from Tashkent to Samarkand, Bukhara, Khiva and five more places. Train, hotel, guide and museum tickets for one price.',
       search_al: 'Find a tour', s_where: 'Where to', s_when: 'When', s_people: 'Travellers', s_all: 'All destinations', s_btn: 'Show tours',
@@ -1764,6 +1767,12 @@ td input { width: 120px; min-height: 38px; }
     if (!Object.values(tours).some(x => x.on)) { $('price-toast').textContent = t('one_tour'); return; }
     try { await serial('site/prices', () => db.doc('site/prices').set({ tours, updatedAt: Date.now() })); $('price-toast').textContent = t('prices_saved'); }
     catch (x) { $('price-toast').textContent = t('save_fail', { code: (x && x.code) || '?' }); }
+  });
+
+  // The corner button in the header (owner only) goes straight to the SEO view
+  $('seo-btn').addEventListener('click', () => {
+    goKabinet('seo');
+    document.querySelector('#set-tabs [data-set="seo"]').click();
   });
 
   /* ---------- Owner: agency details ---------- */
