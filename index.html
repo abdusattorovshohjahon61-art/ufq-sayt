@@ -1394,7 +1394,9 @@ td input { width: 120px; min-height: 38px; }
     if (user) {
       userNs = user;
       const me = await user.me();
-      uid = me.id; isAdmin = !!me.canEdit; isOwner = !!me.isOwner;
+      uid = me.id; isAdmin = !!me.canEdit;
+      isOwner = !!me.isOwner || await user.isOwner().catch(() => false);
+      if (isOwner) isAdmin = true;
       if (me.id) { $('me').hidden = false; $('me-img').src = me.avatarUrl; $('me-name').textContent = me.name || 'Siz'; }
     }
     if (!db) { renderMine(); return; }
@@ -1412,10 +1414,10 @@ td input { width: 120px; min-height: 38px; }
     db.doc('site/seo').onSnapshot(s => { seo = { ...DEFAULT_SEO, ...(s.exists ? s.data() : {}) }; applySeo(); if (state.tab !== 'seo') { seoForm(seo); renderSeo(); } }, onErr);
     if (uid) db.doc('bookings/' + uid).onSnapshot(s => { mine = s.exists ? (s.data().items || []) : []; renderMine(); }, onErr);
     renderMine();
+    // The SEO panel is for the artifact's owner alone, not for editors it is shared with
+    document.querySelectorAll('[data-owner]').forEach(el => el.hidden = !isOwner);
     if (isAdmin) {
       document.querySelectorAll('[data-admin]').forEach(el => el.hidden = false);
-      // The SEO panel is for the artifact's owner alone, not for editors it is shared with
-      document.querySelectorAll('[data-owner]').forEach(el => el.hidden = !isOwner);
       db.collection('bookings').onSnapshot(onBookings, onErr);
       renderAdmin();
     }
