@@ -16,10 +16,16 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://abdusattorovshohjahon61-art.github.io/ufq-sayt/">
 <meta property="og:url" content="https://abdusattorovshohjahon61-art.github.io/ufq-sayt/">
+<link rel="alternate" hreflang="uz" href="https://abdusattorovshohjahon61-art.github.io/ufq-sayt/?lang=uz">
+<link rel="alternate" hreflang="ru" href="https://abdusattorovshohjahon61-art.github.io/ufq-sayt/?lang=ru">
+<link rel="alternate" hreflang="en" href="https://abdusattorovshohjahon61-art.github.io/ufq-sayt/?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://abdusattorovshohjahon61-art.github.io/ufq-sayt/">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:locale:alternate" content="en_US">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TravelAgency", "name": "Ufq", "address": {"@type": "PostalAddress", "addressLocality": "Toshkent", "addressCountry": "UZ"}, "openingHours": "Mo-Su 09:00-21:00", "areaServed": "UZ", "image": "https://abdusattorovshohjahon61-art.github.io/ufq-sayt/img/k-samarqand.jpg", "url": "https://abdusattorovshohjahon61-art.github.io/ufq-sayt/"}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400..700&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400..700&family=Jost:wght@500..700&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
 <script>document.documentElement.classList.add('js')</script>
 <style>
 /* Layout: milliy uslub. Lojuvard peshtoq (girih devor, arka ichidagi suratlar), madrasa ravog‘idek arkada,
@@ -36,7 +42,24 @@
   --anor: #a1303b;
   --line: rgba(20, 33, 63, 0.14);
 
-  --night: #0f1f4d;       /* peshtoq foni, ikkala mavzuda bir xil */
+  /* Peshtoq (hero, aloqa) va sarlavha paneli: kunduzi ganch, tunda lojuvard */
+  --hero-bg: #f3ecdd;
+  --hero-ink: #14213f;
+  --hero-muted: rgba(20, 33, 63, 0.74);
+  --hero-gold: #94650f;
+  --hglass: rgba(255, 255, 255, 0.6);
+  --hglass-line: rgba(20, 33, 63, 0.14);
+  --hfield: #ffffff;
+  --hfield-line: rgba(20, 33, 63, 0.2);
+  --hfield-ink: #14213f;
+  --hlabel: rgba(20, 33, 63, 0.72);
+  --bar-bg: rgba(246, 241, 231, 0.8);
+  --bar-ink: #14213f;
+  --bar-line: rgba(20, 33, 63, 0.12);
+  --girih-img: var(--girih-day, none);
+  --safe-band: #f3ecdd;
+
+  --night: #0f1f4d;       /* kabinet va ikat bandi uchun lojuvard, ikkala rejimda bir xil */
   --night-ink: #f6efe0;
   --gold: #d6aa52;
   --glass: rgba(255, 255, 255, 0.12);
@@ -48,7 +71,7 @@
   --warn: #f1c46a;
   --bad: #f08a8a;
 
-  --display: "Reem Kufi", "Segoe UI", system-ui, sans-serif;
+  --display: "Reem Kufi", "Jost", "Segoe UI", system-ui, sans-serif;   /* Jost draws the Cyrillic that Reem Kufi lacks */
   --text: "Golos Text", "Segoe UI", system-ui, -apple-system, sans-serif;
 
   --step-small: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
@@ -75,6 +98,11 @@
     --oltin: #e0b65c;
     --anor: #ee8a8f;
     --line: rgba(239, 231, 214, 0.16);
+    --hero-bg: #0f1f4d; --hero-ink: #f6efe0; --hero-muted: rgba(246, 239, 224, 0.86); --hero-gold: #d6aa52;
+    --hglass: rgba(255, 255, 255, 0.12); --hglass-line: rgba(255, 255, 255, 0.26);
+    --hfield: rgba(255, 255, 255, 0.14); --hfield-line: rgba(255, 255, 255, 0.22); --hfield-ink: #fbf7ee; --hlabel: rgba(251, 247, 238, 0.74);
+    --bar-bg: rgba(15, 31, 77, 0.62); --bar-ink: #f6efe0; --bar-line: rgba(255, 255, 255, 0.14);
+    --girih-img: var(--girih-night, none); --safe-band: #0f1f4d;
     color-scheme: dark;
   }
 }
@@ -89,6 +117,11 @@
   --oltin: #e0b65c;
   --anor: #ee8a8f;
   --line: rgba(239, 231, 214, 0.16);
+  --hero-bg: #0f1f4d; --hero-ink: #f6efe0; --hero-muted: rgba(246, 239, 224, 0.86); --hero-gold: #d6aa52;
+  --hglass: rgba(255, 255, 255, 0.12); --hglass-line: rgba(255, 255, 255, 0.26);
+  --hfield: rgba(255, 255, 255, 0.14); --hfield-line: rgba(255, 255, 255, 0.22); --hfield-ink: #fbf7ee; --hlabel: rgba(251, 247, 238, 0.74);
+  --bar-bg: rgba(15, 31, 77, 0.62); --bar-ink: #f6efe0; --bar-line: rgba(255, 255, 255, 0.14);
+  --girih-img: var(--girih-night, none); --safe-band: #0f1f4d;
   color-scheme: dark;
 }
 
@@ -96,7 +129,7 @@
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 body { margin: 0; background: var(--bg); color: var(--ink); font: 400 var(--step-body)/1.55 var(--text); overflow-x: clip; }
-body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--night); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--safe-band); }
 img, video { display: block; max-width: 100%; }
 h1, h2, h3, h4, p, ul, ol, dl, dd, figure { margin: 0; }
 h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.05; text-wrap: balance; }
@@ -119,14 +152,14 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .btn[disabled] { opacity: 0.5; cursor: not-allowed; }
 @media (hover: hover) and (pointer: fine) {
   .btn:hover { background: #e9c477; }
-  .btn--ghost:hover { background: rgba(255, 255, 255, 0.12); }
+  .btn--ghost:hover { background: rgba(127, 127, 127, 0.14); }
   .btn--blue:hover { background: var(--ink); color: var(--bg); }
 }
 .link { text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 0.22em; transition: text-decoration-color 180ms ease; }
 @media (hover: hover) { .link:hover { text-decoration-color: currentColor; } }
 
 /* Ornaments: generated in script as SVG tiles (girih star, ikat band) */
-.girih { background-color: var(--night); background-image: var(--girih-gold, none); background-size: 72px 72px; }
+.girih { background-color: var(--hero-bg); background-image: var(--girih-img); background-size: 72px 72px; }
 .ikat { height: 18px; background-color: var(--night); background-image: var(--ikat, none); background-size: 48px 18px; }
 .ornament-title { display: flex; align-items: center; gap: 16px; }
 .ornament-title::before, .ornament-title::after { content: ""; flex: 1; height: 2px; background: currentColor; opacity: 0.25; }
@@ -137,39 +170,47 @@ button, input, select, textarea { font: inherit; color: inherit; }
   position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
   display: flex; align-items: center; gap: 24px;
   padding-top: 12px; padding-bottom: 12px;
-  background: rgba(15, 31, 77, 0.62); color: var(--night-ink);
+  background: var(--bar-bg); color: var(--bar-ink);
   -webkit-backdrop-filter: blur(16px) saturate(1.4); backdrop-filter: blur(16px) saturate(1.4);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  border-bottom: 1px solid var(--bar-line);
 }
-.bar__mark { display: flex; align-items: center; gap: 10px; margin-right: auto; text-decoration: none; font: 600 22px/1 var(--display); }
-.bar__mark svg { width: 28px; height: 28px; color: var(--gold); }
+.bar__mark { display: flex; align-items: center; gap: 10px; margin-right: auto; text-decoration: none; font: 600 22px/1 var(--display); min-width: 0; }
+.bar__mark span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bar__mark svg { width: 28px; height: 28px; flex: none; color: var(--gold); }
 .bar nav { display: flex; gap: 22px; font-size: var(--step-small); }
 .bar .btn { min-height: 40px; padding: 0 18px; font-size: var(--step-small); }
+.langs { display: inline-flex; padding: 3px; gap: 2px; border-radius: 999px; border: 1px solid var(--bar-line); }
+.langs button { min-width: 36px; min-height: 32px; padding: 0 8px; border: 0; border-radius: 999px; background: none; color: inherit; cursor: pointer; font-size: 13px; font-weight: 600; letter-spacing: 0.02em; }
+.langs button[aria-pressed="true"] { background: var(--gold); color: #14213f; }
+.mode { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 12px; border: 1px solid var(--bar-line); border-radius: 999px; background: none; color: inherit; cursor: pointer; font-size: var(--step-small); }
+.mode svg { width: 18px; height: 18px; color: var(--gold); }
+@media (hover: hover) { .langs button:not([aria-pressed="true"]):hover, .mode:hover { background: rgba(127, 127, 127, 0.14); } }
 
 /* ---------- Hero: peshtoq ---------- */
-.hero { color: var(--night-ink); position: relative; margin-top: -65px; padding-top: 65px; }
+.hero { color: var(--hero-ink); position: relative; margin-top: -65px; padding-top: 65px; }
 .hero__in {
   display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap); align-items: end;
   padding-top: clamp(48px, 7vw, 110px);
 }
 .hero__text { grid-column: 1 / 7; padding-bottom: clamp(48px, 6vw, 96px); display: grid; gap: 24px; align-content: end; }
 .hero h1 { font-size: var(--step-display); font-weight: 700; letter-spacing: -0.01em; }
-.hero h1 span { color: var(--gold); }
-.hero__lead { font-size: var(--step-lead); max-width: 34ch; color: rgba(246, 239, 224, 0.86); }
+.hero h1 .gold { color: var(--hero-gold); }
+.hero__lead { font-size: var(--step-lead); max-width: 34ch; color: var(--hero-muted); }
 .search {
   display: grid; grid-template-columns: 1.3fr 1fr 0.8fr auto; gap: 10px; align-items: end;
   padding: 14px; border-radius: 22px;
-  background: var(--glass); border: 1px solid var(--glass-line);
+  background: var(--hglass); border: 1px solid var(--hglass-line);
   -webkit-backdrop-filter: blur(18px) saturate(1.4); backdrop-filter: blur(18px) saturate(1.4);
 }
 .field { display: grid; gap: 6px; min-width: 0; }
 .field label, .field .label { font-size: var(--step-small); color: var(--glass-muted); }
+.search .field label { color: var(--hlabel); }
 .search select, .search input {
   width: 100%; min-height: 48px; padding: 0 14px; border-radius: 14px;
-  background: rgba(255, 255, 255, 0.14); border: 1px solid rgba(255, 255, 255, 0.22); color: var(--glass-ink);
+  background: var(--hfield); border: 1px solid var(--hfield-line); color: var(--hfield-ink);
 }
 .search option { color: #14213f; }
-.hero__facts { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: var(--step-small); color: rgba(246, 239, 224, 0.8); }
+.hero__facts { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: var(--step-small); color: var(--hero-muted); }
 .hero__facts li { display: flex; align-items: center; gap: 8px; }
 .hero__facts svg { width: 14px; height: 14px; color: var(--gold); }
 .hero__arches { grid-column: 7 / 13; position: relative; align-self: end; height: min(78svh, 760px); min-height: 460px; }
@@ -301,6 +342,13 @@ td input { width: 120px; min-height: 38px; }
 .empty { padding: 32px; text-align: center; border-radius: 20px; border: 1px dashed rgba(255, 255, 255, 0.3); color: var(--glass-muted); display: grid; gap: 12px; justify-items: center; }
 .seo { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 18px; align-items: start; }
 .seo .form { grid-template-columns: 1fr; }
+.setbox { display: grid; gap: 14px; padding: 18px; border-radius: 20px; background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.16); }
+.setbox + .setbox { margin-top: 18px; }
+.setbox h4 { font: 600 1.2rem/1.2 var(--display); }
+.setbox .form { grid-template-columns: 1fr 1fr; }
+.seg { display: inline-flex; gap: 4px; padding: 4px; border-radius: 12px; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); }
+.seg button { min-height: 34px; min-width: 44px; padding: 0 10px; border: 0; border-radius: 9px; background: none; color: var(--glass-ink); cursor: pointer; font-weight: 600; font-size: 13px; }
+.seg button[aria-pressed="true"] { background: var(--glass-ink); color: #14213f; }
 .count { float: right; font-size: 12px; color: var(--glass-muted); }
 .count.bad { color: var(--bad); }
 .serp { padding: 18px; border-radius: 18px; background: #fff; color: #202124; font-family: Arial, sans-serif; }
@@ -396,12 +444,14 @@ td input { width: 120px; min-height: 38px; }
 .qa p { padding-bottom: 20px; max-width: 60ch; color: var(--muted); }
 
 /* ---------- Contact ---------- */
-.contact { color: var(--night-ink); }
+.contact { color: var(--hero-ink); }
 .contact__in { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap); row-gap: 24px; padding-block: var(--section); align-items: end; }
 .contact__text { grid-column: 1 / 8; display: grid; gap: 18px; }
 .contact h2 { font-size: var(--step-head); }
-.contact__phone { font: 700 clamp(2rem, 1rem + 4.4vw, 4.6rem)/1 var(--display); color: var(--gold); background: none; border: 0; padding: 0; text-align: left; cursor: copy; }
-.contact__card { grid-column: 8 / 13; padding: 22px; border-radius: 24px; display: grid; gap: 10px; background: var(--glass); border: 1px solid var(--glass-line); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); font-size: var(--step-small); }
+.contact__phone { font: 700 clamp(2rem, 1rem + 4.4vw, 4.6rem)/1 var(--display); color: var(--hero-gold); background: none; border: 0; padding: 0; text-align: left; cursor: copy; }
+.contact__phone[disabled] { cursor: default; font-size: clamp(1.6rem, 1rem + 2.4vw, 3rem); }
+.contact .toast { color: var(--hero-gold); }
+.contact__card { grid-column: 8 / 13; padding: 22px; border-radius: 24px; display: grid; gap: 10px; background: var(--hglass); border: 1px solid var(--hglass-line); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); font-size: var(--step-small); }
 .contact__card b { font-size: var(--step-body); }
 
 /* ---------- Credits, footer ---------- */
@@ -480,6 +530,15 @@ td input { width: 120px; min-height: 38px; }
   .viewer__in { grid-template-columns: 1fr; }
   .viewer__in > img { max-height: 46vh; }
   .bell { min-height: 48px; }
+  .bar { gap: 10px; }
+  .bar .btn { padding: 0 14px; }
+  .mode { padding: 0 10px; }
+  .mode span { display: none; }
+  .setbox .form { grid-template-columns: 1fr; }
+}
+@media (max-width: 430px) {
+  .bar .btn { display: none; }
+  .bar__mark { font-size: 19px; }
 }
 </style>
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}[hidden]{display:none!important}</style>
@@ -497,44 +556,53 @@ td input { width: 120px; min-height: 38px; }
     <symbol id="i-list" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01"/></symbol>
     <symbol id="i-inbox" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M3 13l3-8h12l3 8v6H3v-6zm0 0h5l1 3h6l1-3h5"/></symbol>
     <symbol id="i-coins" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></symbol>
+    <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></symbol>
     <symbol id="i-bell" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M6 17V11a6 6 0 0 1 12 0v6l2 2H4l2-2zM10 21h4"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path fill="currentColor" d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></symbol>
     <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path stroke="currentColor" stroke-width="2" d="M16.5 16.5L21 21"/></symbol>
   </defs>
 </svg>
 
 <header class="bar wrap">
-  <a class="bar__mark" href="#top"><svg aria-hidden="true"><use href="#i-star"/></svg>Ufq</a>
-  <nav aria-label="Asosiy">
-    <a class="link" href="#manzillar">Manzillar</a>
-    <a class="link" href="#kabinet">Kabinet</a>
-    <a class="link" href="#savollar">Savollar</a>
-    <a class="link" href="#aloqa">Aloqa</a>
+  <a class="bar__mark" href="#top"><svg aria-hidden="true"><use href="#i-star"/></svg><span class="brand-name">Ufq</span></a>
+  <nav aria-label="Menu">
+    <a class="link" href="#manzillar" data-i="nav_dest">Manzillar</a>
+    <a class="link" href="#kabinet" data-i="nav_kab">Kabinet</a>
+    <a class="link" href="#savollar" data-i="nav_faq">Savollar</a>
+    <a class="link" href="#aloqa" data-i="nav_contact">Aloqa</a>
   </nav>
-  <a class="btn" href="#kabinet" data-open="bron">Bron qilish</a>
+  <div class="langs" role="group" data-i-al="lang_label" aria-label="Til" id="langs">
+    <button type="button" data-lang="uz" aria-pressed="true">UZ</button>
+    <button type="button" data-lang="ru" aria-pressed="false">RU</button>
+    <button type="button" data-lang="en" aria-pressed="false">EN</button>
+  </div>
+  <button class="mode" type="button" id="mode"><svg aria-hidden="true"><use href="#i-moon"/></svg><span>Tun</span></button>
+  <a class="btn" href="#kabinet" data-open="bron" data-i="btn_book">Bron qilish</a>
 </header>
 
 <main>
   <section class="hero girih" id="top" aria-labelledby="hero-h">
     <div class="hero__in wrap">
       <div class="hero__text">
-        <h1 id="hero-h">O‘zbekiston bo‘ylab <span>sayohatlar</span></h1>
-        <p class="hero__lead">Toshkentdan Samarqand, Buxoro, Xiva va yana beshta manzilga ichki turlar. Poyezd, mehmonxona, gid va muzey chiptalari bitta narxda.</p>
-        <form class="search" id="search" aria-label="Tur qidirish">
-          <div class="field"><label for="s-where">Qayerga</label><select id="s-where"></select></div>
-          <div class="field"><label for="s-month">Qachon</label><select id="s-month"></select></div>
-          <div class="field"><label for="s-people">Necha kishi</label><input id="s-people" type="number" min="1" max="15" value="2" inputmode="numeric"></div>
-          <button class="btn" type="submit"><svg width="18" height="18" aria-hidden="true"><use href="#i-search"/></svg>Turlarni ko‘rish</button>
+        <h1 id="hero-h"><span data-i="h1a">O‘zbekiston bo‘ylab</span> <span class="gold" data-i="h1b">sayohatlar</span></h1>
+        <p class="hero__lead" data-i="hero_lead">Toshkentdan Samarqand, Buxoro, Xiva va yana beshta manzilga ichki turlar. Poyezd, mehmonxona, gid va muzey chiptalari bitta narxda.</p>
+        <form class="search" id="search" data-i-al="search_al" aria-label="Tur qidirish">
+          <div class="field"><label for="s-where" data-i="s_where">Qayerga</label><select id="s-where"></select></div>
+          <div class="field"><label for="s-month" data-i="s_when">Qachon</label><select id="s-month"></select></div>
+          <div class="field"><label for="s-people" data-i="s_people">Necha kishi</label><input id="s-people" type="number" min="1" max="15" value="2" inputmode="numeric"></div>
+          <button class="btn" type="submit"><svg width="18" height="18" aria-hidden="true"><use href="#i-search"/></svg><span data-i="s_btn">Turlarni ko‘rish</span></button>
         </form>
         <ul class="hero__facts">
-          <li><svg aria-hidden="true"><use href="#i-star"/></svg>8 ta manzil</li>
-          <li><svg aria-hidden="true"><use href="#i-star"/></svg>Afrosiyob chiptalari</li>
-          <li><svg aria-hidden="true"><use href="#i-star"/></svg>Har bir turda gid</li>
-          <li><svg aria-hidden="true"><use href="#i-star"/></svg>Bo‘lib to‘lash</li>
+          <li><svg aria-hidden="true"><use href="#i-star"/></svg><span data-i="fact1">8 ta manzil</span></li>
+          <li><svg aria-hidden="true"><use href="#i-star"/></svg><span data-i="fact2">Afrosiyob chiptalari</span></li>
+          <li><svg aria-hidden="true"><use href="#i-star"/></svg><span data-i="fact3">Har bir turda gid</span></li>
+          <li><svg aria-hidden="true"><use href="#i-star"/></svg><span data-i="fact4">Bo‘lib to‘lash</span></li>
         </ul>
       </div>
       <div class="hero__arches">
-        <figure class="arch arch--big"><img src="img/samarqand.jpg" width="1200" height="1800" alt="Samarqand: Registon maydonidagi Tillakori madrasasi"></figure>
-        <figure class="arch arch--small"><img src="img/buxoro.jpg" width="1200" height="1800" alt="Buxoro: Poi Kalon majmuasidagi koshinli gumbaz"></figure>
+        <figure class="arch arch--big"><img src="img/samarqand.jpg" width="1200" height="1800" data-i-alt="alt_skd" alt="Samarqand: Registon maydonidagi Tillakori madrasasi"></figure>
+        <figure class="arch arch--small"><img src="img/buxoro.jpg" width="1200" height="1800" data-i-alt="alt_bhk" alt="Buxoro: Poi Kalon majmuasidagi koshinli gumbaz"></figure>
       </div>
     </div>
     <div class="ikat" aria-hidden="true"></div>
@@ -542,8 +610,8 @@ td input { width: 120px; min-height: 38px; }
 
   <section class="arcade wrap" id="manzillar" aria-labelledby="arcade-h">
     <div class="arcade__head">
-      <h2 class="ornament-title" id="arcade-h"><svg class="star" aria-hidden="true"><use href="#i-star"/></svg>Sakkiz manzil<svg class="star" aria-hidden="true"><use href="#i-star"/></svg></h2>
-      <p>Manzilni bosing: kabinetda uning narxi, oy bo‘yicha havosi va bron qilish shakli ochiladi.</p>
+      <h2 class="ornament-title" id="arcade-h"><svg class="star" aria-hidden="true"><use href="#i-star"/></svg><span data-i="arcade_h">Sakkiz manzil</span><svg class="star" aria-hidden="true"><use href="#i-star"/></svg></h2>
+      <p data-i="arcade_p">Manzilni bosing: kabinetda uning narxi, oy bo‘yicha havosi va bron qilish shakli ochiladi.</p>
     </div>
     <ul class="arcade__row" id="arcade"></ul>
   </section>
@@ -552,19 +620,19 @@ td input { width: 120px; min-height: 38px; }
     <img class="kabinet__bg" src="img/xiva-naqsh.jpg" width="2400" height="1350" loading="lazy" alt="">
     <div class="wrap">
       <div class="kabinet__head">
-        <h2 id="kab-h">Sayohat kabineti</h2>
-        <p>Turlar bilan tanishing, narxlarni solishtiring va shu yerning o‘zida bron qiling. Bronlaringiz holatini “Bronlarim” bo‘limida kuzatasiz.</p>
+        <h2 id="kab-h" data-i="kab_h">Sayohat kabineti</h2>
+        <p data-i="kab_p">Turlar bilan tanishing, narxlarni solishtiring va shu yerning o‘zida bron qiling. Bronlaringiz holatini “Bronlarim” bo‘limida kuzatasiz.</p>
       </div>
       <div class="dash glass">
-        <div class="dash__side" role="tablist" aria-label="Kabinet bo‘limlari" id="tabs">
-          <button class="tab" role="tab" type="button" data-tab="turlar" aria-selected="true"><svg aria-hidden="true"><use href="#i-grid"/></svg>Turlar</button>
-          <button class="tab" role="tab" type="button" data-tab="narxlar" aria-selected="false"><svg aria-hidden="true"><use href="#i-tag"/></svg>Narxlar</button>
-          <button class="tab" role="tab" type="button" data-tab="bron" aria-selected="false"><svg aria-hidden="true"><use href="#i-pen"/></svg>Bron qilish</button>
-          <button class="tab" role="tab" type="button" data-tab="mening" aria-selected="false"><svg aria-hidden="true"><use href="#i-list"/></svg>Bronlarim<span class="badge" id="mine-count" hidden>0</span></button>
-          <p class="dash__group" data-admin hidden>Boshqaruv</p>
-          <button class="tab" role="tab" type="button" data-tab="bronlar" aria-selected="false" data-admin hidden><svg aria-hidden="true"><use href="#i-inbox"/></svg>Kelgan bronlar<span class="badge" id="new-count" hidden>0</span></button>
-          <button class="tab" role="tab" type="button" data-tab="tahrir" aria-selected="false" data-admin hidden><svg aria-hidden="true"><use href="#i-coins"/></svg>Narx tahriri</button>
-          <button class="tab" role="tab" type="button" data-tab="seo" aria-selected="false" data-owner hidden><svg aria-hidden="true"><use href="#i-search"/></svg>SEO paneli</button>
+        <div class="dash__side" role="tablist" id="tabs">
+          <button class="tab" role="tab" type="button" data-tab="turlar" aria-selected="true"><svg aria-hidden="true"><use href="#i-grid"/></svg><span data-i="tab_turlar">Turlar</span></button>
+          <button class="tab" role="tab" type="button" data-tab="narxlar" aria-selected="false"><svg aria-hidden="true"><use href="#i-tag"/></svg><span data-i="tab_narxlar">Narxlar</span></button>
+          <button class="tab" role="tab" type="button" data-tab="bron" aria-selected="false"><svg aria-hidden="true"><use href="#i-pen"/></svg><span data-i="tab_bron">Bron qilish</span></button>
+          <button class="tab" role="tab" type="button" data-tab="mening" aria-selected="false"><svg aria-hidden="true"><use href="#i-list"/></svg><span data-i="tab_mening">Bronlarim</span><span class="badge" id="mine-count" hidden>0</span></button>
+          <p class="dash__group" data-admin hidden data-i="grp_admin">Boshqaruv</p>
+          <button class="tab" role="tab" type="button" data-tab="bronlar" aria-selected="false" data-admin hidden><svg aria-hidden="true"><use href="#i-inbox"/></svg><span data-i="tab_bronlar">Kelgan bronlar</span><span class="badge" id="new-count" hidden>0</span></button>
+          <button class="tab" role="tab" type="button" data-tab="tahrir" aria-selected="false" data-admin hidden><svg aria-hidden="true"><use href="#i-coins"/></svg><span data-i="tab_tahrir">Narx tahriri</span></button>
+          <button class="tab" role="tab" type="button" data-tab="seo" aria-selected="false" data-owner hidden><svg aria-hidden="true"><use href="#i-gear"/></svg><span data-i="tab_seo">Sozlamalar va SEO</span></button>
           <div class="me" id="me" hidden><img alt="" id="me-img"><span id="me-name">Siz</span></div>
         </div>
 
@@ -572,57 +640,57 @@ td input { width: 120px; min-height: 38px; }
           <div class="dash__top">
             <h3 id="panel-title">Turlar</h3>
             <div class="ctrls" id="global-ctrls">
-              <select class="pill-select" id="d-month" aria-label="Sayohat oyi"></select>
-              <div class="stepper" role="group" aria-label="Kishilar soni">
-                <button type="button" id="p-minus" aria-label="Bir kishi kam">−</button>
+              <select class="pill-select" id="d-month" data-i-al="month_al" aria-label="Sayohat oyi"></select>
+              <div class="stepper" role="group" data-i-al="people_al" aria-label="Kishilar soni">
+                <button type="button" id="p-minus" data-i-al="minus_al" aria-label="Bir kishi kam">−</button>
                 <output id="p-out" class="num">2 kishi</output>
-                <button type="button" id="p-plus" aria-label="Bir kishi ko‘p">+</button>
+                <button type="button" id="p-plus" data-i-al="plus_al" aria-label="Bir kishi ko‘p">+</button>
               </div>
             </div>
           </div>
 
           <div class="panel" id="p-turlar" role="tabpanel">
             <div class="tiles" id="tour-tiles"></div>
-            <div class="chips" id="type-chips" role="group" aria-label="Tur turi"></div>
+            <div class="chips" id="type-chips" role="group"></div>
             <div class="cards" id="cards"></div>
           </div>
 
           <div class="panel" id="p-narxlar" role="tabpanel" hidden>
             <div class="table-wrap">
               <table>
-                <thead><tr><th>Tur</th><th>Davomiyligi</th><th>Yo‘l</th><th class="r">Kishi boshiga</th><th class="r" id="th-group">2 kishi</th><th>Havo</th></tr></thead>
+                <thead><tr><th data-i="th_tour">Tur</th><th data-i="th_len">Davomiyligi</th><th data-i="th_way">Yo‘l</th><th class="r" data-i="th_pp">Kishi boshiga</th><th class="r" id="th-group">2 kishi</th><th data-i="th_air">Havo</th></tr></thead>
                 <tbody id="price-rows"></tbody>
               </table>
             </div>
-            <p class="note">Narxga yo‘l, mehmonxona (nonushta bilan), gid va muzey chiptalari kiradi. 12 yoshgacha bolalar uchun narx 50%. Narxlar taxminiy, aniq narxni menejer sana bo‘yicha tasdiqlaydi.</p>
+            <p class="note" data-i="price_note">Narxga yo‘l, mehmonxona (nonushta bilan), gid va muzey chiptalari kiradi. 12 yoshgacha bolalar uchun narx 50%. Narxlar taxminiy, aniq narxni menejer sana bo‘yicha tasdiqlaydi.</p>
           </div>
 
           <div class="panel" id="p-bron" role="tabpanel" hidden>
-            <div class="pickrow" id="pickrow" role="group" aria-label="Turni rasm bo‘yicha tanlash"></div>
+            <div class="pickrow" id="pickrow" role="group" data-i-al="pick_al" aria-label="Turni rasm bo‘yicha tanlash"></div>
             <div class="book" id="book">
               <form class="form" id="book-form" novalidate>
-                <div class="field full"><label for="b-tour">Tur</label><select id="b-tour"></select></div>
-                <div class="field"><label for="b-date">Jo‘nash sanasi</label><input id="b-date" type="date" required></div>
-                <div class="field"><label for="b-nights">Tunlar</label><input id="b-nights" type="number" min="1" max="14" value="2" inputmode="numeric"></div>
-                <div class="field"><label for="b-adults">Kattalar</label><input id="b-adults" type="number" min="1" max="15" value="2" inputmode="numeric"></div>
-                <div class="field"><label for="b-kids">Bolalar (12 yoshgacha)</label><input id="b-kids" type="number" min="0" max="10" value="0" inputmode="numeric"></div>
-                <div class="field"><label for="b-name">Ismingiz</label><input id="b-name" type="text" autocomplete="name" maxlength="60" required></div>
-                <div class="field"><label for="b-phone">Telefon</label><input id="b-phone" type="tel" autocomplete="tel" placeholder="+998 XX XXX XX XX" maxlength="20" required></div>
-                <div class="field full"><label for="b-note">Izoh (ixtiyoriy)</label><textarea id="b-note" maxlength="400" placeholder="Masalan: vegetarian ovqat, bolalar uchun qo‘shimcha karavot"></textarea></div>
-                <div class="sr" aria-hidden="true"><label for="b-hp">Veb-sayt</label><input id="b-hp" name="website" tabindex="-1" autocomplete="off"></div>
+                <div class="field full"><label for="b-tour" data-i="f_tour">Tur</label><select id="b-tour"></select></div>
+                <div class="field"><label for="b-date" data-i="f_date">Jo‘nash sanasi</label><input id="b-date" type="date" required></div>
+                <div class="field"><label for="b-nights" data-i="f_nights">Tunlar</label><input id="b-nights" type="number" min="1" max="14" value="2" inputmode="numeric"></div>
+                <div class="field"><label for="b-adults" data-i="f_adults">Kattalar</label><input id="b-adults" type="number" min="1" max="15" value="2" inputmode="numeric"></div>
+                <div class="field"><label for="b-kids" data-i="f_kids">Bolalar (12 yoshgacha)</label><input id="b-kids" type="number" min="0" max="10" value="0" inputmode="numeric"></div>
+                <div class="field"><label for="b-name" data-i="f_name">Ismingiz</label><input id="b-name" type="text" autocomplete="name" maxlength="60" required></div>
+                <div class="field"><label for="b-phone" data-i="f_phone">Telefon</label><input id="b-phone" type="tel" autocomplete="tel" placeholder="+998 XX XXX XX XX" maxlength="20" required></div>
+                <div class="field full"><label for="b-note" data-i="f_note">Izoh (ixtiyoriy)</label><textarea id="b-note" maxlength="400" data-i-ph="note_ph" placeholder="Masalan: vegetarian ovqat, bolalar uchun qo‘shimcha karavot"></textarea></div>
+                <div class="sr" aria-hidden="true"><label for="b-hp">Website</label><input id="b-hp" name="website" tabindex="-1" autocomplete="off"></div>
                 <p class="err full" id="b-err" role="alert"></p>
-                <div class="full"><button class="btn" type="submit" id="b-submit">Bronni yuborish</button></div>
+                <div class="full"><button class="btn" type="submit" id="b-submit" data-i="b_submit">Bronni yuborish</button></div>
               </form>
               <aside class="summary" aria-live="polite">
-                <button class="zoom" type="button" id="sum-zoom" data-zoom="skd" aria-label="Rasmni kattalashtirish"><img id="sum-img" src="img/k-samarqand.jpg" width="960" height="720" alt=""><span>Kattalashtirish</span></button>
+                <button class="zoom" type="button" id="sum-zoom" data-zoom="skd" data-i-al="zoom_al" aria-label="Rasmni kattalashtirish"><img id="sum-img" src="img/k-samarqand.jpg" width="960" height="720" alt=""><span data-i="zoom">Kattalashtirish</span></button>
                 <div><b id="sum-name" style="font:600 1.3rem/1.2 var(--display)">Samarqand</b><div class="tour__meta" id="sum-how"></div></div>
                 <dl>
-                  <div><dt>Kishi boshiga</dt><dd class="num" id="sum-per"></dd></div>
-                  <div><dt>Kattalar</dt><dd class="num" id="sum-ad"></dd></div>
-                  <div><dt>Bolalar, 50%</dt><dd class="num" id="sum-kd"></dd></div>
-                  <div><dt>Havo</dt><dd id="sum-air"></dd></div>
+                  <div><dt data-i="sum_pp">Kishi boshiga</dt><dd class="num" id="sum-per"></dd></div>
+                  <div><dt data-i="sum_ad">Kattalar</dt><dd class="num" id="sum-ad"></dd></div>
+                  <div><dt data-i="sum_kd">Bolalar, 50%</dt><dd class="num" id="sum-kd"></dd></div>
+                  <div><dt data-i="sum_air">Havo</dt><dd id="sum-air"></dd></div>
                 </dl>
-                <div class="total"><span>Jami</span><b class="num" id="sum-total"></b></div>
+                <div class="total"><span data-i="sum_total">Jami</span><b class="num" id="sum-total"></b></div>
               </aside>
             </div>
           </div>
@@ -632,12 +700,12 @@ td input { width: 120px; min-height: 38px; }
           </div>
 
           <div class="panel" id="p-bronlar" role="tabpanel" hidden>
-            <p class="admin-note">Bu bo‘limni faqat siz ko‘rasiz. Sahifa ochiq turganda yangi bron kelsa, yuqorida xabar chiqadi va pastki burchakdagi “Kelgan bronlar” tugmasida soni ko‘rinadi.</p>
+            <p class="admin-note" data-i="admin_note">Bu bo‘limni faqat siz ko‘rasiz.</p>
             <div class="tiles tiles--4" id="kpi"></div>
-            <div class="chips" id="status-chips" role="group" aria-label="Holat bo‘yicha"></div>
+            <div class="chips" id="status-chips" role="group"></div>
             <div class="table-wrap">
               <table>
-                <thead><tr><th>Qabul qilindi</th><th>Mijoz</th><th>Tur</th><th>Jo‘nash</th><th class="r">Kishilar</th><th class="r">Summa</th><th>Holat</th></tr></thead>
+                <thead><tr><th data-i="th_recv">Qabul qilindi</th><th data-i="th_client">Mijoz</th><th data-i="th_tour">Tur</th><th data-i="th_dep">Jo‘nash</th><th class="r" data-i="th_people">Kishilar</th><th class="r" data-i="th_sum">Summa</th><th data-i="th_status">Holat</th></tr></thead>
                 <tbody id="admin-rows"></tbody>
               </table>
             </div>
@@ -647,33 +715,51 @@ td input { width: 120px; min-height: 38px; }
           <div class="panel" id="p-tahrir" role="tabpanel" hidden>
             <div class="table-wrap">
               <table>
-                <thead><tr><th>Tur</th><th class="r">Yo‘l, so‘m</th><th class="r">Bir tun, so‘m</th><th class="r">Tunlar</th><th class="r">Kishi boshiga</th><th>Saytda</th></tr></thead>
+                <thead><tr><th data-i="th_tour">Tur</th><th class="r" data-i="th_f">Yo‘l, so‘m</th><th class="r" data-i="th_h">Bir tun, so‘m</th><th class="r" data-i="th_n">Tunlar</th><th class="r" data-i="th_pp">Kishi boshiga</th><th data-i="th_on">Saytda</th></tr></thead>
                 <tbody id="edit-rows"></tbody>
               </table>
             </div>
-            <div class="ctrls" style="margin-top:16px"><button class="btn" type="button" id="save-prices">Narxlarni saqlash</button><p class="toast" id="price-toast" role="status"></p></div>
+            <div class="ctrls" style="margin-top:16px"><button class="btn" type="button" id="save-prices" data-i="save_prices">Narxlarni saqlash</button><p class="toast" id="price-toast" role="status"></p></div>
           </div>
 
           <div class="panel" id="p-seo" role="tabpanel" hidden>
             <div class="seo">
-              <form class="form" id="seo-form">
-                <div class="field"><label for="seo-title">Sahifa sarlavhasi <span class="count" id="c-title"></span></label><input id="seo-title" maxlength="90"></div>
-                <div class="field"><label for="seo-desc">Meta tavsif <span class="count" id="c-desc"></span></label><textarea id="seo-desc" maxlength="300"></textarea></div>
-                <div class="field"><label for="seo-key">Asosiy kalit so‘z</label><input id="seo-key" maxlength="60"></div>
-                <div class="field"><label for="seo-keys">Qo‘shimcha kalit so‘zlar, vergul bilan</label><input id="seo-keys" maxlength="300"></div>
-                <div class="field"><label for="seo-url">Sayt manzili</label><input id="seo-url" type="url" placeholder="https://sizning-domeningiz.uz" maxlength="120"></div>
-                <div class="field"><label for="seo-img">Ijtimoiy tarmoqlar uchun rasm</label><select id="seo-img"></select></div>
-                <div class="ctrls"><button class="btn" type="submit">SEO sozlamalarini saqlash</button><button class="btn btn--ghost" type="button" id="seo-copy">Meta teglarni nusxalash</button></div>
-                <p class="toast" id="seo-toast" role="status"></p>
-              </form>
+              <div>
+                <div class="setbox">
+                  <h4 data-i="info_h">Agentlik ma’lumotlari</h4>
+                  <form class="form" id="info-form">
+                    <div class="field"><label for="i-name" data-i="i_name">Agentlik nomi</label><input id="i-name" maxlength="40"></div>
+                    <div class="field"><label for="i-phone" data-i="i_phone">Telefon</label><input id="i-phone" type="tel" maxlength="20" placeholder="+998 XX XXX XX XX"></div>
+                    <div class="field"><label for="i-address" data-i="i_address">Manzil</label><input id="i-address" maxlength="80"></div>
+                    <div class="field"><label for="i-hours" data-i="i_hours">Ish vaqti</label><input id="i-hours" maxlength="60"></div>
+                    <div class="field full"><label for="i-tg" data-i="i_tg">Telegram (username, @ belgisiz)</label><input id="i-tg" maxlength="40" placeholder="ufq_tour"></div>
+                    <p class="err full" id="i-err" role="alert"></p>
+                    <div class="full ctrls"><button class="btn" type="submit" data-i="save_info">Ma’lumotlarni saqlash</button><p class="toast" id="info-toast" role="status"></p></div>
+                  </form>
+                </div>
+                <div class="setbox">
+                  <div class="ctrls" style="justify-content:space-between"><h4 data-i="seo_h">SEO matni</h4>
+                    <div class="seg" role="group" id="seo-langs" data-i-al="seo_lang_al" aria-label="SEO tili"><button type="button" data-sl="uz" aria-pressed="true">UZ</button><button type="button" data-sl="ru" aria-pressed="false">RU</button><button type="button" data-sl="en" aria-pressed="false">EN</button></div></div>
+                  <form class="form" id="seo-form" style="grid-template-columns:1fr">
+                    <div class="field"><label for="seo-title"><span data-i="seo_title">Sahifa sarlavhasi</span> <span class="count" id="c-title"></span></label><input id="seo-title" maxlength="90"></div>
+                    <div class="field"><label for="seo-desc"><span data-i="seo_desc">Meta tavsif</span> <span class="count" id="c-desc"></span></label><textarea id="seo-desc" maxlength="300"></textarea></div>
+                    <div class="field"><label for="seo-key" data-i="seo_key">Asosiy kalit so‘z</label><input id="seo-key" maxlength="60"></div>
+                    <div class="field"><label for="seo-keys" data-i="seo_keys">Qo‘shimcha kalit so‘zlar, vergul bilan</label><input id="seo-keys" maxlength="300"></div>
+                    <div class="field"><label for="seo-url" data-i="seo_url">Sayt manzili</label><input id="seo-url" type="url" placeholder="https://" maxlength="120"></div>
+                    <div class="field"><label for="seo-img" data-i="seo_img">Ijtimoiy tarmoqlar uchun rasm</label><select id="seo-img"></select></div>
+                    <div class="ctrls"><button class="btn" type="submit" data-i="seo_save">SEO sozlamalarini saqlash</button><button class="btn btn--ghost" type="button" id="seo-copy" data-i="seo_copy">Meta teglarni nusxalash</button></div>
+                    <p class="toast" id="seo-toast" role="status"></p>
+                  </form>
+                </div>
+              </div>
               <div style="display:grid;gap:16px">
-                <div class="score"><div class="ring" id="ring"><span id="ring-n">0</span></div><div><b style="font:600 1.2rem var(--display)">SEO bahosi</b><div class="tour__meta" id="ring-t"></div></div></div>
-                <div><div class="tour__meta" style="margin-bottom:8px">Google qidiruvida shunday ko‘rinadi</div>
+                <div class="score"><div class="ring" id="ring"><span id="ring-n">0</span></div><div><b style="font:600 1.2rem var(--display)" data-i="seo_score">SEO bahosi</b><div class="tour__meta" id="ring-t"></div></div></div>
+                <div><div class="tour__meta" style="margin-bottom:8px" data-i="serp_h">Google qidiruvida shunday ko‘rinadi</div>
                   <div class="serp"><div class="serp__url" id="serp-url"></div><div class="serp__title" id="serp-title"></div><div class="serp__desc" id="serp-desc"></div></div></div>
-                <div><div class="tour__meta" style="margin-bottom:8px">Telegram va Facebook’da ulashganda</div>
+                <div><div class="tour__meta" style="margin-bottom:8px" data-i="og_h">Telegram va Facebook’da ulashganda</div>
                   <div class="og"><img id="og-img" alt="" width="960" height="720"><div><small id="og-host"></small><b id="og-title"></b></div></div></div>
                 <ul class="checks" id="checks"></ul>
-                <p class="note" style="margin:0">Bu sahifa claude.ai ichida turgani uchun Google uni indekslamaydi. Saytni o‘z domeningizga qo‘yganda “Meta teglarni nusxalash” tugmasi bergan kodni sahifaning &lt;head&gt; qismiga joylang.</p>
+                <p class="note" style="margin:0" data-i="seo_note">Bu sahifa claude.ai ichida turgani uchun Google uni indekslamaydi.</p>
               </div>
             </div>
           </div>
@@ -684,25 +770,25 @@ td input { width: 120px; min-height: 38px; }
   </section>
 
   <section class="steps wrap" id="qanday" aria-labelledby="steps-h">
-    <h2 id="steps-h" class="rise">Qanday ishlaymiz</h2>
+    <h2 id="steps-h" class="rise" data-i="steps_h">Qanday ishlaymiz</h2>
     <ol>
-      <li class="rise"><div class="medal"><svg aria-hidden="true"><use href="#i-star"/></svg></div><h3>Tanlang</h3><p>Kabinetda oy va kishilar sonini belgilang, havosi qulay va narxi mos turni toping.</p></li>
-      <li class="rise"><div class="medal"><svg aria-hidden="true"><use href="#i-star"/></svg></div><h3>Bron qiling</h3><p>Sana, ism va telefonni yozing. Bron darhol agentlik kabinetiga tushadi.</p></li>
-      <li class="rise"><div class="medal"><svg aria-hidden="true"><use href="#i-star"/></svg></div><h3>Tasdiqni oling</h3><p>Menejer qo‘ng‘iroq qilib sanani tasdiqlaydi. Narxning 30 foizini to‘lasangiz, joy band.</p></li>
-      <li class="rise"><div class="medal"><svg aria-hidden="true"><use href="#i-star"/></svg></div><h3>Yo‘lga chiqing</h3><p>Chiptalar va dastur Telegramga keladi. Manzilda gid sizni vokzalda kutib oladi.</p></li>
+      <li class="rise"><div class="medal"><svg aria-hidden="true"><use href="#i-star"/></svg></div><h3 data-i="s1_h">Tanlang</h3><p data-i="s1_p"></p></li>
+      <li class="rise"><div class="medal"><svg aria-hidden="true"><use href="#i-star"/></svg></div><h3 data-i="s2_h">Bron qiling</h3><p data-i="s2_p"></p></li>
+      <li class="rise"><div class="medal"><svg aria-hidden="true"><use href="#i-star"/></svg></div><h3 data-i="s3_h">Tasdiqni oling</h3><p data-i="s3_p"></p></li>
+      <li class="rise"><div class="medal"><svg aria-hidden="true"><use href="#i-star"/></svg></div><h3 data-i="s4_h">Yo‘lga chiqing</h3><p data-i="s4_p"></p></li>
     </ol>
   </section>
 
   <section class="faq wrap" id="savollar" aria-labelledby="faq-h">
     <div class="faq__grid">
-      <h2 id="faq-h" class="rise">Safardan oldin so‘raladi</h2>
+      <h2 id="faq-h" class="rise" data-i="faq_h">Safardan oldin so‘raladi</h2>
       <div class="faq__items">
-        <details class="qa"><summary>Qanday hujjat kerak?</summary><p>ID-karta yoki pasport. Bolalar uchun tug‘ilganlik haqidagi guvohnoma. Poyezd va samolyot chiptasi shu hujjat raqami bilan olinadi.</p></details>
-        <details class="qa"><summary>Bo‘lib to‘lash mumkinmi?</summary><p>Ha. Bron tasdiqlangach narxning 30 foizi, qolgani jo‘nashdan uch kun oldin. Naqd pul, Uzcard, Humo, Click yoki Payme orqali to‘lash mumkin.</p></details>
-        <details class="qa"><summary>Bron qilgach nima bo‘ladi?</summary><p>Bron agentlik kabinetiga “Yangi” holatida tushadi. Menejer bir soat ichida qo‘ng‘iroq qiladi, so‘ng holat “Tasdiqlandi” bo‘ladi. Buni “Bronlarim” bo‘limida ko‘rasiz.</p></details>
-        <details class="qa"><summary>Afrosiyobga chipta tugab qolsa-chi?</summary><p>Chiptani sotuvga chiqishi bilan olamiz. Joy qolmasa, oddiy poyezd yoki samolyot taklif qilamiz va narx farqini oldindan aytamiz.</p></details>
-        <details class="qa"><summary>Guruh necha kishidan iborat?</summary><p>Guruhlar 8 dan 15 kishigacha. Oilangiz yoki do‘stlaringiz uchun alohida mashina va gid bilan shaxsiy tur ham tuzamiz.</p></details>
-        <details class="qa"><summary>Safar bekor bo‘lsa, pul qaytadimi?</summary><p>Jo‘nashga yetti kundan ko‘p qolgan bo‘lsa, to‘lov to‘liq qaytadi. Undan keyin poyezd va mehmonxona ushlab qoladigan qismini oldindan yozib beramiz.</p></details>
+        <details class="qa"><summary data-i="q1"></summary><p data-i="a1"></p></details>
+        <details class="qa"><summary data-i="q2"></summary><p data-i="a2"></p></details>
+        <details class="qa"><summary data-i="q3"></summary><p data-i="a3"></p></details>
+        <details class="qa"><summary data-i="q4"></summary><p data-i="a4"></p></details>
+        <details class="qa"><summary data-i="q5"></summary><p data-i="a5"></p></details>
+        <details class="qa"><summary data-i="q6"></summary><p data-i="a6"></p></details>
       </div>
     </div>
   </section>
@@ -711,29 +797,29 @@ td input { width: 120px; min-height: 38px; }
     <div class="ikat" aria-hidden="true"></div>
     <div class="contact__in wrap">
       <div class="contact__text">
-        <h2 id="contact-h">Savolingiz bo‘lsa, qo‘ng‘iroq qiling</h2>
-        <button class="contact__phone num" type="button" id="phone" disabled>Raqam tez orada</button>
-        <p class="toast" id="phone-toast" role="status" style="color:var(--gold)"></p>
+        <h2 id="contact-h" data-i="contact_h">Savolingiz bo‘lsa, qo‘ng‘iroq qiling</h2>
+        <button class="contact__phone num" type="button" id="phone" disabled>…</button>
+        <p class="toast" id="phone-toast" role="status"></p>
       </div>
       <div class="contact__card">
-        <b>Toshkent, Yunusobod tumani</b>
-        <span>Har kuni 9:00 dan 21:00 gacha</span>
-        <span id="phone-hint">Raqamni bossangiz, u nusxalanadi. Telegram va SMS ham shu raqamda.</span>
-        <div class="ctrls"><a class="btn" id="tel-link" href="#aloqa" hidden>Qo‘ng‘iroq qilish</a><a class="btn btn--ghost" id="tg-link" href="https://t.me/" target="_blank" rel="noopener" hidden>Telegram’da yozish</a></div>
+        <b id="c-address"></b>
+        <span id="c-hours"></span>
+        <span id="phone-hint" data-i="phone_hint" hidden>Raqamni bossangiz, u nusxalanadi.</span>
+        <div class="ctrls"><a class="btn" id="tel-link" href="#aloqa" hidden data-i="call">Qo‘ng‘iroq qilish</a><a class="btn btn--ghost" id="tg-link" href="#aloqa" target="_blank" rel="noopener" hidden data-i="tg_write">Telegram’da yozish</a></div>
       </div>
     </div>
   </section>
 
-  <section class="credits wrap" id="manba" aria-label="Rasmlar manbasi">
-    <p>Suratlar va naqsh fotosi Wikimedia Commons orqali, ochiq litsenziyalar asosida: Registon, Bobyrr, CC BY-SA 4.0; Poi Kalon, Nassima Chahboun, CC BY-SA 4.0; Chorvoq, WWELNUR, CC BY 4.0; Aydar o‘tov lageri, Benjamin Goetzinger, CC BY-SA 4.0; Mo‘ynoq, Aleksandr Zykov, CC BY-SA 2.0; Kalta Minor yaqindan, Adam Harangozó, CC BY-SA 4.0; Kalta Minor, Bgag, CC0; Sopol lagan, AIDEPCUL, CC BY 4.0; Oqsaroy, xiquinhosilva, CC BY 4.0. Suratlar sahifaga moslab qirqilgan. <a class="link" href="https://commons.wikimedia.org/" rel="noopener">commons.wikimedia.org</a></p>
+  <section class="credits wrap" id="manba">
+    <p id="credits-text"></p>
   </section>
 </main>
 
 <div class="ikat" aria-hidden="true"></div>
 <footer class="foot wrap">
-  <span>Ufq, O‘zbekiston bo‘ylab turlar</span>
-  <nav aria-label="Pastki"><a class="link" href="#manzillar">Manzillar</a><a class="link" href="#kabinet">Kabinet</a><a class="link" href="#savollar">Savollar</a><a class="link" href="#aloqa">Aloqa</a></nav>
-  <span class="foot__r">2026 · <a class="link" href="#manba">Rasmlar manbasi</a></span>
+  <span id="foot-tag">Ufq</span>
+  <nav aria-label="Footer"><a class="link" href="#manzillar" data-i="nav_dest">Manzillar</a><a class="link" href="#kabinet" data-i="nav_kab">Kabinet</a><a class="link" href="#savollar" data-i="nav_faq">Savollar</a><a class="link" href="#aloqa" data-i="nav_contact">Aloqa</a></nav>
+  <span class="foot__r">2026 · <a class="link" href="#manba" data-i="foot_credits">Rasmlar manbasi</a></span>
 </footer>
 
 <dialog class="viewer" id="viewer" aria-labelledby="v-name">
@@ -745,16 +831,21 @@ td input { width: 120px; min-height: 38px; }
       <p id="v-text"></p>
       <span class="season" id="v-season"></span>
       <div class="tour__price"><b class="num" id="v-price"></b><span class="num" id="v-total"></span></div>
-      <div class="ctrls"><button class="btn" type="button" id="v-book">Shu turni bron qilish</button></div>
+      <div class="ctrls"><button class="btn" type="button" id="v-book" data-i="v_book">Shu turni bron qilish</button></div>
     </div>
   </div>
-  <button class="viewer__x" type="button" id="v-close" aria-label="Yopish">×</button>
+  <button class="viewer__x" type="button" id="v-close" data-i-al="close" aria-label="Yopish">×</button>
 </dialog>
 <div class="alerts" id="alerts" aria-live="polite"></div>
-<button class="bell" type="button" id="bell" hidden><svg aria-hidden="true"><use href="#i-bell"/></svg>Kelgan bronlar<span class="badge" id="bell-count" hidden>0</span></button>
+<button class="bell" type="button" id="bell" hidden><svg aria-hidden="true"><use href="#i-bell"/></svg><span data-i="tab_bronlar">Kelgan bronlar</span><span class="badge" id="bell-count" hidden>0</span></button>
 
 <script>
 (() => {
+  /* ---------- Settings ----------
+     BOOKING_URL: Google Apps Script veb-ilovasi manzili (GitHub Pages’da). claude.ai ichida bronlar artifact bazasida saqlanadi.
+     NAME, PHONE, ADDRESS, HOURS, TELEGRAM: agentlik ma’lumotlari. claude.ai’da ularni “Sozlamalar va SEO” bo‘limidan o‘zgartirasiz. */
+  const CONFIG = /*CONFIG*/{"BOOKING_URL": "", "NAME": "Ufq", "PHONE": "", "ADDRESS": "", "HOURS": "", "TELEGRAM": ""}/*/CONFIG*/;
+
   /* ---------- Ornament tiles ---------- */
   function star(cx, cy, R) {
     const r = R * 0.765, p = [];
@@ -765,72 +856,373 @@ td input { width: 120px; min-height: 38px; }
     return p.join(' ');
   }
   const svgUrl = s => 'url("data:image/svg+xml,' + encodeURIComponent(s) + '")';
-  const girih = c => {
+  const girih = (c, o) => {
     const stars = [[36, 36], [0, 0], [72, 0], [0, 72], [72, 72]].map(([x, y]) => `<polygon points='${star(x, y, 19)}'/>`).join('');
     const kites = [[36, 0], [0, 36], [72, 36], [36, 72]].map(([x, y]) => `<polygon points='${x},${y - 9} ${x + 9},${y} ${x},${y + 9} ${x - 9},${y}'/>`).join('');
-    return `<svg xmlns='http://www.w3.org/2000/svg' width='72' height='72'><g fill='none' stroke='${c}' stroke-width='1.1' opacity='.55'>${stars}${kites}</g></svg>`;
+    return `<svg xmlns='http://www.w3.org/2000/svg' width='72' height='72'><g fill='none' stroke='${c}' stroke-width='1.1' opacity='${o}'>${stars}${kites}</g></svg>`;
   };
   const ikat = `<svg xmlns='http://www.w3.org/2000/svg' width='48' height='18'><rect width='48' height='18' fill='#0f1f4d'/><polygon points='12,1 22,9 12,17 2,9' fill='#17808a'/><polygon points='12,5 17,9 12,13 7,9' fill='#d6aa52'/><polygon points='36,1 46,9 36,17 26,9' fill='#a1303b'/><polygon points='36,5 41,9 36,13 31,9' fill='#f6efe0'/></svg>`;
-  const root = document.documentElement.style;
-  root.setProperty('--girih-gold', svgUrl(girih('#d6aa52')));
-  root.setProperty('--ikat', svgUrl(ikat));
+  const rootStyle = document.documentElement.style;
+  rootStyle.setProperty('--girih-night', svgUrl(girih('#d6aa52', 0.55)));
+  rootStyle.setProperty('--girih-day', svgUrl(girih('#1d3b8b', 0.22)));
+  rootStyle.setProperty('--ikat', svgUrl(ikat));
 
-  /* ---------- Settings ----------
-     BOOKING_URL: Google Apps Script veb-ilovasi manzili. U bo‘lsa (GitHub Pages’da), bronlar Google jadvalga yoziladi.
-     claude.ai ichida bronlar artifact bazasida saqlanadi va bu manzil ishlatilmaydi. */
-  const CONFIG = {"BOOKING_URL": "", "TELEGRAM": "", "PHONE": "", "PHONE_TEXT": ""};
+  /* ---------- Languages ---------- */
+  const I18N = {
+    uz: {
+      nav_dest: 'Manzillar', nav_kab: 'Kabinet', nav_faq: 'Savollar', nav_contact: 'Aloqa', btn_book: 'Bron qilish',
+      lang_label: 'Til', mode_day: 'Kun', mode_night: 'Tun', mode_to_day: 'Kun rejimiga o‘tish', mode_to_night: 'Tun rejimiga o‘tish',
+      h1a: 'O‘zbekiston bo‘ylab', h1b: 'sayohatlar',
+      hero_lead: 'Toshkentdan Samarqand, Buxoro, Xiva va yana beshta manzilga ichki turlar. Poyezd, mehmonxona, gid va muzey chiptalari bitta narxda.',
+      search_al: 'Tur qidirish', s_where: 'Qayerga', s_when: 'Qachon', s_people: 'Necha kishi', s_all: 'Hammasi', s_btn: 'Turlarni ko‘rish',
+      fact1: '8 ta manzil', fact2: 'Afrosiyob chiptalari', fact3: 'Har bir turda gid', fact4: 'Bo‘lib to‘lash',
+      alt_skd: 'Samarqand: Registon maydonidagi Tillakori madrasasi', alt_bhk: 'Buxoro: Poi Kalon majmuasidagi koshinli gumbaz',
+      arcade_h: 'Sakkiz manzil', arcade_p: 'Manzilni bosing: kabinetda uning narxi, oy bo‘yicha havosi va bron qilish shakli ochiladi.',
+      from: '{price} dan',
+      kab_h: 'Sayohat kabineti', kab_p: 'Turlar bilan tanishing, narxlarni solishtiring va shu yerning o‘zida bron qiling. Bronlaringiz holatini “Bronlarim” bo‘limida kuzatasiz.',
+      tab_turlar: 'Turlar', tab_narxlar: 'Narxlar', tab_bron: 'Bron qilish', tab_mening: 'Bronlarim', grp_admin: 'Boshqaruv',
+      tab_bronlar: 'Kelgan bronlar', tab_tahrir: 'Narx tahriri', tab_seo: 'Sozlamalar va SEO', me: 'Siz',
+      month_al: 'Sayohat oyi', people_al: 'Kishilar soni', minus_al: 'Bir kishi kam', plus_al: 'Bir kishi ko‘p',
+      tile_month: 'Tanlangan oy', tile_month_sub: '{p} uchun narxlar', tile_best: 'Havosi eng qulay', tile_best_sub: 'kunduzi {t}°, {word}',
+      tile_cheap: 'Eng arzon tur', tile_cheap_sub: '{name}, kishi boshiga',
+      type_all: 'Hammasi', type_tarix: 'Tarixiy shaharlar', type_tabiat: 'Tog‘ va ko‘l', type_chol: 'Cho‘l va Orol', type_hunar: 'Hunarmandchilik',
+      w_ski: 'chang‘i mavsumi', w_swim: 'cho‘milish mavsumi', w_ok: 'sayr uchun qulay', w_hot: 'issiq', w_cool: 'salqin', w_cold: 'sovuq',
+      per_person: 'kishi boshiga', card_total: 'kishi boshiga · {p}: {total}', card_prices: 'Narxlar', card_book: 'Bron qilish',
+      zoom_of: '{name}: rasmni kattalashtirish', empty_type: 'Bu turkumda hozircha tur yo‘q.',
+      th_tour: 'Tur', th_len: 'Davomiyligi', th_way: 'Yo‘l', th_pp: 'Kishi boshiga', th_air: 'Havo',
+      price_note: 'Narxga yo‘l, mehmonxona (nonushta bilan), gid va muzey chiptalari kiradi. 12 yoshgacha bolalar uchun narx 50%. Narxlar taxminiy, aniq narxni menejer sana bo‘yicha tasdiqlaydi.',
+      pick_al: 'Turni rasm bo‘yicha tanlash', f_tour: 'Tur', f_date: 'Jo‘nash sanasi', f_nights: 'Tunlar', f_adults: 'Kattalar', f_kids: 'Bolalar (12 yoshgacha)',
+      f_name: 'Ismingiz', f_phone: 'Telefon', f_note: 'Izoh (ixtiyoriy)', note_ph: 'Masalan: vegetarian ovqat, bolalar uchun qo‘shimcha karavot',
+      b_submit: 'Bronni yuborish', b_sending: 'Yuborilmoqda…', zoom: 'Kattalashtirish', zoom_al: 'Rasmni kattalashtirish',
+      sum_pp: 'Kishi boshiga', sum_ad: 'Kattalar', sum_kd: 'Bolalar, 50%', sum_air: 'Havo', sum_total: 'Jami',
+      err_date: 'Jo‘nash sanasini tanlang.', err_date_min: 'Sana kamida uch kundan keyin bo‘lsin: chipta va mehmonxonani band qilishga vaqt kerak.',
+      err_name: 'Ismingizni yozing.', err_phone: 'Telefonni +998 XX XXX XX XX ko‘rinishida, 9 ta raqam bilan yozing.',
+      done_ok_t: 'Bron qabul qilindi: {id}', done_ok_p: '{tour}, {date}, {people}, {total}. Bron agentlikka “Yangi” holatida yetib bordi. Menejer tasdiqlagach, holat “Bronlarim” bo‘limida o‘zgaradi.',
+      again: 'Yana bron qilish', see_mine: 'Bronlarimni ko‘rish', done_fail_t: 'Bronni yuborib bo‘lmadi',
+      fail_quota: 'Bronlar bazasi to‘lib qolgan.', fail_nostore: 'Bu sahifada bronlar saqlanmaydi.', fail_net: 'Internet yoki server bilan aloqa bo‘lmadi.',
+      fail_send_phone: 'Quyidagi xabarni nusxalab, Telegram yoki SMS orqali {phone} raqamiga yuboring.', fail_send: 'Quyidagi xabarni nusxalab, agentlikka yuboring.',
+      copy_msg: 'Xabarni nusxalash', tg_write: 'Telegram’da yozish', call: 'Qo‘ng‘iroq qilish', back_form: 'Shaklga qaytish',
+      copied_msg: 'Xabar nusxalandi.', copy_fail: 'Nusxalab bo‘lmadi. Matnni belgilab, qo‘lda nusxalang.',
+      msg: 'Assalomu alaykum! {tour} turini bron qilmoqchiman: {date}, {nights}, {ppl}. Taxminiy narx {total}. Ism: {name}, tel: {phone}.',
+      msg_ad: '{n} katta', msg_kd: ', {n} bola',
+      mine_nostore: 'Bu sahifada bronlar saqlanmaydi. Bron qilsangiz, tayyor xabarni Telegram yoki telefon orqali yuborasiz.',
+      mine_empty: 'Hozircha bron yo‘q. Turni tanlab, birinchi broningizni qiling.', cancel: 'Bekor qilish',
+      cancel_fail: 'Bekor qilib bo‘lmadi.', call_us: ' Qo‘ng‘iroq qiling: {phone}.', tell_agency: ' Agentlikka xabar bering.',
+      st_yangi: 'Yangi', st_tasdiqlandi: 'Tasdiqlandi', st_bekor: 'Bekor qilindi',
+      admin_note: 'Bu bo‘limni faqat siz ko‘rasiz. Sahifa ochiq turganda yangi bron kelsa, yuqorida xabar chiqadi va pastki burchakdagi “Kelgan bronlar” tugmasida soni ko‘rinadi.',
+      kpi_total: 'Jami bronlar', kpi_new: 'Yangi', kpi_conf: 'Tasdiqlangan', kpi_income: 'Tasdiqlangan tushum', all: 'Hammasi',
+      th_recv: 'Qabul qilindi', th_client: 'Mijoz', th_dep: 'Jo‘nash', th_people: 'Kishilar', th_sum: 'Summa', th_status: 'Holat',
+      admin_empty: 'Hali bron kelmagan. Mijoz kabinetda bron qilganda shu yerda paydo bo‘ladi.',
+      status_set: '{id}: holat “{s}” qilindi.', status_fail: 'Holatni saqlab bo‘lmadi, qayta urinib ko‘ring.', tel_copied: 'Telefon nusxalandi: {phone}',
+      account: 'Hisob: {name}', hidden_name: 'nomi yashirin', bell_new: ', yangi: {n}',
+      alert_new_t: 'Yangi bron: {name}', alert_see: 'Ko‘rish', alert_close: 'Yopish',
+      missed_t: '{n} ta yangi bron kutmoqda', missed_p: 'Oxirgi kirganingizdan beri kelgan bronlar. Ularni tasdiqlang yoki mijozga qo‘ng‘iroq qiling.', missed_open: 'Bronlarni ochish',
+      db_lost: 'Ma’lumotlar bazasi bilan aloqa uzildi. Sahifani yangilang.',
+      th_f: 'Yo‘l, so‘m', th_h: 'Bir tun, so‘m', th_n: 'Tunlar', th_on: 'Saytda', shown: 'ko‘rinadi', save_prices: 'Narxlarni saqlash',
+      prices_saved: 'Narxlar saqlandi. Sayt hamma uchun yangilandi.', one_tour: 'Kamida bitta tur saytda ko‘rinsin.', save_fail: 'Saqlab bo‘lmadi: {code}',
+      info_h: 'Agentlik ma’lumotlari', i_name: 'Agentlik nomi', i_phone: 'Telefon', i_address: 'Manzil', i_hours: 'Ish vaqti', i_tg: 'Telegram (username, @ belgisiz)',
+      save_info: 'Ma’lumotlarni saqlash', info_saved: 'Ma’lumotlar saqlandi va saytda yangilandi.', bad_phone: 'Telefonni +998 XX XXX XX XX ko‘rinishida yozing yoki bo‘sh qoldiring.',
+      bad_tg: 'Telegram username faqat lotin harflari, raqam va _ dan iborat bo‘ladi.',
+      seo_h: 'SEO matni', seo_lang_al: 'SEO tili', seo_title: 'Sahifa sarlavhasi', seo_desc: 'Meta tavsif', seo_key: 'Asosiy kalit so‘z',
+      seo_keys: 'Qo‘shimcha kalit so‘zlar, vergul bilan', seo_url: 'Sayt manzili', seo_img: 'Ijtimoiy tarmoqlar uchun rasm',
+      seo_save: 'SEO sozlamalarini saqlash', seo_copy: 'Meta teglarni nusxalash', seo_saved: 'SEO sozlamalari saqlandi.',
+      meta_copied: 'Meta teglar nusxalandi. Ularni saytingizning <head> qismiga joylang.', seo_score: 'SEO bahosi', score_sub: '{ok} / {n} talab bajarildi',
+      serp_h: 'Google qidiruvida shunday ko‘rinadi', og_h: 'Telegram va Facebook’da ulashganda',
+      seo_note: 'claude.ai ichidagi sahifani Google indekslamaydi. GitHub’dagi saytda shu teglar sahifa kodiga yoziladi: o‘zgartirgach, Claude’dan qayta yuklashni so‘rang.',
+      no_title: 'Sarlavha yozilmagan', no_desc: 'Tavsif yozilmagan',
+      c_title: 'Sarlavha 30–60 belgi', c_desc: 'Tavsif 120–160 belgi', c_key_t: 'Asosiy kalit so‘z sarlavhada', c_key_d: 'Asosiy kalit so‘z tavsifda',
+      c_keys: 'Qo‘shimcha kalit so‘zlar 3–10 ta', c_url: 'Sayt manzili https bilan', c_h1: 'Sahifada bitta H1 sarlavha', c_alt: 'Hamma rasmlarda alt matn',
+      h_chars: 'Hozir {n} belgi.', h_keyword: 'Asosiy kalit so‘zni yozing.', h_count: 'Hozir {n} ta.', h_https: 'Manzil https:// bilan boshlansin.',
+      h_domain: 'Domen olganingizda yozing.', h_alt: '{n} ta rasmda yo‘q.',
+      steps_h: 'Qanday ishlaymiz', s1_h: 'Tanlang', s1_p: 'Kabinetda oy va kishilar sonini belgilang, havosi qulay va narxi mos turni toping.',
+      s2_h: 'Bron qiling', s2_p: 'Sana, ism va telefonni yozing. Bron darhol agentlikka yetib boradi.',
+      s3_h: 'Tasdiqni oling', s3_p: 'Menejer qo‘ng‘iroq qilib sanani tasdiqlaydi. Narxning 30 foizini to‘lasangiz, joy band.',
+      s4_h: 'Yo‘lga chiqing', s4_p: 'Chiptalar va dastur Telegramga keladi. Manzilda gid sizni vokzalda kutib oladi.',
+      faq_h: 'Safardan oldin so‘raladi',
+      q1: 'Qanday hujjat kerak?', a1: 'ID-karta yoki pasport. Bolalar uchun tug‘ilganlik haqidagi guvohnoma. Poyezd va samolyot chiptasi shu hujjat raqami bilan olinadi.',
+      q2: 'Bo‘lib to‘lash mumkinmi?', a2: 'Ha. Bron tasdiqlangach narxning 30 foizi, qolgani jo‘nashdan uch kun oldin. Naqd pul, Uzcard, Humo, Click yoki Payme orqali to‘lash mumkin.',
+      q3: 'Bron qilgach nima bo‘ladi?', a3: 'Bron agentlikka “Yangi” holatida tushadi. Menejer bir soat ichida qo‘ng‘iroq qiladi, so‘ng holat “Tasdiqlandi” bo‘ladi. Buni “Bronlarim” bo‘limida ko‘rasiz.',
+      q4: 'Afrosiyobga chipta tugab qolsa-chi?', a4: 'Chiptani sotuvga chiqishi bilan olamiz. Joy qolmasa, oddiy poyezd yoki samolyot taklif qilamiz va narx farqini oldindan aytamiz.',
+      q5: 'Guruh necha kishidan iborat?', a5: 'Guruhlar 8 dan 15 kishigacha. Oilangiz yoki do‘stlaringiz uchun alohida mashina va gid bilan shaxsiy tur ham tuzamiz.',
+      q6: 'Safar bekor bo‘lsa, pul qaytadimi?', a6: 'Jo‘nashga yetti kundan ko‘p qolgan bo‘lsa, to‘lov to‘liq qaytadi. Undan keyin poyezd va mehmonxona ushlab qoladigan qismini oldindan yozib beramiz.',
+      contact_h: 'Savolingiz bo‘lsa, qo‘ng‘iroq qiling', phone_soon: 'Raqam tez orada', phone_copied: 'Raqam nusxalandi: {phone}',
+      phone_al: 'Telefon raqamini nusxalash: {phone}', phone_hint: 'Raqamni bossangiz, u nusxalanadi. Telegram va SMS ham shu raqamda.',
+      addr_default: 'Toshkent, Yunusobod tumani', hours_default: 'Har kuni 9:00 dan 21:00 gacha',
+      credits_a: 'Suratlar va naqsh fotosi Wikimedia Commons orqali, ochiq litsenziyalar asosida:', credits_b: 'Suratlar sahifaga moslab qirqilgan.',
+      foot_tag: '{name}, O‘zbekiston bo‘ylab turlar', foot_credits: 'Rasmlar manbasi', v_book: 'Shu turni bron qilish', close: 'Yopish',
+      som: 'so‘m', night1: 'tun', nights: 'tun', person1: 'kishi', persons: 'kishi'
+    },
+    ru: {
+      nav_dest: 'Направления', nav_kab: 'Кабинет', nav_faq: 'Вопросы', nav_contact: 'Контакты', btn_book: 'Забронировать',
+      lang_label: 'Язык', mode_day: 'День', mode_night: 'Ночь', mode_to_day: 'Включить дневной режим', mode_to_night: 'Включить ночной режим',
+      h1a: 'Путешествия по', h1b: 'Узбекистану',
+      hero_lead: 'Туры из Ташкента в Самарканд, Бухару, Хиву и ещё пять мест. Поезд, отель, гид и билеты в музеи по одной цене.',
+      search_al: 'Поиск тура', s_where: 'Куда', s_when: 'Когда', s_people: 'Сколько человек', s_all: 'Все направления', s_btn: 'Показать туры',
+      fact1: '8 направлений', fact2: 'Билеты на «Афросиаб»', fact3: 'Гид в каждом туре', fact4: 'Оплата частями',
+      alt_skd: 'Самарканд: медресе Тилля-Кари на площади Регистан', alt_bhk: 'Бухара: изразцовый купол комплекса Пои-Калян',
+      arcade_h: 'Восемь направлений', arcade_p: 'Нажмите на место: в кабинете откроются цена, погода по месяцам и форма бронирования.',
+      from: 'от {price}',
+      kab_h: 'Кабинет путешественника', kab_p: 'Выбирайте туры, сравнивайте цены и бронируйте прямо здесь. Статус брони видно в разделе «Мои брони».',
+      tab_turlar: 'Туры', tab_narxlar: 'Цены', tab_bron: 'Бронирование', tab_mening: 'Мои брони', grp_admin: 'Управление',
+      tab_bronlar: 'Входящие брони', tab_tahrir: 'Редактор цен', tab_seo: 'Настройки и SEO', me: 'Вы',
+      month_al: 'Месяц поездки', people_al: 'Число людей', minus_al: 'На одного меньше', plus_al: 'На одного больше',
+      tile_month: 'Выбранный месяц', tile_month_sub: 'цены для {p}', tile_best: 'Лучшая погода', tile_best_sub: 'днём {t}°, {word}',
+      tile_cheap: 'Самый доступный тур', tile_cheap_sub: '{name}, за человека',
+      type_all: 'Все', type_tarix: 'Исторические города', type_tabiat: 'Горы и озёра', type_chol: 'Пустыня и Арал', type_hunar: 'Ремёсла',
+      w_ski: 'лыжный сезон', w_swim: 'сезон купания', w_ok: 'комфортно для прогулок', w_hot: 'жарко', w_cool: 'прохладно', w_cold: 'холодно',
+      per_person: 'за человека', card_total: 'за человека · {p}: {total}', card_prices: 'Цены', card_book: 'Забронировать',
+      zoom_of: '{name}: увеличить фото', empty_type: 'В этой категории пока нет туров.',
+      th_tour: 'Тур', th_len: 'Длительность', th_way: 'Дорога', th_pp: 'За человека', th_air: 'Погода',
+      price_note: 'В цену входят дорога, отель с завтраком, гид и билеты в музеи. Дети до 12 лет платят 50%. Цены ориентировочные, точную цену на ваши даты подтвердит менеджер.',
+      pick_al: 'Выбор тура по фото', f_tour: 'Тур', f_date: 'Дата выезда', f_nights: 'Ночей', f_adults: 'Взрослые', f_kids: 'Дети (до 12 лет)',
+      f_name: 'Ваше имя', f_phone: 'Телефон', f_note: 'Комментарий (необязательно)', note_ph: 'Например: вегетарианское питание, доп. кровать для ребёнка',
+      b_submit: 'Отправить бронь', b_sending: 'Отправляем…', zoom: 'Увеличить', zoom_al: 'Увеличить фото',
+      sum_pp: 'За человека', sum_ad: 'Взрослые', sum_kd: 'Дети, 50%', sum_air: 'Погода', sum_total: 'Итого',
+      err_date: 'Выберите дату выезда.', err_date_min: 'Дата не раньше чем через три дня: нужно время на билеты и отель.',
+      err_name: 'Напишите ваше имя.', err_phone: 'Укажите телефон в формате +998 XX XXX XX XX.',
+      done_ok_t: 'Бронь принята: {id}', done_ok_p: '{tour}, {date}, {people}, {total}. Агентство получило бронь со статусом «Новая». После подтверждения менеджером статус изменится в разделе «Мои брони».',
+      again: 'Забронировать ещё', see_mine: 'Мои брони', done_fail_t: 'Не удалось отправить бронь',
+      fail_quota: 'База броней заполнена.', fail_nostore: 'На этой странице брони не сохраняются.', fail_net: 'Нет связи с интернетом или сервером.',
+      fail_send_phone: 'Скопируйте сообщение ниже и отправьте его в Telegram или по SMS на номер {phone}.', fail_send: 'Скопируйте сообщение ниже и отправьте его агентству.',
+      copy_msg: 'Скопировать сообщение', tg_write: 'Написать в Telegram', call: 'Позвонить', back_form: 'Вернуться к форме',
+      copied_msg: 'Сообщение скопировано.', copy_fail: 'Не удалось скопировать. Выделите текст и скопируйте вручную.',
+      msg: 'Здравствуйте! Хочу забронировать тур «{tour}»: {date}, {nights}, {ppl}. Ориентировочная цена {total}. Имя: {name}, тел.: {phone}.',
+      msg_ad: 'взрослых: {n}', msg_kd: ', детей: {n}',
+      mine_nostore: 'На этой странице брони не сохраняются. При бронировании вы отправите готовое сообщение в Telegram или по телефону.',
+      mine_empty: 'Пока броней нет. Выберите тур и сделайте первую бронь.', cancel: 'Отменить',
+      cancel_fail: 'Не удалось отменить.', call_us: ' Позвоните: {phone}.', tell_agency: ' Сообщите агентству.',
+      st_yangi: 'Новая', st_tasdiqlandi: 'Подтверждена', st_bekor: 'Отменена',
+      admin_note: 'Этот раздел видите только вы. Если при открытой странице придёт новая бронь, появится уведомление, а число новых броней будет на кнопке «Входящие брони» внизу.',
+      kpi_total: 'Всего броней', kpi_new: 'Новые', kpi_conf: 'Подтверждённые', kpi_income: 'Подтверждённая выручка', all: 'Все',
+      th_recv: 'Получена', th_client: 'Клиент', th_dep: 'Выезд', th_people: 'Людей', th_sum: 'Сумма', th_status: 'Статус',
+      admin_empty: 'Броней пока нет. Когда клиент забронирует тур, бронь появится здесь.',
+      status_set: '{id}: статус «{s}».', status_fail: 'Не удалось сохранить статус, попробуйте ещё раз.', tel_copied: 'Телефон скопирован: {phone}',
+      account: 'Аккаунт: {name}', hidden_name: 'имя скрыто', bell_new: ', новых: {n}',
+      alert_new_t: 'Новая бронь: {name}', alert_see: 'Открыть', alert_close: 'Закрыть',
+      missed_t: 'Новых броней: {n}', missed_p: 'Брони, пришедшие с вашего последнего визита. Подтвердите их или позвоните клиентам.', missed_open: 'Открыть брони',
+      db_lost: 'Связь с базой данных прервалась. Обновите страницу.',
+      th_f: 'Дорога, сум', th_h: 'Ночь, сум', th_n: 'Ночей', th_on: 'На сайте', shown: 'показан', save_prices: 'Сохранить цены',
+      prices_saved: 'Цены сохранены и обновлены на сайте.', one_tour: 'На сайте должен остаться хотя бы один тур.', save_fail: 'Не удалось сохранить: {code}',
+      info_h: 'Данные агентства', i_name: 'Название агентства', i_phone: 'Телефон', i_address: 'Адрес', i_hours: 'Часы работы', i_tg: 'Telegram (username без @)',
+      save_info: 'Сохранить данные', info_saved: 'Данные сохранены и обновлены на сайте.', bad_phone: 'Укажите телефон в формате +998 XX XXX XX XX или оставьте поле пустым.',
+      bad_tg: 'Username в Telegram состоит из латинских букв, цифр и _.',
+      seo_h: 'SEO-текст', seo_lang_al: 'Язык SEO', seo_title: 'Заголовок страницы', seo_desc: 'Мета-описание', seo_key: 'Главное ключевое слово',
+      seo_keys: 'Другие ключевые слова через запятую', seo_url: 'Адрес сайта', seo_img: 'Картинка для соцсетей',
+      seo_save: 'Сохранить SEO', seo_copy: 'Скопировать мета-теги', seo_saved: 'Настройки SEO сохранены.',
+      meta_copied: 'Мета-теги скопированы. Вставьте их в раздел <head> вашего сайта.', seo_score: 'Оценка SEO', score_sub: 'выполнено {ok} из {n}',
+      serp_h: 'Так страница выглядит в Google', og_h: 'При отправке в Telegram и Facebook',
+      seo_note: 'Страницу внутри claude.ai Google не индексирует. На сайте в GitHub эти теги записываются в код страницы: после изменений попросите Claude обновить сайт.',
+      no_title: 'Нет заголовка', no_desc: 'Нет описания',
+      c_title: 'Заголовок 30–60 символов', c_desc: 'Описание 120–160 символов', c_key_t: 'Ключевое слово в заголовке', c_key_d: 'Ключевое слово в описании',
+      c_keys: 'Других ключевых слов 3–10', c_url: 'Адрес сайта с https', c_h1: 'На странице один заголовок H1', c_alt: 'У всех картинок есть alt',
+      h_chars: 'Сейчас {n} симв.', h_keyword: 'Укажите главное ключевое слово.', h_count: 'Сейчас {n}.', h_https: 'Адрес должен начинаться с https://.',
+      h_domain: 'Укажите, когда появится домен.', h_alt: 'Нет у {n} картинок.',
+      steps_h: 'Как мы работаем', s1_h: 'Выберите', s1_p: 'В кабинете укажите месяц и число людей и найдите тур с хорошей погодой и подходящей ценой.',
+      s2_h: 'Забронируйте', s2_p: 'Укажите дату, имя и телефон. Бронь сразу приходит в агентство.',
+      s3_h: 'Получите подтверждение', s3_p: 'Менеджер позвонит и подтвердит дату. После оплаты 30% место за вами.',
+      s4_h: 'В путь', s4_p: 'Билеты и программа придут в Telegram. На месте гид встретит вас на вокзале.',
+      faq_h: 'Частые вопросы',
+      q1: 'Какие нужны документы?', a1: 'ID-карта или паспорт. Для детей нужно свидетельство о рождении. Билеты на поезд и самолёт оформляются по номеру этого документа.',
+      q2: 'Можно платить частями?', a2: 'Да. После подтверждения брони вносится 30% стоимости, остальное за три дня до выезда. Оплата наличными, Uzcard, Humo, Click или Payme.',
+      q3: 'Что происходит после бронирования?', a3: 'Бронь приходит в агентство со статусом «Новая». Менеджер звонит в течение часа, и статус меняется на «Подтверждена». Это видно в разделе «Мои брони».',
+      q4: 'А если билеты на «Афросиаб» закончились?', a4: 'Мы покупаем билеты сразу после старта продаж. Если мест нет, предложим обычный поезд или самолёт и заранее назовём разницу в цене.',
+      q5: 'Сколько человек в группе?', a5: 'В группе от 8 до 15 человек. Для семьи или друзей соберём частный тур с отдельной машиной и гидом.',
+      q6: 'Вернут ли деньги при отмене?', a6: 'Если до выезда больше семи дней, деньги возвращаются полностью. Позже мы заранее напишем, какую часть удержат поезд и отель.',
+      contact_h: 'Есть вопросы? Позвоните нам', phone_soon: 'Номер скоро появится', phone_copied: 'Номер скопирован: {phone}',
+      phone_al: 'Скопировать номер телефона: {phone}', phone_hint: 'Нажмите на номер, чтобы скопировать его. Telegram и SMS на этот же номер.',
+      addr_default: 'Ташкент, Юнусабадский район', hours_default: 'Ежедневно с 9:00 до 21:00',
+      credits_a: 'Фотографии с Wikimedia Commons по открытым лицензиям:', credits_b: 'Фото обрезаны под страницу.',
+      foot_tag: '{name}, туры по Узбекистану', foot_credits: 'Источники фото', v_book: 'Забронировать этот тур', close: 'Закрыть',
+      som: 'сум'
+    },
+    en: {
+      nav_dest: 'Destinations', nav_kab: 'Dashboard', nav_faq: 'FAQ', nav_contact: 'Contact', btn_book: 'Book now',
+      lang_label: 'Language', mode_day: 'Day', mode_night: 'Night', mode_to_day: 'Switch to day mode', mode_to_night: 'Switch to night mode',
+      h1a: 'Travel across', h1b: 'Uzbekistan',
+      hero_lead: 'Tours from Tashkent to Samarkand, Bukhara, Khiva and five more places. Train, hotel, guide and museum tickets for one price.',
+      search_al: 'Find a tour', s_where: 'Where to', s_when: 'When', s_people: 'Travellers', s_all: 'All destinations', s_btn: 'Show tours',
+      fact1: '8 destinations', fact2: 'Afrosiyob train tickets', fact3: 'A guide on every tour', fact4: 'Pay in parts',
+      alt_skd: 'Samarkand: the Tilla-Kari Madrasa on the Registan', alt_bhk: 'Bukhara: the tiled dome of the Poi Kalon complex',
+      arcade_h: 'Eight destinations', arcade_p: 'Tap a place to open its price, monthly weather and booking form in the dashboard.',
+      from: 'from {price}',
+      kab_h: 'Travel dashboard', kab_p: 'Browse tours, compare prices and book right here. Track your bookings under “My bookings”.',
+      tab_turlar: 'Tours', tab_narxlar: 'Prices', tab_bron: 'Book', tab_mening: 'My bookings', grp_admin: 'Management',
+      tab_bronlar: 'Incoming bookings', tab_tahrir: 'Price editor', tab_seo: 'Settings & SEO', me: 'You',
+      month_al: 'Travel month', people_al: 'Number of travellers', minus_al: 'One fewer', plus_al: 'One more',
+      tile_month: 'Selected month', tile_month_sub: 'prices for {p}', tile_best: 'Best weather', tile_best_sub: '{t}° by day, {word}',
+      tile_cheap: 'Lowest price', tile_cheap_sub: '{name}, per person',
+      type_all: 'All', type_tarix: 'Historic cities', type_tabiat: 'Mountains & lakes', type_chol: 'Desert & Aral', type_hunar: 'Crafts',
+      w_ski: 'ski season', w_swim: 'swimming season', w_ok: 'good for walking', w_hot: 'hot', w_cool: 'cool', w_cold: 'cold',
+      per_person: 'per person', card_total: 'per person · {p}: {total}', card_prices: 'Prices', card_book: 'Book',
+      zoom_of: '{name}: enlarge photo', empty_type: 'No tours in this category yet.',
+      th_tour: 'Tour', th_len: 'Length', th_way: 'Getting there', th_pp: 'Per person', th_air: 'Weather',
+      price_note: 'Prices include travel, a hotel with breakfast, a guide and museum tickets. Children under 12 pay 50%. Prices are estimates; a manager confirms the exact price for your dates.',
+      pick_al: 'Choose a tour by photo', f_tour: 'Tour', f_date: 'Departure date', f_nights: 'Nights', f_adults: 'Adults', f_kids: 'Children (under 12)',
+      f_name: 'Your name', f_phone: 'Phone', f_note: 'Note (optional)', note_ph: 'For example: vegetarian meals, an extra bed for a child',
+      b_submit: 'Send booking', b_sending: 'Sending…', zoom: 'Enlarge', zoom_al: 'Enlarge photo',
+      sum_pp: 'Per person', sum_ad: 'Adults', sum_kd: 'Children, 50%', sum_air: 'Weather', sum_total: 'Total',
+      err_date: 'Choose a departure date.', err_date_min: 'Pick a date at least three days ahead so we can book tickets and the hotel.',
+      err_name: 'Enter your name.', err_phone: 'Enter the phone as +998 XX XXX XX XX.',
+      done_ok_t: 'Booking received: {id}', done_ok_p: '{tour}, {date}, {people}, {total}. The agency has your booking as “New”. Once a manager confirms it, the status changes under “My bookings”.',
+      again: 'Book another', see_mine: 'My bookings', done_fail_t: 'Couldn’t send the booking',
+      fail_quota: 'The booking store is full.', fail_nostore: 'This page can’t store bookings.', fail_net: 'Couldn’t reach the internet or the server.',
+      fail_send_phone: 'Copy the message below and send it via Telegram or SMS to {phone}.', fail_send: 'Copy the message below and send it to the agency.',
+      copy_msg: 'Copy message', tg_write: 'Message on Telegram', call: 'Call', back_form: 'Back to the form',
+      copied_msg: 'Message copied.', copy_fail: 'Couldn’t copy. Select the text and copy it by hand.',
+      msg: 'Hello! I’d like to book the {tour} tour: {date}, {nights}, {ppl}. Estimated price {total}. Name: {name}, phone: {phone}.',
+      msg_ad: '{n} adults', msg_kd: ', {n} children',
+      mine_nostore: 'This page can’t store bookings. When you book, you send a ready message by Telegram or phone.',
+      mine_empty: 'No bookings yet. Pick a tour and make your first one.', cancel: 'Cancel',
+      cancel_fail: 'Couldn’t cancel.', call_us: ' Call us: {phone}.', tell_agency: ' Let the agency know.',
+      st_yangi: 'New', st_tasdiqlandi: 'Confirmed', st_bekor: 'Cancelled',
+      admin_note: 'Only you can see this section. When a booking arrives while the page is open, an alert appears and the “Incoming bookings” button at the bottom shows the count.',
+      kpi_total: 'All bookings', kpi_new: 'New', kpi_conf: 'Confirmed', kpi_income: 'Confirmed revenue', all: 'All',
+      th_recv: 'Received', th_client: 'Client', th_dep: 'Departure', th_people: 'People', th_sum: 'Amount', th_status: 'Status',
+      admin_empty: 'No bookings yet. They appear here as soon as a client books in the dashboard.',
+      status_set: '{id}: status set to “{s}”.', status_fail: 'Couldn’t save the status, try again.', tel_copied: 'Phone copied: {phone}',
+      account: 'Account: {name}', hidden_name: 'name hidden', bell_new: ', new: {n}',
+      alert_new_t: 'New booking: {name}', alert_see: 'View', alert_close: 'Close',
+      missed_t: '{n} new bookings waiting', missed_p: 'These arrived since your last visit. Confirm them or call the clients.', missed_open: 'Open bookings',
+      db_lost: 'Lost the connection to the database. Reload the page.',
+      th_f: 'Travel, UZS', th_h: 'Per night, UZS', th_n: 'Nights', th_on: 'On site', shown: 'shown', save_prices: 'Save prices',
+      prices_saved: 'Prices saved and updated on the site.', one_tour: 'Keep at least one tour on the site.', save_fail: 'Couldn’t save: {code}',
+      info_h: 'Agency details', i_name: 'Agency name', i_phone: 'Phone', i_address: 'Address', i_hours: 'Opening hours', i_tg: 'Telegram (username without @)',
+      save_info: 'Save details', info_saved: 'Details saved and updated on the site.', bad_phone: 'Enter the phone as +998 XX XXX XX XX or leave it empty.',
+      bad_tg: 'A Telegram username has Latin letters, digits and _ only.',
+      seo_h: 'SEO text', seo_lang_al: 'SEO language', seo_title: 'Page title', seo_desc: 'Meta description', seo_key: 'Focus keyword',
+      seo_keys: 'More keywords, comma separated', seo_url: 'Site address', seo_img: 'Social sharing image',
+      seo_save: 'Save SEO', seo_copy: 'Copy meta tags', seo_saved: 'SEO settings saved.',
+      meta_copied: 'Meta tags copied. Paste them into the <head> of your site.', seo_score: 'SEO score', score_sub: '{ok} of {n} checks passed',
+      serp_h: 'How it looks in Google', og_h: 'When shared on Telegram and Facebook',
+      seo_note: 'Google doesn’t index pages inside claude.ai. On the GitHub site these tags go into the page code: after changing them, ask Claude to update the site.',
+      no_title: 'No title', no_desc: 'No description',
+      c_title: 'Title is 30–60 characters', c_desc: 'Description is 120–160 characters', c_key_t: 'Focus keyword in the title', c_key_d: 'Focus keyword in the description',
+      c_keys: '3–10 more keywords', c_url: 'Site address uses https', c_h1: 'One H1 heading on the page', c_alt: 'Every image has alt text',
+      h_chars: 'Now {n} characters.', h_keyword: 'Enter a focus keyword.', h_count: 'Now {n}.', h_https: 'Start the address with https://.',
+      h_domain: 'Add it once you have a domain.', h_alt: 'Missing on {n} images.',
+      steps_h: 'How it works', s1_h: 'Choose', s1_p: 'Pick a month and the number of travellers in the dashboard to find a tour with good weather and the right price.',
+      s2_h: 'Book', s2_p: 'Enter the date, your name and phone. The booking reaches the agency at once.',
+      s3_h: 'Get confirmed', s3_p: 'A manager calls to confirm the date. Pay 30% and your place is held.',
+      s4_h: 'Set off', s4_p: 'Tickets and the programme arrive on Telegram. A guide meets you at the station.',
+      faq_h: 'Before you travel',
+      q1: 'What documents do I need?', a1: 'An ID card or passport, and a birth certificate for children. Train and flight tickets are issued on that document number.',
+      q2: 'Can I pay in parts?', a2: 'Yes. 30% once the booking is confirmed, the rest three days before departure. Pay in cash or with Uzcard, Humo, Click or Payme.',
+      q3: 'What happens after I book?', a3: 'Your booking reaches the agency as “New”. A manager calls within an hour and the status changes to “Confirmed”. You can see it under “My bookings”.',
+      q4: 'What if Afrosiyob tickets sell out?', a4: 'We buy tickets as soon as sales open. If there are no seats, we offer a regular train or a flight and tell you the price difference up front.',
+      q5: 'How big are the groups?', a5: 'Groups have 8 to 15 people. For your family or friends we can arrange a private tour with its own car and guide.',
+      q6: 'Do I get a refund if I cancel?', a6: 'More than seven days before departure you get a full refund. After that we tell you in advance what the train and hotel will keep.',
+      contact_h: 'Questions? Give us a call', phone_soon: 'Number coming soon', phone_copied: 'Number copied: {phone}',
+      phone_al: 'Copy the phone number: {phone}', phone_hint: 'Tap the number to copy it. Telegram and SMS use the same number.',
+      addr_default: 'Tashkent, Yunusabad district', hours_default: 'Daily, 9:00 to 21:00',
+      credits_a: 'Photos from Wikimedia Commons under open licences:', credits_b: 'Photos are cropped to fit the page.',
+      foot_tag: '{name}, tours across Uzbekistan', foot_credits: 'Photo credits', v_book: 'Book this tour', close: 'Close',
+      som: 'UZS'
+    }
+  };
+  const MONTHS = {
+    uz: ['Yanvar','Fevral','Mart','Aprel','May','Iyun','Iyul','Avgust','Sentabr','Oktabr','Noyabr','Dekabr'],
+    ru: ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
+    en: ['January','February','March','April','May','June','July','August','September','October','November','December']
+  };
+  // Per tour, per language: name, region, how you get there, one line about it.
+  const TT = {
+    uz: {
+      skd: ['Samarqand', 'Samarqand viloyati', 'Afrosiyob, 2 soat 10 daqiqa', 'Registon, Shohi Zinda, Siyob bozori va Konigil qog‘oz ustaxonasi.'],
+      bhk: ['Buxoro', 'Buxoro viloyati', 'Afrosiyob, 3 soat 40 daqiqa', 'Poi Kalon, Ark qal’asi, Labi hovuz va gumbazli toqi bozorlar.'],
+      khv: ['Xiva', 'Xorazm viloyati', 'Samolyot, 1 soat 40 daqiqa', 'Ichan Qal’a ichida tunash, Kalta Minor va devor ustidan quyosh botishi.'],
+      shr: ['Shahrisabz', 'Qashqadaryo viloyati', 'Poyezd va mashina, 4 soat', 'Oqsaroy peshtoqi, Doruttilovat va Taxtaqoracha dovoni orqali yo‘l.'],
+      chv: ['Chorvoq va Chimyon', 'Toshkent viloyati', 'Avtobus, 1 soat 30 daqiqa', 'Suv bo‘yidagi dam olish, Chimyonga kanatli yo‘l, qishda chang‘i.'],
+      ayd: ['Aydarko‘l va Nurota', 'Jizzax va Navoiy', 'Mashina, 5 soat', 'Qizilqumdagi o‘tovda tunash, tuyada sayr va gulxan atrofida kechki ovqat.'],
+      mnq: ['Mo‘ynoq va Orol', 'Qoraqalpog‘iston', 'Samolyot va jip, 5 soat', 'Savitskiy muzeyi, kemalar qabristoni va Orol qirg‘og‘idagi o‘tov lager.'],
+      fgn: ['Farg‘ona vodiysi', 'Farg‘ona vodiysi', 'Poyezd, 4 soat 30 daqiqa', 'Marg‘ilon atlas fabrikasi, Rishton kulollari va Qo‘qondagi Xudoyorxon o‘rdasi.']
+    },
+    ru: {
+      skd: ['Самарканд', 'Самаркандская область', '«Афросиаб», 2 ч 10 мин', 'Регистан, Шахи-Зинда, базар Сиаб и бумажная мастерская Конигил.'],
+      bhk: ['Бухара', 'Бухарская область', '«Афросиаб», 3 ч 40 мин', 'Пои-Калян, крепость Арк, Ляби-Хауз и купольные торговые ряды.'],
+      khv: ['Хива', 'Хорезмская область', 'Самолёт, 1 ч 40 мин', 'Ночёвка внутри Ичан-Калы, Кальта-Минар и закат со стен крепости.'],
+      shr: ['Шахрисабз', 'Кашкадарьинская область', 'Поезд и машина, 4 ч', 'Портал Ак-Сарая, Дорут-Тиловат и дорога через перевал Тахтакарача.'],
+      chv: ['Чарвак и Чимган', 'Ташкентская область', 'Автобус, 1 ч 30 мин', 'Отдых у воды, канатная дорога на Чимган, зимой лыжи.'],
+      ayd: ['Айдаркуль и Нурата', 'Джизак и Навои', 'Машина, 5 ч', 'Ночь в юрте в Кызылкумах, прогулка на верблюде и ужин у костра.'],
+      mnq: ['Муйнак и Арал', 'Каракалпакстан', 'Самолёт и джип, 5 ч', 'Музей Савицкого, кладбище кораблей и юрточный лагерь на берегу Арала.'],
+      fgn: ['Ферганская долина', 'Ферганская долина', 'Поезд, 4 ч 30 мин', 'Шёлковая фабрика в Маргилане, мастера Риштана и дворец Худояр-хана в Коканде.']
+    },
+    en: {
+      skd: ['Samarkand', 'Samarkand Region', 'Afrosiyob train, 2 h 10 min', 'Registan, Shah-i-Zinda, Siab Bazaar and the Konigil paper workshop.'],
+      bhk: ['Bukhara', 'Bukhara Region', 'Afrosiyob train, 3 h 40 min', 'Poi Kalon, the Ark fortress, Lyabi-Hauz and the domed trading bazaars.'],
+      khv: ['Khiva', 'Khorezm Region', 'Flight, 1 h 40 min', 'A night inside Itchan Kala, Kalta Minor and sunset from the city walls.'],
+      shr: ['Shahrisabz', 'Kashkadarya Region', 'Train and car, 4 h', 'The Ak-Saray portal, Dorut Tilovat and the road over the Takhtakaracha pass.'],
+      chv: ['Charvak & Chimgan', 'Tashkent Region', 'Bus, 1 h 30 min', 'Lakeside rest, the Chimgan cable car and skiing in winter.'],
+      ayd: ['Aydarkul & Nurata', 'Jizzakh & Navoi', 'Car, 5 h', 'A night in a yurt in the Kyzylkum, a camel ride and dinner by the fire.'],
+      mnq: ['Muynak & the Aral Sea', 'Karakalpakstan', 'Flight and jeep, 5 h', 'The Savitsky Museum, the ship graveyard and a yurt camp on the Aral shore.'],
+      fgn: ['Fergana Valley', 'Fergana Valley', 'Train, 4 h 30 min', 'Margilan’s silk factory, the potters of Rishtan and Khudayar Khan’s palace in Kokand.']
+    }
+  };
+  const CREDITS = 'Registon, Bobyrr, CC BY-SA 4.0; Poi Kalon, Nassima Chahboun, CC BY-SA 4.0; Chorvoq, WWELNUR, CC BY 4.0; Aydar, Benjamin Goetzinger, CC BY-SA 4.0; Mo‘ynoq, Aleksandr Zykov, CC BY-SA 2.0; Kalta Minor, Adam Harangozó, CC BY-SA 4.0; Kalta Minor, Bgag, CC0; Sopol lagan, AIDEPCUL, CC BY 4.0; Oqsaroy, xiquinhosilva, CC BY 4.0.';
+
+  const LANGS = ['uz', 'ru', 'en'];
+  function pickLang() {
+    const q = new URLSearchParams(location.search).get('lang');
+    if (LANGS.includes(q)) return q;
+    try { const s = localStorage.getItem('ufq-lang'); if (LANGS.includes(s)) return s; } catch (e) {}
+    const n = (navigator.language || '').slice(0, 2);
+    return n === 'ru' ? 'ru' : n === 'en' ? 'en' : 'uz';
+  }
+  let lang = pickLang();
+  const t = (k, v) => {
+    let s = I18N[lang][k];
+    if (s == null) s = I18N.uz[k];
+    if (s == null) return k;
+    return v ? s.replace(/\{(\w+)\}/g, (_, x) => v[x] != null ? v[x] : '') : s;
+  };
+  const tourText = id => { const a = TT[lang][id] || TT.uz[id]; return { name: a[0], region: a[1], how: a[2], text: a[3] }; };
+  const months = () => MONTHS[lang];
+  const nightsWord = n => {
+    if (lang === 'ru') { const a = n % 10, b = n % 100; return n + ' ' + (a === 1 && b !== 11 ? 'ночь' : a >= 2 && a <= 4 && (b < 12 || b > 14) ? 'ночи' : 'ночей'); }
+    if (lang === 'en') return n + (n === 1 ? ' night' : ' nights');
+    return n + ' tun';
+  };
+  const peopleWord = n => {
+    if (lang === 'ru') { const a = n % 10, b = n % 100; return n + ' ' + (a >= 2 && a <= 4 && (b < 12 || b > 14) ? 'человека' : 'человек'); }
+    if (lang === 'en') return n + (n === 1 ? ' person' : ' people');
+    return n + ' kishi';
+  };
 
   /* ---------- Content ---------- */
-  const MONTHS = ['Yanvar','Fevral','Mart','Aprel','May','Iyun','Iyul','Avgust','Sentabr','Oktabr','Noyabr','Dekabr'];
-  const loc = i => MONTHS[i].toLowerCase() + 'da';
-  const TYPES = { tarix: 'Tarixiy shaharlar', tabiat: 'Tog‘ va ko‘l', chol: 'Cho‘l va Orol', hunar: 'Hunarmandchilik' };
+  const TYPES = ['tarix', 'tabiat', 'chol', 'hunar'];
   // f: yo‘l (kishi boshiga), h: bir tun mehmonxona (kishi boshiga), n: odatiy tunlar — so‘mda. air: o‘rtacha kunduzgi harorat, °C.
   const D = [
-    { id: 'skd', name: 'Samarqand', region: 'Samarqand viloyati', type: 'tarix', img: 'samarqand', f: 540000, h: 450000, n: 2,
-      how: 'Afrosiyob, 2 soat 10 daqiqa', air: [6,9,15,22,27,33,35,33,28,21,14,8],
-      text: 'Registon, Shohi Zinda, Siyob bozori va Konigil qog‘oz ustaxonasi.' },
-    { id: 'bhk', name: 'Buxoro', region: 'Buxoro viloyati', type: 'tarix', img: 'buxoro', f: 760000, h: 420000, n: 2,
-      how: 'Afrosiyob, 3 soat 40 daqiqa', air: [7,10,17,25,31,36,38,36,30,23,15,9],
-      text: 'Poi Kalon, Ark qal’asi, Labi hovuz va gumbazli toqi bozorlar.' },
-    { id: 'khv', name: 'Xiva', region: 'Xorazm viloyati', type: 'tarix', img: 'xiva', f: 1600000, h: 400000, n: 2,
-      how: 'Samolyot, 1 soat 40 daqiqa', air: [3,6,14,23,30,35,37,35,29,21,12,5],
-      text: 'Ichan Qal’a ichida tunash, Kalta Minor va devor ustidan quyosh botishi.' },
-    { id: 'shr', name: 'Shahrisabz', region: 'Qashqadaryo viloyati', type: 'tarix', img: 'shahrisabz', f: 600000, h: 400000, n: 1,
-      how: 'Poyezd va mashina, 4 soat', air: [9,11,16,23,29,34,36,35,30,23,16,11],
-      text: 'Oqsaroy peshtoqi, Doruttilovat va Taxtaqoracha dovoni orqali yo‘l.' },
-    { id: 'chv', name: 'Chorvoq va Chimyon', region: 'Toshkent viloyati', type: 'tabiat', img: 'chorvoq', f: 250000, h: 650000, n: 1,
-      how: 'Avtobus, 1 soat 30 daqiqa', air: [4,6,12,18,23,28,31,30,25,18,11,6], ski: [11, 0, 1], swim: [5, 6, 7],
-      text: 'Suv bo‘yidagi dam olish, Chimyonga kanatli yo‘l, qishda chang‘i.' },
-    { id: 'ayd', name: 'Aydarko‘l va Nurota', region: 'Jizzax va Navoiy', type: 'chol', img: 'aydarkol', f: 600000, h: 550000, n: 1,
-      how: 'Mashina, 5 soat', air: [6,9,16,24,30,36,38,36,30,22,14,8],
-      text: 'Qizilqumdagi o‘tovda tunash, tuyada sayr va gulxan atrofida kechki ovqat.' },
-    { id: 'mnq', name: 'Mo‘ynoq va Orol', region: 'Qoraqalpog‘iston', type: 'chol', img: 'moynoq', f: 1900000, h: 450000, n: 2,
-      how: 'Samolyot va jip, 5 soat', air: [0,3,11,20,27,32,34,32,26,17,8,2],
-      text: 'Savitskiy muzeyi, kemalar qabristoni va Orol qirg‘og‘idagi o‘tov lager.' },
-    { id: 'fgn', name: 'Farg‘ona vodiysi', region: 'Farg‘ona vodiysi', type: 'hunar', img: 'fargona', f: 500000, h: 380000, n: 2,
-      how: 'Poyezd, 4 soat 30 daqiqa', air: [4,8,15,22,28,33,35,33,28,20,12,6],
-      text: 'Marg‘ilon atlas fabrikasi, Rishton kulollari va Qo‘qondagi Xudoyorxon o‘rdasi.' }
+    { id: 'skd', type: 'tarix', img: 'samarqand', f: 540000, h: 450000, n: 2, air: [6,9,15,22,27,33,35,33,28,21,14,8] },
+    { id: 'bhk', type: 'tarix', img: 'buxoro', f: 760000, h: 420000, n: 2, air: [7,10,17,25,31,36,38,36,30,23,15,9] },
+    { id: 'khv', type: 'tarix', img: 'xiva', f: 1600000, h: 400000, n: 2, air: [3,6,14,23,30,35,37,35,29,21,12,5] },
+    { id: 'shr', type: 'tarix', img: 'shahrisabz', f: 600000, h: 400000, n: 1, air: [9,11,16,23,29,34,36,35,30,23,16,11] },
+    { id: 'chv', type: 'tabiat', img: 'chorvoq', f: 250000, h: 650000, n: 1, air: [4,6,12,18,23,28,31,30,25,18,11,6], ski: [11, 0, 1], swim: [5, 6, 7] },
+    { id: 'ayd', type: 'chol', img: 'aydarkol', f: 600000, h: 550000, n: 1, air: [6,9,16,24,30,36,38,36,30,22,14,8] },
+    { id: 'mnq', type: 'chol', img: 'moynoq', f: 1900000, h: 450000, n: 2, air: [0,3,11,20,27,32,34,32,26,17,8,2] },
+    { id: 'fgn', type: 'hunar', img: 'fargona', f: 500000, h: 380000, n: 2, air: [4,8,15,22,28,33,35,33,28,20,12,6] }
   ];
   const byId = Object.fromEntries(D.map(d => [d.id, d]));
-  const DEFAULT_SEO = {
-    title: 'Ufq — O‘zbekiston bo‘ylab ichki turlar Toshkentdan',
-    description: 'Samarqand, Buxoro, Xiva, Chorvoq va Aydarko‘lga ichki turlar: Afrosiyob chiptasi, mehmonxona, gid va muzeylar bitta narxda. Narxni ko‘ring va bron qiling.',
-    keyword: 'ichki turlar',
-    keywords: 'ichki turizm, Samarqand turi, Buxoro tur, Xiva sayohat, Chorvoq dam olish, Afrosiyob chipta',
-    url: '', image: 'samarqand'
-  };
-  const STATUS = { yangi: 'Yangi', tasdiqlandi: 'Tasdiqlandi', bekor: 'Bekor qilindi' };
+  const DEFAULT_SEO = /*SEO*/{
+    "uz": { "title": "Ufq — O‘zbekiston bo‘ylab ichki turlar Toshkentdan", "description": "Samarqand, Buxoro, Xiva, Chorvoq va Aydarko‘lga ichki turlar: Afrosiyob chiptasi, mehmonxona, gid va muzeylar bitta narxda. Narxni ko‘ring va bron qiling.", "keyword": "ichki turlar", "keywords": "ichki turizm, Samarqand turi, Buxoro tur, Xiva sayohat, Chorvoq dam olish, Afrosiyob chipta" },
+    "ru": { "title": "Ufq — туры по Узбекистану из Ташкента", "description": "Туры по Узбекистану из Ташкента: Самарканд, Бухара, Хива, Чарвак и Айдаркуль. Поезд «Афросиаб», отель, гид и музеи по одной цене. Бронируйте онлайн.", "keyword": "туры по Узбекистану", "keywords": "тур в Самарканд, тур в Бухару, Хива экскурсия, Чарвак отдых, билеты Афросиаб" },
+    "en": { "title": "Ufq — Uzbekistan tours from Tashkent", "description": "Uzbekistan tours from Tashkent to Samarkand, Bukhara, Khiva, Charvak and Aydarkul. Afrosiyob train, hotel, guide and museums for one price. Book online.", "keyword": "Uzbekistan tours", "keywords": "Samarkand tour, Bukhara tour, Khiva trip, Charvak lake, Afrosiyob train" },
+    "url": "", "image": "samarqand"
+  }/*/SEO*/;
+  const STATUS_KEYS = ['yangi', 'tasdiqlandi', 'bekor'];
 
   const $ = id => document.getElementById(id);
   const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const num = v => String(Math.round(v)).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
-  const som = v => num(v) + ' so‘m';
+  const som = v => num(v) + ' ' + t('som');
+  const fmtPhone = p => { const d = String(p || '').replace(/\D/g, ''); return d.length === 12 && d.startsWith('998') ? `+${d.slice(0, 3)} ${d.slice(3, 5)} ${d.slice(5, 8)} ${d.slice(8, 10)} ${d.slice(10)}` : (p || ''); };
+  const fmtDate = s => s ? s.split('-').reverse().join('.') : '';
   const now = new Date();
   let m0 = now.getMonth(); if (now.getDate() > 20) m0 = (m0 + 1) % 12;
 
-  const state = { m: m0, p: 2, type: 'all', tab: 'turlar', pick: 'skd', statusFilter: 'all' };
+  const state = { m: m0, p: 2, type: 'all', tab: 'turlar', pick: 'skd', statusFilter: 'all', seoLang: lang };
   let prices = {};          // overrides from the shared store
-  let seo = { ...DEFAULT_SEO };
+  let info = { name: CONFIG.NAME, phone: CONFIG.PHONE, address: CONFIG.ADDRESS, hours: CONFIG.HOURS, telegram: CONFIG.TELEGRAM };
+  let seo = JSON.parse(JSON.stringify(DEFAULT_SEO));
+  let seoDraft = JSON.parse(JSON.stringify(seo));
   let mine = [];            // this viewer's bookings
   let all = [];             // every booking, admin only
 
@@ -839,41 +1231,103 @@ td input { width: 120px; min-height: 38px; }
   const active = () => D.filter(d => P(d).on !== false);
 
   function season(d, m) {
-    const t = d.air[m];
-    if (d.ski && d.ski.includes(m)) return { t, cls: 'ok', word: 'chang‘i mavsumi', score: 30 };
-    if (d.swim && d.swim.includes(m)) return { t, cls: 'ok', word: 'cho‘milish mavsumi', score: 29 };
-    if (t >= 14 && t <= 31) return { t, cls: 'ok', word: 'sayr uchun qulay', score: 28 - Math.abs(t - 23) / 3 };
-    if (t > 31) return { t, cls: 'bad', word: 'issiq', score: 10 - (t - 31) / 3 };
-    return { t, cls: t >= 8 ? '' : 'bad', word: t >= 8 ? 'salqin' : 'sovuq', score: 10 - (14 - t) / 3 };
+    const tt = d.air[m];
+    if (d.ski && d.ski.includes(m)) return { t: tt, cls: 'ok', word: t('w_ski'), score: 30 };
+    if (d.swim && d.swim.includes(m)) return { t: tt, cls: 'ok', word: t('w_swim'), score: 29 };
+    if (tt >= 14 && tt <= 31) return { t: tt, cls: 'ok', word: t('w_ok'), score: 28 - Math.abs(tt - 23) / 3 };
+    if (tt > 31) return { t: tt, cls: 'bad', word: t('w_hot'), score: 10 - (tt - 31) / 3 };
+    return { t: tt, cls: tt >= 8 ? '' : 'bad', word: t(tt >= 8 ? 'w_cool' : 'w_cold'), score: 10 - (14 - tt) / 3 };
+  }
+
+  /* ---------- Static text, language and mode ---------- */
+  function applyStatic() {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i]').forEach(el => { el.textContent = t(el.dataset.i); });
+    document.querySelectorAll('[data-i-ph]').forEach(el => { el.placeholder = t(el.dataset.iPh); });
+    document.querySelectorAll('[data-i-al]').forEach(el => { el.setAttribute('aria-label', t(el.dataset.iAl)); });
+    document.querySelectorAll('[data-i-alt]').forEach(el => { el.alt = t(el.dataset.iAlt); });
+    document.querySelectorAll('#langs [data-lang]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
+    $('credits-text').textContent = t('credits_a') + ' ' + CREDITS + ' ' + t('credits_b');
+    $('seo-img').innerHTML = ['samarqand', 'buxoro', 'xiva', 'chorvoq', 'moynoq'].map(k =>
+      `<option value="${k}">${esc(tourText(D.find(d => d.img === k).id).name)}</option>`).join('');
+    $('seo-img').value = seoDraft.image || 'samarqand';
+    applyInfo(); applySeo(); renderMode();
+  }
+  function setLang(l) {
+    if (!LANGS.includes(l) || l === lang) return;
+    lang = l; state.seoLang = l;
+    try { localStorage.setItem('ufq-lang', l); } catch (e) {}
+    applyStatic(); rerenderAll(); renderAdmin(); seoForm(); renderSeo();
+    $('panel-title').textContent = t('tab_' + state.tab);
+  }
+  $('langs').addEventListener('click', e => { const b = e.target.closest('[data-lang]'); if (b) setLang(b.dataset.lang); });
+
+  const MODE_KEY = 'ufq-mode';
+  const isDark = () => {
+    const a = document.documentElement.getAttribute('data-theme');
+    return a ? a === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  };
+  try { const sm = localStorage.getItem(MODE_KEY); if (sm === 'dark' || sm === 'light') document.documentElement.setAttribute('data-theme', sm); } catch (e) {}
+  function renderMode() {
+    const dark = isDark(), b = $('mode');
+    b.querySelector('use').setAttribute('href', dark ? '#i-sun' : '#i-moon');
+    b.querySelector('span').textContent = t(dark ? 'mode_day' : 'mode_night');
+    b.setAttribute('aria-label', t(dark ? 'mode_to_day' : 'mode_to_night'));
+  }
+  $('mode').addEventListener('click', () => {
+    const next = isDark() ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try { localStorage.setItem(MODE_KEY, next); } catch (e) {}
+    renderMode();
+  });
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', renderMode);
+
+  /* ---------- Agency details ---------- */
+  function applyInfo() {
+    const name = info.name || 'Ufq';
+    document.querySelectorAll('.brand-name').forEach(el => { el.textContent = name; });
+    $('foot-tag').textContent = t('foot_tag', { name });
+    $('c-address').textContent = info.address || t('addr_default');
+    $('c-hours').textContent = info.hours || t('hours_default');
+    const ph = info.phone, btn = $('phone');
+    if (ph) {
+      btn.textContent = fmtPhone(ph); btn.disabled = false; btn.setAttribute('aria-label', t('phone_al', { phone: fmtPhone(ph) }));
+      $('tel-link').href = 'tel:' + ph.replace(/[^\d+]/g, ''); $('tel-link').hidden = false; $('phone-hint').hidden = false;
+    } else {
+      btn.textContent = t('phone_soon'); btn.disabled = true; btn.removeAttribute('aria-label');
+      $('tel-link').hidden = true; $('phone-hint').hidden = true;
+    }
+    if (info.telegram) { $('tg-link').href = 'https://t.me/' + encodeURIComponent(info.telegram); $('tg-link').hidden = false; }
+    else $('tg-link').hidden = true;
   }
 
   /* ---------- Selects ---------- */
   function fillSelects() {
-    const opts = active().map(d => `<option value="${d.id}">${esc(d.name)}</option>`).join('');
-    $('s-where').innerHTML = '<option value="all">Hammasi</option>' + opts;
+    const opts = active().map(d => `<option value="${d.id}">${esc(tourText(d.id).name)}</option>`).join('');
+    const w = $('s-where').value;
+    $('s-where').innerHTML = `<option value="all">${esc(t('s_all'))}</option>` + opts;
+    if (w) $('s-where').value = w;
     $('b-tour').innerHTML = opts;
     $('b-tour').value = byId[state.pick] && P(byId[state.pick]).on !== false ? state.pick : active()[0].id;
-    const mo = MONTHS.map((x, i) => `<option value="${i}">${x}</option>`).join('');
+    const mo = months().map((x, i) => `<option value="${i}">${x}</option>`).join('');
     $('s-month').innerHTML = mo; $('d-month').innerHTML = mo;
     $('s-month').value = state.m; $('d-month').value = state.m;
   }
 
   /* ---------- Arcade ---------- */
   function renderArcade() {
-    $('arcade').innerHTML = active().map(d =>
-      `<li><button class="gate" type="button" data-go="${d.id}">
-        <span class="arch"><img src="img/${d.img}.jpg" width="1200" height="1800" loading="lazy" alt="${esc(d.name)}"></span>
-        <span class="gate__name">${esc(d.name)}</span>
-        <span class="gate__meta num">${P(d).n} tun · ${som(perPerson(d))} dan</span></button></li>`).join('');
+    $('arcade').innerHTML = active().map(d => { const x = tourText(d.id); return `<li><button class="gate" type="button" data-go="${d.id}">
+        <span class="arch"><img src="img/${d.img}.jpg" width="1200" height="1800" loading="lazy" alt="${esc(x.name)}"></span>
+        <span class="gate__name">${esc(x.name)}</span>
+        <span class="gate__meta num">${nightsWord(P(d).n)} · ${t('from', { price: som(perPerson(d)) })}</span></button></li>`; }).join('');
   }
 
   /* ---------- Tabs ---------- */
-  const TITLES = { turlar: 'Turlar', narxlar: 'Narxlar', bron: 'Bron qilish', mening: 'Bronlarim', bronlar: 'Kelgan bronlar', tahrir: 'Narx tahriri', seo: 'SEO paneli' };
   function openTab(tab, focus) {
     state.tab = tab;
     document.querySelectorAll('.tab').forEach(b => b.setAttribute('aria-selected', String(b.dataset.tab === tab)));
     document.querySelectorAll('.panel').forEach(p => p.hidden = p.id !== 'p-' + tab);
-    $('panel-title').textContent = TITLES[tab];
+    $('panel-title').textContent = t('tab_' + tab);
     $('global-ctrls').hidden = !['turlar', 'narxlar'].includes(tab);
     if (tab === 'bronlar') markSeen();
     if (focus) document.querySelector(`.tab[data-tab="${tab}"]`).focus();
@@ -881,8 +1335,8 @@ td input { width: 120px; min-height: 38px; }
   $('tabs').addEventListener('click', e => { const b = e.target.closest('.tab'); if (b) openTab(b.dataset.tab); });
   $('tabs').addEventListener('keydown', e => {
     if (!['ArrowDown', 'ArrowUp', 'ArrowRight', 'ArrowLeft'].includes(e.key)) return;
-    const tabs = [...document.querySelectorAll('.tab')].filter(t => !t.hidden);
-    const i = tabs.findIndex(t => t.dataset.tab === state.tab);
+    const tabs = [...document.querySelectorAll('.tab')].filter(x => !x.hidden);
+    const i = tabs.findIndex(x => x.dataset.tab === state.tab);
     const j = (i + (e.key === 'ArrowDown' || e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length;
     e.preventDefault(); openTab(tabs[j].dataset.tab, true);
   });
@@ -890,11 +1344,14 @@ td input { width: 120px; min-height: 38px; }
     openTab(tab);
     $('kabinet').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
   }
+  function choose(id) { state.pick = id; $('b-tour').value = id; $('b-nights').value = P(byId[id]).n; renderBookSummary(); }
   document.addEventListener('click', e => {
     const g = e.target.closest('[data-go]');
-    if (g) { state.pick = g.dataset.go; $('b-tour').value = g.dataset.go; renderBookSummary(); goKabinet('bron'); return; }
+    if (g) { choose(g.dataset.go); goKabinet('bron'); return; }
     const o = e.target.closest('[data-open]');
-    if (o) { e.preventDefault(); goKabinet(o.dataset.open); }
+    if (o) { e.preventDefault(); goKabinet(o.dataset.open); return; }
+    const z = e.target.closest('[data-zoom]');
+    if (z) openViewer(z.dataset.zoom);
   });
 
   /* ---------- Turlar ---------- */
@@ -903,45 +1360,45 @@ td input { width: 120px; min-height: 38px; }
     const best = [...list].sort((a, b) => b.s.score - a.s.score)[0];
     const cheap = [...list].sort((a, b) => a.price - b.price)[0];
     $('tour-tiles').innerHTML =
-      `<div class="tile"><small>Tanlangan oy</small><b>${MONTHS[state.m]}</b><span>${state.p} kishi uchun narxlar</span></div>
-       <div class="tile"><small>Havosi eng qulay</small><b>${esc(best.d.name)}</b><span>kunduzi ${best.s.t}°, ${best.s.word}</span></div>
-       <div class="tile"><small>Eng arzon tur</small><b class="num">${som(cheap.price)}</b><span>${esc(cheap.d.name)}, kishi boshiga</span></div>`;
+      `<div class="tile"><small>${esc(t('tile_month'))}</small><b>${months()[state.m]}</b><span>${esc(t('tile_month_sub', { p: peopleWord(state.p) }))}</span></div>
+       <div class="tile"><small>${esc(t('tile_best'))}</small><b>${esc(tourText(best.d.id).name)}</b><span>${esc(t('tile_best_sub', { t: best.s.t, word: best.s.word }))}</span></div>
+       <div class="tile"><small>${esc(t('tile_cheap'))}</small><b class="num">${som(cheap.price)}</b><span>${esc(t('tile_cheap_sub', { name: tourText(cheap.d.id).name }))}</span></div>`;
   }
   function renderChips() {
-    const types = [['all', 'Hammasi'], ...Object.entries(TYPES)];
-    $('type-chips').innerHTML = types.map(([k, v]) => `<button class="chip" type="button" data-type="${k}" aria-pressed="${state.type === k}">${v}</button>`).join('');
+    $('type-chips').innerHTML = ['all', ...TYPES].map(k =>
+      `<button class="chip" type="button" data-type="${k}" aria-pressed="${state.type === k}">${esc(t('type_' + k))}</button>`).join('');
   }
   $('type-chips').addEventListener('click', e => { const c = e.target.closest('[data-type]'); if (!c) return; state.type = c.dataset.type; renderChips(); renderCards(); });
   function renderCards() {
     const list = active().filter(d => state.type === 'all' || d.type === state.type)
       .map(d => ({ d, s: season(d, state.m) })).sort((a, b) => b.s.score - a.s.score);
     $('cards').innerHTML = list.map(({ d, s }) => {
-      const pp = perPerson(d);
+      const pp = perPerson(d), x = tourText(d.id);
       return `<article class="tour">
-        <button class="zoom" type="button" data-zoom="${d.id}" aria-label="${esc(d.name)}: rasmni kattalashtirish"><img src="img/k-${d.img}.jpg" width="960" height="720" loading="lazy" alt="${esc(d.name)}"></button>
+        <button class="zoom" type="button" data-zoom="${d.id}" aria-label="${esc(t('zoom_of', { name: x.name }))}"><img src="img/k-${d.img}.jpg" width="960" height="720" loading="lazy" alt="${esc(x.name)}"></button>
         <div class="tour__body">
-          <h4 class="tour__name">${esc(d.name)}</h4>
-          <div class="tour__meta">${esc(d.region)} · ${P(d).n} tun · ${esc(d.how)}</div>
-          <div class="tour__meta">${esc(d.text)}</div>
-          <span class="season ${s.cls}"><i></i>${MONTHS[state.m]}: ${s.t}°, ${s.word}</span>
-          <div class="tour__price"><b class="num">${som(pp)}</b><span class="num">kishi boshiga · ${state.p} kishi: ${som(pp * state.p)}</span></div>
-          <div class="tour__acts"><button class="btn btn--ghost" type="button" data-price="${d.id}">Narxlar</button><button class="btn" type="button" data-book="${d.id}">Bron qilish</button></div>
+          <h4 class="tour__name">${esc(x.name)}</h4>
+          <div class="tour__meta">${esc(x.region)} · ${nightsWord(P(d).n)} · ${esc(x.how)}</div>
+          <div class="tour__meta">${esc(x.text)}</div>
+          <span class="season ${s.cls}"><i></i>${months()[state.m]}: ${s.t}°, ${esc(s.word)}</span>
+          <div class="tour__price"><b class="num">${som(pp)}</b><span class="num">${esc(t('card_total', { p: peopleWord(state.p), total: som(pp * state.p) }))}</span></div>
+          <div class="tour__acts"><button class="btn btn--ghost" type="button" data-price="${d.id}">${esc(t('card_prices'))}</button><button class="btn" type="button" data-book="${d.id}">${esc(t('card_book'))}</button></div>
         </div></article>`;
-    }).join('') || '<div class="empty">Bu turkumda hozircha tur yo‘q.</div>';
+    }).join('') || `<div class="empty">${esc(t('empty_type'))}</div>`;
   }
   $('cards').addEventListener('click', e => {
     const b = e.target.closest('[data-book]'), p = e.target.closest('[data-price]');
-    if (b) { state.pick = b.dataset.book; $('b-tour').value = state.pick; $('b-nights').value = P(byId[state.pick]).n; $('b-adults').value = state.p; renderBookSummary(); openTab('bron'); }
+    if (b) { choose(b.dataset.book); $('b-adults').value = state.p; renderBookSummary(); openTab('bron'); }
     if (p) openTab('narxlar');
   });
 
   /* ---------- Narxlar ---------- */
   function renderPrices() {
-    $('th-group').textContent = state.p + ' kishi';
+    $('th-group').textContent = peopleWord(state.p);
     $('price-rows').innerHTML = active().map(d => {
-      const s = season(d, state.m), pp = perPerson(d);
-      return `<tr><td><b>${esc(d.name)}</b><br><span class="tour__meta">${esc(d.region)}</span></td>
-        <td class="num">${P(d).n} tun</td><td>${esc(d.how)}</td>
+      const s = season(d, state.m), pp = perPerson(d), x = tourText(d.id);
+      return `<tr><td><b>${esc(x.name)}</b><br><span class="tour__meta">${esc(x.region)}</span></td>
+        <td class="num">${nightsWord(P(d).n)}</td><td>${esc(x.how)}</td>
         <td class="r num">${som(pp)}</td><td class="r num"><b>${som(pp * state.p)}</b></td>
         <td><span class="season ${s.cls}"><i></i>${s.t}°</span></td></tr>`;
     }).join('');
@@ -949,7 +1406,7 @@ td input { width: 120px; min-height: 38px; }
 
   /* ---------- Global controls ---------- */
   const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
-  function setPeople(v) { state.p = clamp(v, 1, 15); $('p-out').textContent = state.p + ' kishi'; renderLive(); }
+  function setPeople(v) { state.p = clamp(v, 1, 15); $('p-out').textContent = peopleWord(state.p); renderLive(); }
   $('p-minus').addEventListener('click', () => setPeople(state.p - 1));
   $('p-plus').addEventListener('click', () => setPeople(state.p + 1));
   $('d-month').addEventListener('change', e => { state.m = +e.target.value; $('s-month').value = state.m; renderLive(); });
@@ -958,10 +1415,10 @@ td input { width: 120px; min-height: 38px; }
     state.m = +$('s-month').value; $('d-month').value = state.m;
     setPeople(+$('s-people').value || 2);
     const w = $('s-where').value;
-    if (w !== 'all') { state.pick = w; $('b-tour').value = w; $('b-nights').value = P(byId[w]).n; $('b-adults').value = state.p; renderBookSummary(); goKabinet('bron'); }
+    if (w !== 'all') { choose(w); $('b-adults').value = state.p; renderBookSummary(); goKabinet('bron'); }
     else goKabinet('turlar');
   });
-  function renderLive() { renderTiles(); renderCards(); renderPrices(); renderBookSummary(); }
+  function renderLive() { $('p-out').textContent = peopleWord(state.p); renderTiles(); renderCards(); renderPrices(); renderBookSummary(); }
 
   /* ---------- Bron ---------- */
   const today = new Date(); today.setDate(today.getDate() + 3);
@@ -973,50 +1430,47 @@ td input { width: 120px; min-height: 38px; }
     return { d, n, ad, kd, pp, total: pp * ad + pp * 0.5 * kd };
   }
   function renderBookSummary() {
-    const c = bookCalc(), date = $('b-date').value;
+    const c = bookCalc(), date = $('b-date').value, x = tourText(c.d.id);
     const m = date ? new Date(date).getMonth() : state.m, s = season(c.d, m);
     $('sum-img').src = 'img/k-' + c.d.img + '.jpg';
-    $('sum-img').alt = c.d.name;
+    $('sum-img').alt = x.name;
     $('sum-zoom').dataset.zoom = c.d.id;
     document.querySelectorAll('#pickrow [data-pick]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.pick === c.d.id)));
-    $('sum-name').textContent = c.d.name;
-    $('sum-how').textContent = c.n + ' tun · ' + c.d.how;
+    $('sum-name').textContent = x.name;
+    $('sum-how').textContent = nightsWord(c.n) + ' · ' + x.how;
     $('sum-per').textContent = som(c.pp);
     $('sum-ad').textContent = c.ad + ' × ' + som(c.pp);
     $('sum-kd').textContent = c.kd ? c.kd + ' × ' + som(c.pp * 0.5) : '—';
-    $('sum-air').textContent = MONTHS[m] + ', ' + s.t + '°';
+    $('sum-air').textContent = months()[m] + ', ' + s.t + '°';
     $('sum-total').textContent = som(c.total);
   }
   ['b-tour', 'b-date', 'b-nights', 'b-adults', 'b-kids'].forEach(id => $(id).addEventListener('input', renderBookSummary));
+  $('b-tour').addEventListener('change', () => choose($('b-tour').value));
 
-  /* Pick the tour by its picture */
   function renderPickrow() {
     $('pickrow').innerHTML = active().map(d =>
-      `<button type="button" data-pick="${d.id}" aria-pressed="false"><img src="img/k-${d.img}.jpg" width="960" height="720" loading="lazy" alt="">${esc(d.name)}</button>`).join('');
+      `<button type="button" data-pick="${d.id}" aria-pressed="false"><img src="img/k-${d.img}.jpg" width="960" height="720" loading="lazy" alt="">${esc(tourText(d.id).name)}</button>`).join('');
   }
-  $('pickrow').addEventListener('click', e => {
-    const b = e.target.closest('[data-pick]'); if (!b) return;
-    state.pick = b.dataset.pick; $('b-tour').value = state.pick; $('b-nights').value = P(byId[state.pick]).n; renderBookSummary();
-  });
+  $('pickrow').addEventListener('click', e => { const b = e.target.closest('[data-pick]'); if (b) choose(b.dataset.pick); });
 
   /* A card photo that fails falls back to the full-size picture of the same place */
   document.addEventListener('error', e => {
-    const t = e.target;
-    if (t && t.tagName === 'IMG' && /\/k-[a-z-]+\.jpg/.test(t.src)) t.src = t.src.replace('/k-', '/');
+    const x = e.target;
+    if (x && x.tagName === 'IMG' && /\/k-[a-z-]+\.jpg/.test(x.src)) x.src = x.src.replace('/k-', '/');
   }, true);
 
   /* Photo viewer */
   const viewer = $('viewer');
   function openViewer(id) {
     const d = byId[id]; if (!d) return;
-    const s = season(d, state.m), pp = perPerson(d);
-    $('v-img').src = 'img/' + d.img + '.jpg'; $('v-img').alt = d.name;
-    $('v-name').textContent = d.name;
-    $('v-meta').textContent = d.region + ' · ' + P(d).n + ' tun · ' + d.how;
-    $('v-text').textContent = d.text;
-    $('v-season').className = 'season ' + s.cls; $('v-season').innerHTML = '<i></i>' + MONTHS[state.m] + ': kunduzi ' + s.t + '°, ' + s.word;
+    const s = season(d, state.m), pp = perPerson(d), x = tourText(id);
+    $('v-img').src = 'img/' + d.img + '.jpg'; $('v-img').alt = x.name;
+    $('v-name').textContent = x.name;
+    $('v-meta').textContent = x.region + ' · ' + nightsWord(P(d).n) + ' · ' + x.how;
+    $('v-text').textContent = x.text;
+    $('v-season').className = 'season ' + s.cls; $('v-season').innerHTML = '<i></i>' + esc(months()[state.m] + ': ' + s.t + '°, ' + s.word);
     $('v-price').textContent = som(pp);
-    $('v-total').textContent = 'kishi boshiga · ' + state.p + ' kishi: ' + som(pp * state.p);
+    $('v-total').textContent = t('card_total', { p: peopleWord(state.p), total: som(pp * state.p) });
     $('v-book').dataset.id = id;
     if (viewer.showModal) { if (!viewer.open) viewer.showModal(); } else viewer.setAttribute('open', '');
   }
@@ -1025,20 +1479,17 @@ td input { width: 120px; min-height: 38px; }
   viewer.addEventListener('click', e => { if (e.target === viewer) closeViewer(); });
   $('v-book').addEventListener('click', e => {
     const id = e.currentTarget.dataset.id; closeViewer();
-    state.pick = id; $('b-tour').value = id; $('b-nights').value = P(byId[id]).n; $('b-adults').value = state.p; renderBookSummary(); goKabinet('bron');
+    choose(id); $('b-adults').value = state.p; renderBookSummary(); goKabinet('bron');
   });
-  document.addEventListener('click', e => { const z = e.target.closest('[data-zoom]'); if (z) openViewer(z.dataset.zoom); });
-  $('b-tour').addEventListener('change', () => { state.pick = $('b-tour').value; $('b-nights').value = P(byId[state.pick]).n; renderBookSummary(); });
 
   const phoneOk = v => /^\+?998\d{9}$/.test(v.replace(/[\s()-]/g, '')) || /^\d{9}$/.test(v.replace(/[\s()-]/g, ''));
-  const fmtDate = s => s ? s.split('-').reverse().join('.') : '';
   function message(b) {
-    return 'Assalomu alaykum! ' + b.tourName + ' turini bron qilmoqchiman: ' + fmtDate(b.date) + ', ' + b.nights + ' tun, ' +
-      b.adults + ' katta' + (b.kids ? ', ' + b.kids + ' bola' : '') + '. Taxminiy narx ' + som(b.total) + '. Ism: ' + b.name + ', tel: ' + b.phone + '.';
+    return t('msg', { tour: b.tourName, date: fmtDate(b.date), nights: nightsWord(b.nights),
+      ppl: t('msg_ad', { n: b.adults }) + (b.kids ? t('msg_kd', { n: b.kids }) : ''), total: som(b.total), name: b.name, phone: b.phone });
   }
 
-  /* ---------- Store (claude.ai db, or a local stand-in on localhost for testing) ---------- */
-  let db = null, uid = null, isAdmin = false, isOwner = false;
+  /* ---------- Store (claude.ai db, Google Sheets on GitHub Pages, or a local stand-in on localhost) ---------- */
+  let db = null, uid = null, isAdmin = false, isOwner = false, userNs = null;
   let api = null;           // { save(booking), cancel(id) } for whichever store this page reached
   const queue = new Map();
   const serial = (key, fn) => { const p = (queue.get(key) || Promise.resolve()).then(fn, fn); queue.set(key, p.catch(() => {})); return p; };
@@ -1047,56 +1498,63 @@ td input { width: 120px; min-height: 38px; }
     e.preventDefault();
     const err = $('b-err'); err.textContent = '';
     const c = bookCalc(), name = $('b-name').value.trim(), phone = $('b-phone').value.trim(), date = $('b-date').value;
-    if (!date) { err.textContent = 'Jo‘nash sanasini tanlang.'; $('b-date').focus(); return; }
-    if (date < $('b-date').min) { err.textContent = 'Sana kamida uch kundan keyin bo‘lsin: chipta va mehmonxonani band qilishga vaqt kerak.'; $('b-date').focus(); return; }
-    if (name.length < 2) { err.textContent = 'Ismingizni yozing.'; $('b-name').focus(); return; }
-    if (!phoneOk(phone)) { err.textContent = 'Telefonni +998 XX XXX XX XX ko‘rinishida, 9 ta raqam bilan yozing.'; $('b-phone').focus(); return; }
-    const b = { id: 'UFQ-' + Date.now().toString(36).slice(-5).toUpperCase(), tour: c.d.id, tourName: c.d.name, date, nights: c.n,
+    if (!date) { err.textContent = t('err_date'); $('b-date').focus(); return; }
+    if (date < $('b-date').min) { err.textContent = t('err_date_min'); $('b-date').focus(); return; }
+    if (name.length < 2) { err.textContent = t('err_name'); $('b-name').focus(); return; }
+    if (!phoneOk(phone)) { err.textContent = t('err_phone'); $('b-phone').focus(); return; }
+    const b = { id: 'UFQ-' + Date.now().toString(36).slice(-5).toUpperCase(), tour: c.d.id, tourName: TT.uz[c.d.id][0], date, nights: c.n,
       adults: c.ad, kids: c.kd, total: Math.round(c.total), name, phone, note: $('b-note').value.trim().slice(0, 400),
-      status: 'yangi', createdAt: Date.now() };
-    const btn = $('b-submit'); btn.disabled = true; btn.textContent = 'Yuborilmoqda…';
+      lang, status: 'yangi', createdAt: Date.now() };
+    const btn = $('b-submit'); btn.disabled = true; btn.textContent = t('b_sending');
     try {
       if (!api) throw { code: 'no_store' };
       await api.save(b);
       showDone(b, true);
     } catch (x) {
       showDone(b, false, x && x.code);
-    } finally { btn.disabled = false; btn.textContent = 'Bronni yuborish'; }
+    } finally { btn.disabled = false; btn.textContent = t('b_submit'); }
   });
   function showDone(b, saved, code) {
     const box = document.createElement('div'); box.className = 'done';
-    box.innerHTML = saved
-      ? `<b>Bron qabul qilindi: ${esc(b.id)}</b><span>${esc(b.tourName)}, ${fmtDate(b.date)}, ${b.adults + b.kids} kishi, ${som(b.total)}. Bron agentlikka “Yangi” holatida yetib bordi. Menejer tasdiqlagach, holat “Bronlarim” bo‘limida o‘zgaradi.</span>
-         <div class="ctrls"><button class="btn" type="button" data-again>Yana bron qilish</button><button class="btn btn--ghost" type="button" data-mine>Bronlarimni ko‘rish</button></div>`
-      : `<b>Bronni yuborib bo‘lmadi</b><span>${code === 'quota_exceeded' ? 'Bronlar bazasi to‘lib qolgan.' : code === 'no_store' ? 'Bu sahifada bronlar saqlanmaydi.' : 'Internet yoki server bilan aloqa bo‘lmadi.'} ${CONFIG.PHONE ? 'Quyidagi xabarni nusxalab, Telegram yoki SMS orqali ' + esc(CONFIG.PHONE_TEXT) + ' raqamiga yuboring.' : 'Quyidagi xabarni nusxalab, agentlikka yuboring.'}</span>
-         <p class="tour__meta" data-msg>${esc(message(b))}</p>
-         <div class="ctrls"><button class="btn" type="button" data-copy>Xabarni nusxalash</button>${CONFIG.TELEGRAM ? `<a class="btn btn--ghost" href="https://t.me/${esc(CONFIG.TELEGRAM)}" target="_blank" rel="noopener">Telegram’da yozish</a>` : ''}${CONFIG.PHONE ? `<a class="btn btn--ghost" href="tel:${esc(CONFIG.PHONE)}">Qo‘ng‘iroq qilish</a>` : ''}<button class="btn btn--ghost" type="button" data-again>Shaklga qaytish</button></div><p class="toast" data-t></p>`;
+    const tourName = byId[b.tour] ? tourText(b.tour).name : b.tourName;
+    const ph = info.phone;
+    if (saved) {
+      box.innerHTML = `<b>${esc(t('done_ok_t', { id: b.id }))}</b><span>${esc(t('done_ok_p', { tour: tourName, date: fmtDate(b.date), people: peopleWord(b.adults + b.kids), total: som(b.total) }))}</span>
+         <div class="ctrls"><button class="btn" type="button" data-again>${esc(t('again'))}</button><button class="btn btn--ghost" type="button" data-mine>${esc(t('see_mine'))}</button></div>`;
+    } else {
+      const why = t(code === 'quota_exceeded' ? 'fail_quota' : code === 'no_store' ? 'fail_nostore' : 'fail_net');
+      const how = ph ? t('fail_send_phone', { phone: fmtPhone(ph) }) : t('fail_send');
+      box.innerHTML = `<b>${esc(t('done_fail_t'))}</b><span>${esc(why + ' ' + how)}</span>
+         <p class="tour__meta" data-msg>${esc(message({ ...b, tourName }))}</p>
+         <div class="ctrls"><button class="btn" type="button" data-copy>${esc(t('copy_msg'))}</button>${info.telegram ? `<a class="btn btn--ghost" href="https://t.me/${esc(encodeURIComponent(info.telegram))}" target="_blank" rel="noopener">${esc(t('tg_write'))}</a>` : ''}${ph ? `<a class="btn btn--ghost" href="tel:${esc(ph.replace(/[^\d+]/g, ''))}">${esc(t('call'))}</a>` : ''}<button class="btn btn--ghost" type="button" data-again>${esc(t('back_form'))}</button></div><p class="toast" data-t></p>`;
+    }
     box.addEventListener('click', ev => {
       if (ev.target.closest('[data-again]')) { box.remove(); $('book-form').hidden = false; }
       if (ev.target.closest('[data-mine]')) { box.remove(); $('book-form').hidden = false; openTab('mening'); }
-      if (ev.target.closest('[data-copy]')) copy(message(b), box.querySelector('[data-t]'), 'Xabar nusxalandi.', box.querySelector('[data-msg]'));
+      if (ev.target.closest('[data-copy]')) copy(message({ ...b, tourName }), box.querySelector('[data-t]'), t('copied_msg'), box.querySelector('[data-msg]'));
     });
     $('book-form').hidden = true;
-    if (saved) $('book-form').reset(), $('b-tour').value = b.tour;
+    if (saved) { $('book-form').reset(); $('b-tour').value = b.tour; }
     $('book').prepend(box);
   }
 
   /* ---------- Bronlarim ---------- */
+  function statusChip(s) { return `<span class="status status--${esc(s)}">${esc(t('st_' + s))}</span>`; }
   function renderMine() {
     const badge = $('mine-count');
     badge.hidden = !mine.length; badge.textContent = mine.length;
-    if (!api) { $('mine').innerHTML = '<div class="empty">Bu sahifada bronlar saqlanmaydi. Bron qilsangiz, tayyor xabarni Telegram yoki telefon orqali yuborasiz.<button class="btn" type="button" data-open="bron">Bron qilish</button></div>'; return; }
-    if (!mine.length) { $('mine').innerHTML = '<div class="empty">Hozircha bron yo‘q. Turni tanlab, birinchi broningizni qiling.<button class="btn" type="button" data-open="bron">Bron qilish</button></div>'; return; }
+    if (!api) { $('mine').innerHTML = `<div class="empty">${esc(t('mine_nostore'))}<button class="btn" type="button" data-open="bron">${esc(t('btn_book'))}</button></div>`; return; }
+    if (!mine.length) { $('mine').innerHTML = `<div class="empty">${esc(t('mine_empty'))}<button class="btn" type="button" data-open="bron">${esc(t('btn_book'))}</button></div>`; return; }
     $('mine').innerHTML = mine.map(b => `<div class="bk">
       <img src="img/k-${byId[b.tour] ? byId[b.tour].img : 'samarqand'}.jpg" alt="">
-      <div><div class="bk__t">${esc(b.tourName)} · ${esc(b.id)}</div>
-        <div class="bk__m num">${fmtDate(b.date)}, ${b.nights} tun, ${b.adults + (b.kids || 0)} kishi · ${som(b.total)}</div></div>
-      <div class="ctrls"><span class="status status--${b.status}">${STATUS[b.status] || b.status}</span>
-        ${b.status === 'yangi' ? `<button class="btn btn--ghost" type="button" data-cancel="${esc(b.id)}" style="min-height:36px;font-size:13px">Bekor qilish</button>` : ''}</div></div>`).join('');
+      <div><div class="bk__t">${esc(byId[b.tour] ? tourText(b.tour).name : b.tourName)} · ${esc(b.id)}</div>
+        <div class="bk__m num">${fmtDate(b.date)}, ${nightsWord(b.nights)}, ${peopleWord(b.adults + (b.kids || 0))} · ${som(b.total)}</div></div>
+      <div class="ctrls">${statusChip(b.status)}
+        ${b.status === 'yangi' ? `<button class="btn btn--ghost" type="button" data-cancel="${esc(b.id)}" style="min-height:36px;font-size:13px">${esc(t('cancel'))}</button>` : ''}</div></div>`).join('');
   }
   $('mine').addEventListener('click', e => {
     const c = e.target.closest('[data-cancel]'); if (!c || !api) return;
-    api.cancel(c.dataset.cancel).catch(() => { $('dash-status').textContent = 'Bekor qilib bo‘lmadi.' + (CONFIG.PHONE ? ' Qo‘ng‘iroq qiling: ' + CONFIG.PHONE_TEXT + '.' : ' Agentlikka xabar bering.'); });
+    api.cancel(c.dataset.cancel).catch(() => { $('dash-status').textContent = t('cancel_fail') + (info.phone ? t('call_us', { phone: fmtPhone(info.phone) }) : t('tell_agency')); });
   });
   function changeStatus(owner, id, status) {
     return serial('bookings/' + owner, async () => {
@@ -1109,48 +1567,56 @@ td input { width: 120px; min-height: 38px; }
 
   /* ---------- Admin: kelgan bronlar ---------- */
   function renderAdmin() {
+    if (!isAdmin) return;
     const n = s => all.filter(b => b.status === s).length;
     const income = all.filter(b => b.status === 'tasdiqlandi').reduce((a, b) => a + (b.total || 0), 0);
     $('new-count').hidden = !n('yangi'); $('new-count').textContent = n('yangi');
     $('kpi').innerHTML =
-      `<div class="tile"><small>Jami bronlar</small><b class="num">${all.length}</b></div>
-       <div class="tile"><small>Yangi</small><b class="num" style="color:var(--warn)">${n('yangi')}</b></div>
-       <div class="tile"><small>Tasdiqlangan</small><b class="num" style="color:var(--ok)">${n('tasdiqlandi')}</b></div>
-       <div class="tile"><small>Tasdiqlangan tushum</small><b class="num">${som(income)}</b></div>`;
-    $('status-chips').innerHTML = [['all', 'Hammasi'], ...Object.entries(STATUS)].map(([k, v]) =>
-      `<button class="chip" type="button" data-sf="${k}" aria-pressed="${state.statusFilter === k}">${v}</button>`).join('');
+      `<div class="tile"><small>${esc(t('kpi_total'))}</small><b class="num">${all.length}</b></div>
+       <div class="tile"><small>${esc(t('kpi_new'))}</small><b class="num" style="color:var(--warn)">${n('yangi')}</b></div>
+       <div class="tile"><small>${esc(t('kpi_conf'))}</small><b class="num" style="color:var(--ok)">${n('tasdiqlandi')}</b></div>
+       <div class="tile"><small>${esc(t('kpi_income'))}</small><b class="num">${som(income)}</b></div>`;
+    $('status-chips').innerHTML = ['all', ...STATUS_KEYS].map(k =>
+      `<button class="chip" type="button" data-sf="${k}" aria-pressed="${state.statusFilter === k}">${esc(k === 'all' ? t('all') : t('st_' + k))}</button>`).join('');
     const rows = all.filter(b => state.statusFilter === 'all' || b.status === state.statusFilter).sort((a, b) => b.createdAt - a.createdAt);
     $('admin-rows').innerHTML = rows.length ? rows.map(b => `<tr>
       <td class="num">${new Date(b.createdAt).toLocaleDateString('ru-RU')}<br><span class="tour__meta">${esc(b.id)}</span></td>
       <td><b>${esc(b.name)}</b><br><button class="link num" type="button" data-tel="${esc(b.phone)}" style="background:none;border:0;padding:0;color:inherit;cursor:copy">${esc(b.phone)}</button>${b.note ? `<br><span class="tour__meta">${esc(b.note)}</span>` : ''}<div class="who" data-who="${esc(b.owner)}"></div></td>
-      <td>${esc(b.tourName)}<br><span class="tour__meta">${b.nights} tun</span></td>
+      <td>${esc(byId[b.tour] ? tourText(b.tour).name : b.tourName)}<br><span class="tour__meta">${nightsWord(b.nights)}</span></td>
       <td class="num">${fmtDate(b.date)}</td>
       <td class="r num">${b.adults}${b.kids ? ' + ' + b.kids : ''}</td>
       <td class="r num"><b>${som(b.total)}</b></td>
-      <td><select class="pill-select" data-owner="${esc(b.owner)}" data-id="${esc(b.id)}" aria-label="Holat">
-        ${Object.entries(STATUS).map(([k, v]) => `<option value="${k}" ${k === b.status ? 'selected' : ''}>${v}</option>`).join('')}</select></td></tr>`).join('')
-      : `<tr><td colspan="7"><div class="empty" style="border:0">Hali bron kelmagan. Mijoz kabinetda bron qilganda shu yerda paydo bo‘ladi.</div></td></tr>`;
+      <td><select class="pill-select" data-owner="${esc(b.owner)}" data-id="${esc(b.id)}" aria-label="${esc(t('th_status'))}">
+        ${STATUS_KEYS.map(k => `<option value="${k}" ${k === b.status ? 'selected' : ''}>${esc(t('st_' + k))}</option>`).join('')}</select></td></tr>`).join('')
+      : `<tr><td colspan="7"><div class="empty" style="border:0">${esc(t('admin_empty'))}</div></td></tr>`;
     renderBell();
-    // Which claude.ai account made each booking (names come from the platform, never stored)
     const owners = [...new Set(rows.map(b => b.owner))];
     if (userNs && owners.length) userNs.profiles(owners).then(ps => {
       document.querySelectorAll('#admin-rows [data-who]').forEach(el => {
         const p = ps[el.dataset.who]; if (!p) return;
         const img = new Image(); img.src = p.avatarUrl; img.alt = '';
-        const s = document.createElement('span'); s.textContent = 'Hisob: ' + (p.name || 'nomi yashirin');
+        const s = document.createElement('span'); s.textContent = t('account', { name: p.name || t('hidden_name') });
         el.replaceChildren(img, s);
       });
     });
   }
+  $('status-chips').addEventListener('click', e => { const c = e.target.closest('[data-sf]'); if (c) { state.statusFilter = c.dataset.sf; renderAdmin(); } });
+  $('admin-rows').addEventListener('change', e => {
+    const s = e.target.closest('select[data-id]'); if (!s) return;
+    changeStatus(s.dataset.owner, s.dataset.id, s.value)
+      .then(() => { $('admin-toast').textContent = t('status_set', { id: s.dataset.id, s: t('st_' + s.value) }); })
+      .catch(() => { $('admin-toast').textContent = t('status_fail'); });
+  });
+  $('admin-rows').addEventListener('click', e => { const x = e.target.closest('[data-tel]'); if (x) copy(x.dataset.tel, $('admin-toast'), t('tel_copied', { phone: x.dataset.tel })); });
 
   /* ---------- Admin: new-booking alerts ---------- */
-  let userNs = null, seen = null;
+  let seen = null;
   const newCount = () => all.filter(b => b.status === 'yangi').length;
   function renderBell() {
     const n = newCount(), bell = $('bell'), c = $('bell-count');
     bell.hidden = !isAdmin;
     c.hidden = !n; c.textContent = n;
-    bell.setAttribute('aria-label', 'Kelgan bronlar' + (n ? ', yangi: ' + n : ''));
+    bell.setAttribute('aria-label', t('tab_bronlar') + (n ? t('bell_new', { n }) : ''));
   }
   $('bell').addEventListener('click', () => { goKabinet('bronlar'); markSeen(); });
   function chime() {
@@ -1158,17 +1624,18 @@ td input { width: 120px; min-height: 38px; }
       const A = window.AudioContext || window.webkitAudioContext; if (!A) return;
       const ctx = chime.ctx || (chime.ctx = new A());
       [880, 1320].forEach((f, i) => {
-        const o = ctx.createOscillator(), g = ctx.createGain(), t = ctx.currentTime + i * 0.16;
+        const o = ctx.createOscillator(), g = ctx.createGain(), tt = ctx.currentTime + i * 0.16;
         o.frequency.value = f; o.type = 'sine';
-        g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(0.18, t + 0.02); g.gain.exponentialRampToValueAtTime(0.0001, t + 0.5);
-        o.connect(g).connect(ctx.destination); o.start(t); o.stop(t + 0.55);
+        g.gain.setValueAtTime(0.0001, tt); g.gain.exponentialRampToValueAtTime(0.18, tt + 0.02); g.gain.exponentialRampToValueAtTime(0.0001, tt + 0.5);
+        o.connect(g).connect(ctx.destination); o.start(tt); o.stop(tt + 0.55);
       });
     } catch (e) {}
   }
   function alertBox(title, body, actLabel) {
     const box = document.createElement('div'); box.className = 'alert'; box.setAttribute('role', 'status');
-    box.innerHTML = `<b></b><span></span><div class="ctrls"><button class="btn" type="button" data-see>${actLabel}</button><button class="btn btn--ghost" type="button" data-x>Yopish</button></div>`;
+    box.innerHTML = `<b></b><span></span><div class="ctrls"><button class="btn" type="button" data-see></button><button class="btn btn--ghost" type="button" data-x></button></div>`;
     box.querySelector('b').textContent = title; box.querySelector('span').textContent = body;
+    box.querySelector('[data-see]').textContent = actLabel; box.querySelector('[data-x]').textContent = t('alert_close');
     box.addEventListener('click', e => {
       if (e.target.closest('[data-see]')) { goKabinet('bronlar'); markSeen(); box.remove(); }
       if (e.target.closest('[data-x]')) box.remove();
@@ -1188,35 +1655,28 @@ td input { width: 120px; min-height: 38px; }
     if (!cached) {
       if (seen) {
         const fresh = all.filter(b => !seen.has(b.owner + '/' + b.id) && b.status === 'yangi');
-        fresh.slice(0, 3).forEach(b => alertBox('Yangi bron: ' + b.name, b.tourName + ', ' + fmtDate(b.date) + ', ' + (b.adults + (b.kids || 0)) + ' kishi, ' + som(b.total) + '. Tel: ' + b.phone, 'Ko‘rish'));
+        fresh.slice(0, 3).forEach(b => alertBox(t('alert_new_t', { name: b.name }),
+          (byId[b.tour] ? tourText(b.tour).name : b.tourName) + ', ' + fmtDate(b.date) + ', ' + peopleWord(b.adults + (b.kids || 0)) + ', ' + som(b.total) + '. Tel: ' + b.phone, t('alert_see')));
         if (fresh.length) chime();
       } else {
         const since = lastSeen();
         const missed = all.filter(b => b.status === 'yangi' && b.createdAt > since);
-        if (missed.length) alertBox(missed.length + ' ta yangi bron kutmoqda', 'Oxirgi kirganingizdan beri kelgan bronlar. Ularni tasdiqlang yoki mijozga qo‘ng‘iroq qiling.', 'Bronlarni ochish');
+        if (missed.length) alertBox(t('missed_t', { n: missed.length }), t('missed_p'), t('missed_open'));
       }
       seen = ids;
     }
     renderAdmin();
   }
-  $('status-chips').addEventListener('click', e => { const c = e.target.closest('[data-sf]'); if (c) { state.statusFilter = c.dataset.sf; renderAdmin(); } });
-  $('admin-rows').addEventListener('change', e => {
-    const s = e.target.closest('select[data-id]'); if (!s) return;
-    changeStatus(s.dataset.owner, s.dataset.id, s.value)
-      .then(() => { $('admin-toast').textContent = s.dataset.id + ': holat “' + STATUS[s.value] + '” qilindi.'; })
-      .catch(() => { $('admin-toast').textContent = 'Holatni saqlab bo‘lmadi, qayta urinib ko‘ring.'; });
-  });
-  $('admin-rows').addEventListener('click', e => { const t = e.target.closest('[data-tel]'); if (t) copy(t.dataset.tel, $('admin-toast'), 'Telefon nusxalandi: ' + t.dataset.tel); });
 
   /* ---------- Admin: narx tahriri ---------- */
   function renderEdit() {
-    $('edit-rows').innerHTML = D.map(d => { const x = P(d); return `<tr data-row="${d.id}">
-      <td><b>${esc(d.name)}</b></td>
-      <td class="r"><input type="number" step="10000" min="0" value="${x.f}" data-k="f" aria-label="${esc(d.name)}: yo‘l narxi"></td>
-      <td class="r"><input type="number" step="10000" min="0" value="${x.h}" data-k="h" aria-label="${esc(d.name)}: bir tun narxi"></td>
-      <td class="r"><input type="number" step="1" min="1" max="14" value="${x.n}" data-k="n" style="width:72px" aria-label="${esc(d.name)}: tunlar"></td>
+    $('edit-rows').innerHTML = D.map(d => { const x = P(d), nm = tourText(d.id).name; return `<tr data-row="${d.id}">
+      <td><b>${esc(nm)}</b></td>
+      <td class="r"><input type="number" step="10000" min="0" value="${x.f}" data-k="f" aria-label="${esc(nm + ': ' + t('th_f'))}"></td>
+      <td class="r"><input type="number" step="10000" min="0" value="${x.h}" data-k="h" aria-label="${esc(nm + ': ' + t('th_h'))}"></td>
+      <td class="r"><input type="number" step="1" min="1" max="14" value="${x.n}" data-k="n" style="width:72px" aria-label="${esc(nm + ': ' + t('th_n'))}"></td>
       <td class="r num" data-pp>${som(x.f + x.h * x.n)}</td>
-      <td><label style="display:flex;gap:8px;align-items:center"><input type="checkbox" data-k="on" ${x.on !== false ? 'checked' : ''} style="min-height:auto;width:18px;height:18px">ko‘rinadi</label></td></tr>`; }).join('');
+      <td><label style="display:flex;gap:8px;align-items:center"><input type="checkbox" data-k="on" ${x.on !== false ? 'checked' : ''} style="min-height:auto;width:18px;height:18px">${esc(t('shown'))}</label></td></tr>`; }).join('');
   }
   $('edit-rows').addEventListener('input', e => {
     const tr = e.target.closest('tr'); if (!tr) return;
@@ -1229,108 +1689,130 @@ td input { width: 120px; min-height: 38px; }
       const g = k => tr.querySelector(`[data-k="${k}"]`);
       tours[tr.dataset.row] = { f: Math.max(0, +g('f').value || 0), h: Math.max(0, +g('h').value || 0), n: clamp(+g('n').value || 1, 1, 14), on: g('on').checked };
     });
-    if (!active().length && !Object.values(tours).some(t => t.on)) { $('price-toast').textContent = 'Kamida bitta tur saytda ko‘rinsin.'; return; }
-    try { await serial('site/prices', () => db.doc('site/prices').set({ tours, updatedAt: Date.now() })); $('price-toast').textContent = 'Narxlar saqlandi. Sayt hamma uchun yangilandi.'; }
-    catch (x) { $('price-toast').textContent = 'Saqlab bo‘lmadi: ' + (x && x.code || 'xato'); }
+    if (!Object.values(tours).some(x => x.on)) { $('price-toast').textContent = t('one_tour'); return; }
+    try { await serial('site/prices', () => db.doc('site/prices').set({ tours, updatedAt: Date.now() })); $('price-toast').textContent = t('prices_saved'); }
+    catch (x) { $('price-toast').textContent = t('save_fail', { code: (x && x.code) || '?' }); }
   });
 
-  /* ---------- Admin: SEO ---------- */
-  const IMGS = ['samarqand', 'buxoro', 'xiva', 'chorvoq', 'moynoq'];
-  $('seo-img').innerHTML = IMGS.map(k => `<option value="${k}">${byId[{ samarqand: 'skd', buxoro: 'bhk', xiva: 'khv', chorvoq: 'chv', moynoq: 'mnq' }[k]].name}</option>`).join('');
-  function seoForm(v) {
-    $('seo-title').value = v.title; $('seo-desc').value = v.description; $('seo-key').value = v.keyword;
-    $('seo-keys').value = v.keywords; $('seo-url').value = v.url; $('seo-img').value = v.image || 'samarqand';
+  /* ---------- Owner: agency details ---------- */
+  function infoForm() {
+    $('i-name').value = info.name || ''; $('i-phone').value = info.phone ? fmtPhone(info.phone) : '';
+    $('i-address').value = info.address || ''; $('i-hours').value = info.hours || ''; $('i-tg').value = info.telegram || '';
   }
-  function seoRead() {
-    return { title: $('seo-title').value.trim(), description: $('seo-desc').value.trim(), keyword: $('seo-key').value.trim(),
-      keywords: $('seo-keys').value.trim(), url: $('seo-url').value.trim(), image: $('seo-img').value };
+  $('info-form').addEventListener('submit', async e => {
+    e.preventDefault();
+    if (!isOwner || !db) return;
+    $('i-err').textContent = '';
+    const phRaw = $('i-phone').value.trim(), d = phRaw.replace(/\D/g, '');
+    let phone = '';
+    if (phRaw) {
+      if (d.length === 12 && d.startsWith('998')) phone = '+' + d;
+      else if (d.length === 9) phone = '+998' + d;
+      else { $('i-err').textContent = t('bad_phone'); $('i-phone').focus(); return; }
+    }
+    const tg = $('i-tg').value.trim().replace(/^@/, '').replace(/^https?:\/\/t\.me\//, '');
+    if (tg && !/^[A-Za-z0-9_]{4,32}$/.test(tg)) { $('i-err').textContent = t('bad_tg'); $('i-tg').focus(); return; }
+    const next = { name: $('i-name').value.trim().slice(0, 40) || 'Ufq', phone, address: $('i-address').value.trim().slice(0, 80),
+      hours: $('i-hours').value.trim().slice(0, 60), telegram: tg };
+    try { await serial('site/info', () => db.doc('site/info').set({ ...next, updatedAt: Date.now() })); info = next; applyInfo(); infoForm(); $('info-toast').textContent = t('info_saved'); }
+    catch (x) { $('info-toast').textContent = t('save_fail', { code: (x && x.code) || '?' }); }
+  });
+
+  /* ---------- Owner: SEO (one text per language) ---------- */
+  function seoForm() {
+    const v = seoDraft[state.seoLang];
+    $('seo-title').value = v.title; $('seo-desc').value = v.description; $('seo-key').value = v.keyword; $('seo-keys').value = v.keywords;
+    $('seo-url').value = seoDraft.url || ''; $('seo-img').value = seoDraft.image || 'samarqand';
+    document.querySelectorAll('#seo-langs [data-sl]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.sl === state.seoLang)));
   }
+  function seoTake() {
+    seoDraft[state.seoLang] = { title: $('seo-title').value.trim(), description: $('seo-desc').value.trim(), keyword: $('seo-key').value.trim(), keywords: $('seo-keys').value.trim() };
+    seoDraft.url = $('seo-url').value.trim(); seoDraft.image = $('seo-img').value;
+  }
+  $('seo-langs').addEventListener('click', e => { const b = e.target.closest('[data-sl]'); if (!b) return; seoTake(); state.seoLang = b.dataset.sl; seoForm(); renderSeo(); });
   function renderSeo() {
-    const v = seoRead(), k = v.keyword.toLowerCase();
+    seoTake();
+    const v = seoDraft[state.seoLang], k = v.keyword.toLowerCase();
     const tl = v.title.length, dl = v.description.length, keys = v.keywords.split(',').map(s => s.trim()).filter(Boolean);
     const imgs = [...document.querySelectorAll('img')].filter(i => !i.hasAttribute('alt'));
     const checks = [
-      [tl >= 30 && tl <= 60, 'Sarlavha 30–60 belgi', `Hozir ${tl} belgi.`],
-      [dl >= 120 && dl <= 160, 'Tavsif 120–160 belgi', `Hozir ${dl} belgi.`],
-      [!!k && v.title.toLowerCase().includes(k), 'Asosiy kalit so‘z sarlavhada', k ? '' : 'Asosiy kalit so‘zni yozing.'],
-      [!!k && v.description.toLowerCase().includes(k), 'Asosiy kalit so‘z tavsifda', ''],
-      [keys.length >= 3 && keys.length <= 10, 'Qo‘shimcha kalit so‘zlar 3–10 ta', `Hozir ${keys.length} ta.`],
-      [/^https:\/\/[^\s.]+\.[^\s]+$/.test(v.url), 'Sayt manzili https bilan', v.url ? 'Manzil https:// bilan boshlansin.' : 'Domen olganingizda yozing.'],
-      [document.querySelectorAll('h1').length === 1, 'Sahifada bitta H1 sarlavha', ''],
-      [imgs.length === 0, 'Hamma rasmlarda alt matn', imgs.length ? imgs.length + ' ta rasmda yo‘q.' : '']
+      [tl >= 30 && tl <= 60, t('c_title'), t('h_chars', { n: tl })],
+      [dl >= 120 && dl <= 160, t('c_desc'), t('h_chars', { n: dl })],
+      [!!k && v.title.toLowerCase().includes(k), t('c_key_t'), k ? '' : t('h_keyword')],
+      [!!k && v.description.toLowerCase().includes(k), t('c_key_d'), ''],
+      [keys.length >= 3 && keys.length <= 10, t('c_keys'), t('h_count', { n: keys.length })],
+      [/^https:\/\/[^\s.]+\.[^\s]+$/.test(seoDraft.url), t('c_url'), seoDraft.url ? t('h_https') : t('h_domain')],
+      [document.querySelectorAll('h1').length === 1, t('c_h1'), ''],
+      [imgs.length === 0, t('c_alt'), imgs.length ? t('h_alt', { n: imgs.length }) : '']
     ];
     const ok = checks.filter(c => c[0]).length, pct = Math.round(ok / checks.length * 100);
     $('ring').style.setProperty('--p', pct);
     $('ring').style.setProperty('--ring', pct >= 80 ? 'var(--ok)' : pct >= 50 ? 'var(--warn)' : 'var(--bad)');
     $('ring-n').textContent = pct;
-    $('ring-t').textContent = ok + ' / ' + checks.length + ' talab bajarildi';
-    $('checks').innerHTML = checks.map(([pass, t, hint]) => `<li class="${pass ? '' : 'no'}"><span>${t}${!pass && hint ? `<em>${esc(hint)}</em>` : ''}</span></li>`).join('');
+    $('ring-t').textContent = t('score_sub', { ok, n: checks.length });
+    $('checks').innerHTML = checks.map(([pass, label, hint]) => `<li class="${pass ? '' : 'no'}"><span>${esc(label)}${!pass && hint ? `<em>${esc(hint)}</em>` : ''}</span></li>`).join('');
     $('c-title').textContent = tl + ' / 60'; $('c-title').classList.toggle('bad', tl > 60 || tl < 30);
     $('c-desc').textContent = dl + ' / 160'; $('c-desc').classList.toggle('bad', dl > 160 || dl < 120);
-    let host = 'sizning-domeningiz.uz'; try { if (v.url) host = new URL(v.url).host; } catch (e) {}
-    $('serp-url').textContent = host + ' › turlar';
-    $('serp-title').textContent = tl > 60 ? v.title.slice(0, 58) + '…' : v.title || 'Sarlavha yozilmagan';
-    $('serp-desc').textContent = dl > 160 ? v.description.slice(0, 157) + '…' : v.description || 'Tavsif yozilmagan';
-    $('og-img').src = 'img/k-' + v.image + '.jpg';
+    let host = 'example.uz'; try { if (seoDraft.url) host = new URL(seoDraft.url).host; } catch (e) {}
+    $('serp-url').textContent = host + ' › ' + state.seoLang;
+    $('serp-title').textContent = tl > 60 ? v.title.slice(0, 58) + '…' : v.title || t('no_title');
+    $('serp-desc').textContent = dl > 160 ? v.description.slice(0, 157) + '…' : v.description || t('no_desc');
+    $('og-img').src = 'img/k-' + (seoDraft.image || 'samarqand') + '.jpg';
     $('og-host').textContent = host; $('og-title').textContent = v.title;
   }
   $('seo-form').addEventListener('input', renderSeo);
+  $('seo-form').addEventListener('change', renderSeo);
   $('seo-form').addEventListener('submit', async e => {
     e.preventDefault();
-    if (!isOwner) return;
-    const v = seoRead();
-    try { await serial('site/seo', () => db.doc('site/seo').set({ ...v, updatedAt: Date.now() })); $('seo-toast').textContent = 'SEO sozlamalari saqlandi.'; }
-    catch (x) { $('seo-toast').textContent = 'Saqlab bo‘lmadi: ' + (x && x.code || 'xato'); }
+    if (!isOwner || !db) return;
+    seoTake();
+    try { await serial('site/seo', () => db.doc('site/seo').set({ ...seoDraft, updatedAt: Date.now() })); seo = JSON.parse(JSON.stringify(seoDraft)); applySeo(); $('seo-toast').textContent = t('seo_saved'); }
+    catch (x) { $('seo-toast').textContent = t('save_fail', { code: (x && x.code) || '?' }); }
   });
   $('seo-copy').addEventListener('click', () => {
-    const v = seoRead(), base = (v.url || 'https://sizning-domeningiz.uz').replace(/\/$/, ''), a = s => esc(s);
-    const ld = { '@context': 'https://schema.org', '@type': 'TravelAgency', name: 'Ufq', url: base, telephone: CONFIG.PHONE || undefined,
-      image: base + '/img/k-' + v.image + '.jpg', address: { '@type': 'PostalAddress', addressLocality: 'Toshkent', addressCountry: 'UZ' },
+    seoTake();
+    const v = seoDraft[state.seoLang], base = (seoDraft.url || 'https://example.uz').replace(/\/$/, ''), a = s => esc(s);
+    const ld = { '@context': 'https://schema.org', '@type': 'TravelAgency', name: info.name || 'Ufq', url: base, telephone: info.phone || undefined,
+      image: base + '/img/k-' + seoDraft.image + '.jpg', address: { '@type': 'PostalAddress', streetAddress: info.address || undefined, addressLocality: 'Toshkent', addressCountry: 'UZ' },
       openingHours: 'Mo-Su 09:00-21:00', areaServed: 'UZ' };
     const code = [
       `<title>${a(v.title)}</title>`,
       `<meta name="description" content="${a(v.description)}">`,
       `<meta name="keywords" content="${a([v.keyword, v.keywords].filter(Boolean).join(', '))}">`,
       `<link rel="canonical" href="${a(base)}/">`,
+      ...LANGS.map(l => `<link rel="alternate" hreflang="${l}" href="${a(base)}/?lang=${l}">`),
       `<meta property="og:type" content="website">`,
-      `<meta property="og:locale" content="uz_UZ">`,
       `<meta property="og:title" content="${a(v.title)}">`,
       `<meta property="og:description" content="${a(v.description)}">`,
       `<meta property="og:url" content="${a(base)}/">`,
-      `<meta property="og:image" content="${a(base)}/img/k-${a(v.image)}.jpg">`,
+      `<meta property="og:image" content="${a(base)}/img/k-${a(seoDraft.image)}.jpg">`,
       `<meta name="twitter:card" content="summary_large_image">`,
       `<script type="application/ld+json">${JSON.stringify(ld)}<\/script>`
     ].join('\n');
-    copy(code, $('seo-toast'), 'Meta teglar nusxalandi. Ularni saytingizning <head> qismiga joylang.');
+    copy(code, $('seo-toast'), t('meta_copied'));
   });
-  function applySeo() { document.title = seo.title; const m = document.querySelector('meta[name="description"]'); if (m) m.content = seo.description; }
+  function applySeo() {
+    const v = seo[lang] || seo.uz;
+    if (v && v.title) document.title = v.title;
+    const m = document.querySelector('meta[name="description"]'); if (m && v) m.content = v.description;
+  }
 
   /* ---------- Copy helper ---------- */
   function copy(text, toastEl, ok, selectEl) {
     const fail = () => {
       if (selectEl) { const r = document.createRange(); r.selectNodeContents(selectEl); const s = getSelection(); s.removeAllRanges(); s.addRange(r); }
-      if (toastEl) toastEl.textContent = 'Nusxalab bo‘lmadi. Matnni belgilab, qo‘lda nusxalang.';
+      if (toastEl) toastEl.textContent = t('copy_fail');
     };
     try { navigator.clipboard.writeText(text).then(() => { if (toastEl) toastEl.textContent = ok; }, fail); } catch (e) { fail(); }
   }
-  if (CONFIG.PHONE) {
-    $('phone').textContent = CONFIG.PHONE_TEXT;
-    $('phone').setAttribute('aria-label', 'Telefon raqamini nusxalash: ' + CONFIG.PHONE_TEXT);
-    $('tel-link').href = 'tel:' + CONFIG.PHONE;
-  } else {
-    $('phone').textContent = 'Raqam tez orada'; $('phone').disabled = true; $('phone').removeAttribute('aria-label');
-    $('tel-link').hidden = true; $('phone-hint').hidden = true;
-  }
-  $('phone').addEventListener('click', e => copy(CONFIG.PHONE, $('phone-toast'), 'Raqam nusxalandi: ' + CONFIG.PHONE_TEXT, e.currentTarget));
-
-  if (CONFIG.TELEGRAM) { $('tg-link').href = 'https://t.me/' + encodeURIComponent(CONFIG.TELEGRAM); $('tg-link').hidden = false; }
+  $('phone').addEventListener('click', e => { if (info.phone) copy(fmtPhone(info.phone), $('phone-toast'), t('phone_copied', { phone: fmtPhone(info.phone) }), e.currentTarget); });
 
   /* ---------- First paint ---------- */
-  fillSelects(); renderArcade(); renderChips(); renderPickrow(); renderLive(); renderMine(); seoForm(seo); renderSeo(); renderEdit();
+  function rerenderAll() { fillSelects(); renderArcade(); renderChips(); renderPickrow(); renderLive(); renderEdit(); renderMine(); }
+  applyStatic(); rerenderAll(); infoForm(); seoForm(); renderSeo();
   openTab('turlar');
 
-  /* ---------- Connect to the shared store ---------- */
-  function rerenderAll() { fillSelects(); renderArcade(); renderPickrow(); renderLive(); renderEdit(); renderMine(); }
+  /* ---------- Stores ---------- */
   function localStore() {
     const docs = new Map(), subs = [];
     const fire = () => subs.forEach(s => s());
@@ -1341,6 +1823,7 @@ td input { width: 120px; min-height: 38px; }
       collection: path => ({ onSnapshot: next => { const f = () => { const ds = [...docs.keys()].filter(k => k.startsWith(path + '/') && k.split('/').length === path.split('/').length + 1).map(snap); next({ docs: ds, size: ds.length, empty: !ds.length }); }; subs.push(f); setTimeout(f); return () => {}; } })
     };
   }
+
   /* GitHub Pages: bookings go to a Google Apps Script web app that writes them to a Google Sheet
      and messages the agency on Telegram. Each visitor's own bookings are remembered in this browser,
      and their status is read back from the sheet. */
@@ -1397,7 +1880,7 @@ td input { width: 120px; min-height: 38px; }
       uid = me.id; isAdmin = !!me.canEdit;
       isOwner = !!me.isOwner || await user.isOwner().catch(() => false);
       if (isOwner) isAdmin = true;
-      if (me.id) { $('me').hidden = false; $('me-img').src = me.avatarUrl; $('me-name').textContent = me.name || 'Siz'; }
+      if (me.id) { $('me').hidden = false; $('me-img').src = me.avatarUrl; $('me-name').textContent = me.name || t('me'); }
     }
     if (!db) { renderMine(); return; }
     if (uid) api = {
@@ -1409,12 +1892,24 @@ td input { width: 120px; min-height: 38px; }
       }),
       cancel: id => changeStatus(uid, id, 'bekor')
     };
-    const onErr =() => { $('dash-status').textContent = 'Ma’lumotlar bazasi bilan aloqa uzildi. Sahifani yangilang.'; };
+    const onErr = () => { $('dash-status').textContent = t('db_lost'); };
     db.doc('site/prices').onSnapshot(s => { prices = s.exists ? (s.data().tours || {}) : {}; rerenderAll(); }, onErr);
-    db.doc('site/seo').onSnapshot(s => { seo = { ...DEFAULT_SEO, ...(s.exists ? s.data() : {}) }; applySeo(); if (state.tab !== 'seo') { seoForm(seo); renderSeo(); } }, onErr);
+    db.doc('site/info').onSnapshot(s => {
+      if (s.exists) { const v = s.data(); info = { name: v.name || 'Ufq', phone: v.phone || '', address: v.address || '', hours: v.hours || '', telegram: v.telegram || '' }; }
+      applyInfo(); if (state.tab !== 'seo') infoForm();
+    }, onErr);
+    db.doc('site/seo').onSnapshot(s => {
+      const v = s.exists ? s.data() : {};
+      const merged = JSON.parse(JSON.stringify(DEFAULT_SEO));
+      if (v.title) merged.uz = { title: v.title, description: v.description || '', keyword: v.keyword || '', keywords: v.keywords || '' };  // older single-language save
+      LANGS.forEach(l => { if (v[l]) merged[l] = { ...merged[l], ...v[l] }; });
+      if (v.url != null) merged.url = v.url; if (v.image) merged.image = v.image;
+      seo = merged; applySeo();
+      if (state.tab !== 'seo') { seoDraft = JSON.parse(JSON.stringify(seo)); seoForm(); renderSeo(); }
+    }, onErr);
     if (uid) db.doc('bookings/' + uid).onSnapshot(s => { mine = s.exists ? (s.data().items || []) : []; renderMine(); }, onErr);
     renderMine();
-    // The SEO panel is for the artifact's owner alone, not for editors it is shared with
+    // The settings and SEO panel is for the artifact's owner alone, not for editors it is shared with
     document.querySelectorAll('[data-owner]').forEach(el => el.hidden = !isOwner);
     if (isAdmin) {
       document.querySelectorAll('[data-admin]').forEach(el => el.hidden = false);
