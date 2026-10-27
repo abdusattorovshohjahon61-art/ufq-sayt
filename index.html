@@ -197,6 +197,14 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .auth input { width: 100%; min-height: 46px; padding: 0 14px; border-radius: 12px; background: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.24); color: var(--glass-ink); }
 .gbtn { background: #fff; color: #1f1f1f; width: 100%; }
 @media (hover: hover) { .gbtn:hover { background: #f1f1f1; } }
+.auth__role { display: flex; width: 100%; }
+.auth__role button { flex: 1; min-height: 42px; font-size: var(--step-small); }
+.auth__claim { justify-self: start; background: none; border: 0; padding: 0; cursor: pointer; color: var(--glass-ink); font-size: var(--step-small); text-decoration-color: rgba(255, 255, 255, 0.4); }
+.staff { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.staff li { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-width: 0; padding: 10px 14px; border-radius: 12px; background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.12); }
+.staff span { min-width: 0; overflow-wrap: anywhere; }
+.staff small { display: block; color: var(--glass-muted); font-size: 12.5px; }
+.staff button { flex: none; background: none; border: 0; padding: 4px 0; cursor: pointer; color: var(--glass-ink); font-size: var(--step-small); text-decoration: underline; text-decoration-color: rgba(255, 255, 255, 0.4); }
 .auth__or { display: flex; align-items: center; gap: 12px; font-size: var(--step-small); color: var(--glass-muted); }
 .auth__or::before, .auth__or::after { content: ""; flex: 1; height: 1px; background: rgba(255, 255, 255, 0.2); }
 .auth__links { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; font-size: var(--step-small); }
@@ -784,6 +792,7 @@ td input { width: 120px; min-height: 38px; }
             <div class="seg seg--sub" role="group" id="set-tabs" data-i-al="set_al" aria-label="Sozlamalar bo‘limi">
               <button type="button" data-set="info" aria-pressed="true" data-i="set_info">Agentlik ma’lumotlari</button>
               <button type="button" data-set="seo" aria-pressed="false" data-i="set_seo">SEO</button>
+              <button type="button" data-set="staff" aria-pressed="false" data-i="set_staff" data-chief hidden>Adminlar</button>
             </div>
 
             <div class="setgrid" id="set-info">
@@ -810,6 +819,18 @@ td input { width: 120px; min-height: 38px; }
                 </div>
                 <p class="note" data-i="pv_note"></p>
               </aside>
+            </div>
+
+            <div class="setgrid" id="set-staff" hidden>
+              <section class="setcard">
+                <header class="setcard__head"><h4 data-i="staff_h">Panelga kira oladiganlar</h4><p data-i="staff_sub"></p></header>
+                <ul class="staff" id="staff-list"></ul>
+                <form class="form" id="staff-form" novalidate>
+                  <div class="field full"><label for="staff-email" data-i="staff_email">Yangi admin emaili</label><input id="staff-email" type="email" maxlength="120" placeholder="ism@gmail.com" autocomplete="off"></div>
+                  <p class="err full" id="staff-err" role="alert"></p>
+                  <div class="full setcard__foot"><button class="btn" type="submit" id="staff-add" data-i="staff_add">Admin qo‘shish</button><p class="toast" id="staff-toast" role="status"></p></div>
+                </form>
+              </section>
             </div>
 
             <div class="setgrid" id="set-seo" hidden>
@@ -917,6 +938,8 @@ td input { width: 120px; min-height: 38px; }
 <dialog class="viewer authd" id="auth" aria-labelledby="auth-h">
   <div class="auth" id="auth-out">
     <h3 id="auth-h" data-i="auth_in_h">Kabinetga kirish</h3>
+    <div class="seg auth__role" role="group" id="a-role" data-i-al="role_al" aria-label="Kim sifatida kirasiz"><button type="button" data-role="client" aria-pressed="true" data-i="role_client">Mijoz</button><button type="button" data-role="admin" aria-pressed="false" data-i="role_admin">Admin</button></div>
+    <p class="auth__why" id="a-role-note" hidden data-i="role_note">Agentlik egasi bir marta ro‘yxatdan o‘tadi. Keyin admin bo‘lib faqat u ruxsat bergan odamlar kira oladi.</p>
     <p class="auth__why" id="auth-why" hidden></p>
     <button class="btn gbtn" type="button" id="auth-google"><svg viewBox="0 0 48 48" width="20" height="20" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9 3.5l6.7-6.7C35.6 2.4 30.2 0 24 0 14.6 0 6.6 5.4 2.7 13.3l7.8 6C12.4 13.6 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.7c-.6 3-2.3 5.5-4.8 7.2l7.5 5.8c4.4-4 7.1-10 7.1-17.5z"/><path fill="#FBBC05" d="M10.5 28.7c-.5-1.5-.8-3-.8-4.7s.3-3.2.8-4.7l-7.8-6C1 16.6 0 20.2 0 24s1 7.4 2.7 10.7l7.8-6z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.5-5.8c-2.1 1.4-4.8 2.3-8.4 2.3-6.3 0-11.6-4.1-13.5-9.8l-7.8 6C6.6 42.6 14.6 48 24 48z"/></svg><span data-i="auth_google">Google bilan kirish</span></button>
     <div class="auth__or"><span data-i="auth_or">yoki</span></div>
@@ -932,7 +955,9 @@ td input { width: 120px; min-height: 38px; }
   <div class="auth" id="auth-in" hidden>
     <h3 id="a-me-name"></h3>
     <p class="auth__why" id="a-me-mail"></p>
-    <p class="auth__why" id="a-me-role" hidden data-i="admin_role">Siz agentlik adminisiz: kelgan bronlar, narxlar va SEO sizga ochiq.</p>
+    <p class="auth__why" id="a-me-role" hidden></p>
+    <p class="auth__why" id="a-claim" role="status" hidden></p>
+    <button type="button" class="link auth__claim" id="a-claim-btn" data-i="claim_btn" hidden>Men agentlik egasiman: admin bo‘lish</button>
     <div id="a-verify" hidden><p class="auth__why" id="a-verify-t"></p><button type="button" class="link" id="a-resend" data-i="auth_resend">Xatni qayta yuborish</button></div>
     <div class="ctrls"><button class="btn" type="button" id="a-mine" data-i="see_mine">Bronlarim</button><button class="btn btn--ghost" type="button" id="a-out" data-i="logout">Chiqish</button></div>
   </div>
@@ -982,9 +1007,18 @@ td input { width: 120px; min-height: 38px; }
       auth_err_domain: 'Bu sayt manzili Firebase’da hali ruxsat etilmagan.', auth_err_off: 'Bu kirish usuli hali yoqilmagan.', auth_err: 'Kirib bo‘lmadi. Qayta urinib ko‘ring.',
       mine_login: 'Bronlaringiz kabinetingizda saqlanadi. Ko‘rish uchun kiring: istalgan telefon yoki kompyuterdan ham ko‘rinadi.',
       admin_role: 'Siz agentlik adminisiz: kelgan bronlar, narxlar va SEO sizga ochiq.',
-      auth_admin: 'Admin kirishi. Agentlik Gmail’i bilan kiring: “Google bilan kirish” yoki email va parol.',
       auth_verify: 'Email hali tasdiqlanmagan. {email} manziliga xat yubordik: undagi havolani bosing va shu sahifaga qayting. Xat “Spam” papkasiga ham tushishi mumkin.',
       auth_resend: 'Xatni qayta yuborish', auth_resent: 'Xat qayta yuborildi.',
+      role_al: 'Kim sifatida kirasiz', role_client: 'Mijoz', role_admin: 'Admin',
+      role_note: 'Agentlik egasi bir marta ro‘yxatdan o‘tadi. Keyin admin bo‘lib faqat u ruxsat bergan odamlar kira oladi.',
+      chief_role: 'Siz agentlik egasisiz: bronlar, narxlar, SEO va adminlar ro‘yxati sizda.', claim_btn: 'Men agentlik egasiman: admin bo‘lish',
+      owner_new: 'Siz agentlik egasi bo‘ldingiz. Endi boshqa hech kim o‘zini admin qila olmaydi: adminlarni faqat siz qo‘shasiz.',
+      owner_taken: 'Admin allaqachon ro‘yxatdan o‘tgan, siz mijoz sifatida kirdingiz. Admin sizni qo‘shgan bo‘lsa, shu email bilan Google orqali kiring yoki emailni tasdiqlang.',
+      owner_fail: 'Admin bo‘lib bo‘lmadi. Internetni tekshirib, qayta urinib ko‘ring.',
+      set_staff: 'Adminlar', staff_h: 'Panelga kira oladiganlar', staff_sub: 'Ko‘pi bilan 4 kishi. Ular shu email bilan saytda ro‘yxatdan o‘tib, emailini tasdiqlasa yoki Google bilan kirsa, panel ochiladi.',
+      staff_email: 'Yangi admin emaili', staff_add: 'Admin qo‘shish', staff_remove: 'Olib tashlash', staff_owner: 'Egasi (siz)', staff_admin: 'Admin',
+      staff_full: 'Ko‘pi bilan 4 ta admin. Yangisini qo‘shish uchun birini olib tashlang.', staff_bad: 'Emailni to‘g‘ri yozing.', staff_dup: 'Bu email ro‘yxatda bor.',
+      staff_self: 'Bu sizning emailingiz: siz allaqachon egasisiz.', staff_saved: 'Saqlandi.', staff_fail: 'Saqlab bo‘lmadi ({code}).', staff_none: 'Hozircha qo‘shilgan admin yo‘q.',
       notif_on: 'Brauzer xabarnomalarini yoqish', notif_ok: 'Xabarnomalar yoqildi: sahifa ochiq tursa, yangi bron haqida kompyuter yoki telefon xabar beradi.',
       seo_btn_al: 'SEO va sozlamalar', lang_label: 'Til', mode_day: 'Kun', mode_night: 'Tun', mode_to_day: 'Kun rejimiga o‘tish', mode_to_night: 'Tun rejimiga o‘tish',
       h1a: 'O‘zbekiston bo‘ylab', h1b: 'sayohatlar',
@@ -1084,9 +1118,18 @@ td input { width: 120px; min-height: 38px; }
       auth_err_domain: 'Адрес этого сайта ещё не разрешён в Firebase.', auth_err_off: 'Этот способ входа ещё не включён.', auth_err: 'Не удалось войти. Попробуйте ещё раз.',
       mine_login: 'Ваши брони хранятся в личном кабинете. Войдите, чтобы их увидеть: они доступны с любого телефона или компьютера.',
       admin_role: 'Вы администратор агентства: вам открыты входящие брони, цены и SEO.',
-      auth_admin: 'Вход администратора. Войдите через Gmail агентства: «Войти через Google» или email и пароль.',
       auth_verify: 'Email ещё не подтверждён. Мы отправили письмо на {email}: нажмите ссылку в нём и вернитесь на эту страницу. Письмо может попасть в «Спам».',
       auth_resend: 'Отправить письмо ещё раз', auth_resent: 'Письмо отправлено ещё раз.',
+      role_al: 'Кто вы', role_client: 'Клиент', role_admin: 'Админ',
+      role_note: 'Владелец агентства регистрируется один раз. Потом админами могут быть только те, кого он добавит.',
+      chief_role: 'Вы владелец агентства: брони, цены, SEO и список админов у вас.', claim_btn: 'Я владелец агентства: стать админом',
+      owner_new: 'Вы стали владельцем агентства. Теперь никто другой не сможет сделать себя админом: админов добавляете только вы.',
+      owner_taken: 'Админ уже зарегистрирован, вы вошли как клиент. Если админ добавил вас, войдите с этим email через Google или подтвердите email.',
+      owner_fail: 'Не получилось стать админом. Проверьте интернет и попробуйте ещё раз.',
+      set_staff: 'Админы', staff_h: 'Кто может входить в панель', staff_sub: 'Не больше 4 человек. Панель откроется, когда они зарегистрируются с этим email и подтвердят его или войдут через Google.',
+      staff_email: 'Email нового админа', staff_add: 'Добавить админа', staff_remove: 'Убрать', staff_owner: 'Владелец (вы)', staff_admin: 'Админ',
+      staff_full: 'Не больше 4 админов. Чтобы добавить нового, уберите одного.', staff_bad: 'Введите правильный email.', staff_dup: 'Этот email уже в списке.',
+      staff_self: 'Это ваш email: вы уже владелец.', staff_saved: 'Сохранено.', staff_fail: 'Не удалось сохранить ({code}).', staff_none: 'Пока админов не добавлено.',
       notif_on: 'Включить уведомления браузера', notif_ok: 'Уведомления включены: пока страница открыта, о новой брони сообщит компьютер или телефон.',
       seo_btn_al: 'SEO и настройки', lang_label: 'Язык', mode_day: 'День', mode_night: 'Ночь', mode_to_day: 'Включить дневной режим', mode_to_night: 'Включить ночной режим',
       h1a: 'Путешествия по', h1b: 'Узбекистану',
@@ -1186,9 +1229,18 @@ td input { width: 120px; min-height: 38px; }
       auth_err_domain: 'This site address isn’t allowed in Firebase yet.', auth_err_off: 'This sign-in method isn’t turned on yet.', auth_err: 'Couldn’t sign in. Try again.',
       mine_login: 'Your bookings live in your account. Sign in to see them from any phone or computer.',
       admin_role: 'You’re the agency admin: incoming bookings, prices and SEO are open to you.',
-      auth_admin: 'Admin sign-in. Use the agency’s Gmail: “Sign in with Google” or email and password.',
       auth_verify: 'Your email isn’t confirmed yet. We sent a message to {email}: open the link in it and come back to this page. Check Spam too.',
       auth_resend: 'Send the email again', auth_resent: 'Sent again.',
+      role_al: 'Signing in as', role_client: 'Customer', role_admin: 'Admin',
+      role_note: 'The agency owner registers once. After that only people the owner adds can be admins.',
+      chief_role: 'You own the agency: bookings, prices, SEO and the admin list are yours.', claim_btn: 'I own the agency: become admin',
+      owner_new: 'You’re now the agency owner. Nobody else can make themselves admin: only you add admins.',
+      owner_taken: 'An admin is already registered, so you’re signed in as a customer. If the admin added you, sign in with that email through Google or confirm your email.',
+      owner_fail: 'Couldn’t make you admin. Check the connection and try again.',
+      set_staff: 'Admins', staff_h: 'Who can open the panel', staff_sub: 'Up to 4 people. The panel opens for them once they register with that email and confirm it, or sign in with Google.',
+      staff_email: 'New admin’s email', staff_add: 'Add admin', staff_remove: 'Remove', staff_owner: 'Owner (you)', staff_admin: 'Admin',
+      staff_full: 'Up to 4 admins. Remove one to add another.', staff_bad: 'Enter a valid email.', staff_dup: 'That email is already on the list.',
+      staff_self: 'That’s your own email: you’re already the owner.', staff_saved: 'Saved.', staff_fail: 'Couldn’t save ({code}).', staff_none: 'No admins added yet.',
       notif_on: 'Turn on browser notifications', notif_ok: 'Notifications are on: while the page is open, your computer or phone will tell you about new bookings.',
       seo_btn_al: 'SEO & settings', lang_label: 'Language', mode_day: 'Day', mode_night: 'Night', mode_to_day: 'Switch to day mode', mode_to_night: 'Switch to night mode',
       h1a: 'Travel across', h1b: 'Uzbekistan',
@@ -1416,7 +1468,7 @@ td input { width: 120px; min-height: 38px; }
     if (!LANGS.includes(l) || l === lang) return;
     lang = l; state.seoLang = l;
     try { localStorage.setItem('ufq-lang', l); } catch (e) {}
-    applyStatic(); rerenderAll(); renderAdmin(); seoForm(); renderSeo(); renderInfoPreview(); renderAuth();
+    applyStatic(); rerenderAll(); renderAdmin(); seoForm(); renderSeo(); renderInfoPreview(); renderAuth(); renderStaff();
     $('panel-title').textContent = panelTitle(state.tab);
   }
   const panelTitle = tab => t(I18N.uz['title_' + tab] ? 'title_' + tab : 'tab_' + tab);
@@ -1671,7 +1723,7 @@ td input { width: 120px; min-height: 38px; }
     if (name.length < 2) { err.textContent = t('err_name'); $('b-name').focus(); return; }
     if (!phoneOk(phone)) { err.textContent = t('err_phone'); $('b-phone').focus(); return; }
     // On the public site a booking belongs to an account: sign in first, then the form sends itself
-    if (fb && !fb.user) { pendingBook = true; openAuth(t('auth_need')); return; }
+    if (fb && !fb.user) { pendingBook = true; openAuth(t('auth_need'), 'client'); return; }
     const b = { id: 'UFQ-' + Date.now().toString(36).slice(-5).toUpperCase(), tour: c.d.id, tourName: TT.uz[c.d.id][0], date, nights: c.n,
       adults: c.ad, kids: c.kd, total: Math.round(c.total), name, phone, note: $('b-note').value.trim().slice(0, 400),
       lang, status: 'yangi', createdAt: Date.now() };
@@ -1882,7 +1934,38 @@ td input { width: 120px; min-height: 38px; }
   $('set-tabs').addEventListener('click', e => {
     const b = e.target.closest('[data-set]'); if (!b) return;
     document.querySelectorAll('#set-tabs [data-set]').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
-    $('set-info').hidden = b.dataset.set !== 'info'; $('set-seo').hidden = b.dataset.set !== 'seo';
+    $('set-info').hidden = b.dataset.set !== 'info'; $('set-seo').hidden = b.dataset.set !== 'seo'; $('set-staff').hidden = b.dataset.set !== 'staff';
+  });
+
+  /* ---------- Owner: who else may open the panel (up to 4 people, by email) ---------- */
+  const okEmail = v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+  function renderStaff() {
+    const box = $('staff-list'), o = fb && fb.owner;
+    if (!o) { box.innerHTML = ''; return; }
+    const list = o.staff || [];
+    box.innerHTML = `<li><span>${esc(o.email || '')}<small>${esc(t('staff_owner'))}</small></span></li>` + (list.length
+      ? list.map(m => `<li><span>${esc(m)}<small>${esc(t('staff_admin'))}</small></span><button type="button" data-unstaff="${esc(m)}">${esc(t('staff_remove'))}</button></li>`).join('')
+      : `<li><span class="hint">${esc(t('staff_none'))}</span></li>`);
+  }
+  async function saveStaff(list) {
+    $('staff-toast').textContent = ''; $('staff-err').textContent = '';
+    try { await fb.F.updateDoc(fb.F.doc(fb.fs, 'config', 'owner'), { staff: list, updatedAt: Date.now() }); $('staff-toast').textContent = t('staff_saved'); return true; }
+    catch (x) { $('staff-err').textContent = t('staff_fail', { code: (x && x.code) || '?' }); return false; }
+  }
+  $('staff-form').addEventListener('submit', async e => {
+    e.preventDefault();
+    if (!fb || !fb.chief || !fb.owner) return;
+    const v = $('staff-email').value.trim().toLowerCase(), list = fb.owner.staff || [];
+    const bad = k => { $('staff-err').textContent = t(k); $('staff-toast').textContent = ''; $('staff-email').focus(); };
+    if (!okEmail(v)) return bad('staff_bad');
+    if (v === (fb.owner.email || '').toLowerCase()) return bad('staff_self');
+    if (list.includes(v)) return bad('staff_dup');
+    if (list.length >= 4) return bad('staff_full');
+    if (await saveStaff([...list, v])) $('staff-email').value = '';
+  });
+  $('staff-list').addEventListener('click', e => {
+    const b = e.target.closest('[data-unstaff]');
+    if (b && fb && fb.chief && fb.owner) saveStaff((fb.owner.staff || []).filter(m => m !== b.dataset.unstaff));
   });
   function infoForm() {
     $('i-name').value = info.name || ''; $('i-phone').value = info.phone ? fmtPhone(info.phone) : '';
@@ -2091,6 +2174,7 @@ td input { width: 120px; min-height: 38px; }
   function showAdmin(on) {
     document.querySelectorAll('[data-owner]').forEach(el => el.hidden = !(on && isOwner));
     document.querySelectorAll('[data-admin]').forEach(el => el.hidden = !on);
+    document.querySelectorAll('[data-chief]').forEach(el => el.hidden = !(on && fb && fb.chief));
     $('bell').hidden = !on;
     if (!on && ['bronlar', 'tahrir', 'seo'].includes(state.tab)) openTab('turlar');
     if (on && isOwner && /^#(admin|seo|sozlamalar)$/.test(location.hash)) {   // direct links for the owner
@@ -2106,7 +2190,7 @@ td input { width: 120px; min-height: 38px; }
     const [appM, A, F] = await Promise.all([import(V + 'firebase-app.js'), import(V + 'firebase-auth.js'), import(V + 'firebase-firestore.js')]);
     const app = appM.initializeApp(CONFIG.FIREBASE);
     const auth = A.getAuth(app), fs = F.getFirestore(app);
-    fb = { A, F, auth, fs, user: null, subs: [] };
+    fb = { A, F, auth, fs, user: null, subs: [], chief: false, owner: null, claimMsg: null, wantAdmin: false };
     // The same doc()/onSnapshot() surface the claude.ai store offers, for the shared site documents
     const wrap = s => ({ id: s.id, exists: s.exists(), data: () => s.data(), metadata: s.metadata });
     db = { doc: path => { const r = F.doc(fs, path); return {
@@ -2118,7 +2202,7 @@ td input { width: 120px; min-height: 38px; }
     A.onAuthStateChanged(auth, async u => {
       fb.subs.forEach(stop => stop()); fb.subs = [];
       fb.user = u; uid = u ? u.uid : null; mine = []; all = []; seen = null;
-      isAdmin = isOwner = false; fb.adminOn = false; showAdmin(false);
+      isAdmin = isOwner = false; fb.adminOn = false; fb.chief = false; fb.owner = null; fb.claimMsg = null; showAdmin(false); renderStaff();
       api = u ? {
         save: async b => {
           await F.setDoc(F.doc(fs, 'bookings', b.id), { ...b, uid: u.uid });
@@ -2141,11 +2225,13 @@ td input { width: 120px; min-height: 38px; }
       if (needsVerify(u) && !recentlySent(u)) sendVerify(u).catch(() => {});
       await checkAdmin(u);
       if (fb.user !== u) return;
+      // Signed in with “Admin” chosen: an admin goes to the panel, anyone else tries to become the owner
+      if (wantAdmin()) { wantAdmin(false); if (isAdmin) goKabinet('bronlar'); else await claimOwner(u); return; }
       if (pendingBook) { pendingBook = false; closeAuth(); openTab('bron'); $('book-form').requestSubmit(); }
-      else if (!isAdmin && adminLink()) openAuth(t('auth_admin'));
+      else if (!isAdmin && adminLink()) openAuth('', 'admin');
     });
     // The admin link (…/#admin) opens the sign-in straight away for someone who is not signed in yet
-    auth.authStateReady().then(() => { if (!auth.currentUser && adminLink()) openAuth(t('auth_admin')); });
+    auth.authStateReady().then(() => { if (!auth.currentUser && adminLink()) openAuth('', 'admin'); });
 
     async function checkAdmin(u) {
       // Only the agency's admin accounts may read this document (see firestore.rules)
@@ -2153,7 +2239,15 @@ td input { width: 120px; min-height: 38px; }
       if (fb.user !== u) return;
       renderAuth();
       if (isAdmin && !fb.adminOn) {
-        fb.adminOn = true; showAdmin(true);
+        fb.adminOn = true;
+        // The owner document says who runs the agency (and manages admins) and who was added
+        fb.subs.push(F.onSnapshot(F.doc(fs, 'config', 'owner'), s => {
+          fb.owner = s.exists() ? s.data() : null; fb.chief = !!fb.owner && fb.owner.uid === u.uid;
+          document.querySelectorAll('[data-chief]').forEach(el => el.hidden = !fb.chief);
+          if (!fb.chief && !$('set-staff').hidden) document.querySelector('#set-tabs [data-set="info"]').click();
+          renderStaff(); renderAuth();
+        }, () => {}));
+        showAdmin(true);
         fb.subs.push(F.onSnapshot(F.query(F.collection(fs, 'bookings'), F.orderBy('createdAt', 'desc'), F.limit(500)), qs =>
           onBookings({ docs: qs.docs.map(d => ({ id: d.id, data: () => ({ items: [d.data()] }) })), metadata: qs.metadata }), onErr));
         $('notif-btn').hidden = !('Notification' in window) || Notification.permission === 'granted';
@@ -2169,10 +2263,28 @@ td input { width: 120px; min-height: 38px; }
       await u.getIdToken(true);
       renderAuth(); checkAdmin(u);
     }
+    // The agency's first admin claims config/owner; once it exists the rules refuse every other claim
+    async function claimOwner(u) {
+      try {
+        await F.setDoc(F.doc(fs, 'config', 'owner'), { uid: u.uid, email: (u.email || '').toLowerCase().slice(0, 120), staff: [], createdAt: Date.now() });
+      } catch (e) {
+        if (fb.user !== u) return;
+        fb.claimMsg = e && e.code === 'permission-denied' ? 'owner_taken' : 'owner_fail'; renderAuth(); openAuth(); return;
+      }
+      await checkAdmin(u);
+      if (fb.user === u && isAdmin) { closeAuth(); goKabinet('bronlar'); $('admin-toast').textContent = t('owner_new'); }
+    }
+    fb.claim = () => fb.user && claimOwner(fb.user);
     addEventListener('focus', recheck);
     document.addEventListener('visibilitychange', () => { if (!document.hidden) recheck(); });
   }
   const adminLink = () => /^#(admin|seo|sozlamalar)$/.test(location.hash);
+  // “Admin” chosen in the dialog survives a Google redirect, so it lives in sessionStorage until the sign-in lands
+  function wantAdmin(v) {
+    if (v === undefined) { try { return sessionStorage.getItem('ufq-want-admin') === '1'; } catch (e) { return !!(fb && fb.wantAdmin); } }
+    if (fb) fb.wantAdmin = !!v;
+    try { if (v) sessionStorage.setItem('ufq-want-admin', '1'); else sessionStorage.removeItem('ufq-want-admin'); } catch (e) {}
+  }
   const needsVerify = u => !!(u && u.email && !u.emailVerified && u.providerData.some(p => p.providerId === 'password'));
   const recentlySent = u => { try { return !!localStorage.getItem('ufq-verify-' + u.uid); } catch (e) { return false; } };   // more only by the button
   async function sendVerify(u) {
@@ -2194,7 +2306,16 @@ td input { width: 120px; min-height: 38px; }
     $('a-pass').autocomplete = m === 'up' ? 'new-password' : 'current-password';
     $('a-err').textContent = '';
   }
-  function openAuth(why) {
+  // Customer or admin: the admin side explains that the owner registers once and then hands out access
+  let authRole = 'client';
+  function setAuthRole(r) {
+    authRole = r;
+    document.querySelectorAll('#a-role [data-role]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.role === r)));
+    $('a-role-note').hidden = r !== 'admin';
+  }
+  $('a-role').addEventListener('click', e => { const b = e.target.closest('[data-role]'); if (b) setAuthRole(b.dataset.role); });
+  function openAuth(why, role) {
+    if (role) setAuthRole(role);
     $('auth-why').textContent = why || ''; $('auth-why').hidden = !why;
     renderAuth();
     if (authD.showModal) { if (!authD.open) authD.showModal(); } else authD.setAttribute('open', '');
@@ -2208,7 +2329,9 @@ td input { width: 120px; min-height: 38px; }
       btn.querySelector('span').removeAttribute('data-i'); btn.querySelector('span').textContent = name;
       btn.setAttribute('aria-label', name);
       $('a-me-name').textContent = name; $('a-me-mail').textContent = u.email || '';
-      $('a-me-role').hidden = !isAdmin;
+      $('a-me-role').hidden = !isAdmin; $('a-me-role').textContent = t(fb.chief ? 'chief_role' : 'admin_role');
+      $('a-claim').hidden = !fb.claimMsg; $('a-claim').textContent = fb.claimMsg ? t(fb.claimMsg) : '';
+      $('a-claim-btn').hidden = isAdmin || !adminLink() || fb.claimMsg === 'owner_taken';
       $('a-verify').hidden = !needsVerify(u); $('a-verify-t').textContent = t('auth_verify', { email: u.email || '' });
     } else {
       btn.querySelector('span').dataset.i = 'login'; btn.querySelector('span').textContent = t('login');
@@ -2233,12 +2356,14 @@ td input { width: 120px; min-height: 38px; }
   $('auth-google').addEventListener('click', async () => {
     if (!fb) return;
     $('a-err').textContent = '';
+    wantAdmin(authRole === 'admin');
     try {
       fb.auth.languageCode = lang;
       await fb.A.signInWithPopup(fb.auth, new fb.A.GoogleAuthProvider());
       if (!pendingBook) closeAuth();
     } catch (e) {
       if (e && e.code === 'auth/popup-blocked') { fb.A.signInWithRedirect(fb.auth, new fb.A.GoogleAuthProvider()); return; }
+      wantAdmin(false);
       $('a-err').textContent = authError(e);
     }
   });
@@ -2249,6 +2374,7 @@ td input { width: 120px; min-height: 38px; }
     $('a-err').textContent = '';
     if (authMode === 'up' && name.length < 2) { $('a-err').textContent = t('auth_err_name'); $('a-name').focus(); return; }
     const btn = $('a-submit'); btn.disabled = true;
+    wantAdmin(authRole === 'admin');
     try {
       if (authMode === 'up') {
         const cred = await fb.A.createUserWithEmailAndPassword(fb.auth, email, pass);
@@ -2259,7 +2385,7 @@ td input { width: 120px; min-height: 38px; }
       }
       $('a-pass').value = '';
       if (!pendingBook) closeAuth();
-    } catch (x) { $('a-err').textContent = authError(x); }
+    } catch (x) { wantAdmin(false); $('a-err').textContent = authError(x); }
     finally { btn.disabled = false; }
   });
   $('a-forgot').addEventListener('click', async () => {
@@ -2271,6 +2397,11 @@ td input { width: 120px; min-height: 38px; }
   });
   $('a-out').addEventListener('click', async () => { closeAuth(); if (fb) await fb.A.signOut(fb.auth); });
   $('a-mine').addEventListener('click', () => { closeAuth(); goKabinet('mening'); });
+  $('a-claim-btn').addEventListener('click', async () => {
+    if (!fb || !fb.claim) return;
+    $('a-claim-btn').disabled = true;
+    try { await fb.claim(); } finally { $('a-claim-btn').disabled = false; }
+  });
   $('a-resend').addEventListener('click', async () => {
     const b = $('a-resend'); if (!fb || !fb.user) return;
     b.disabled = true;
