@@ -658,8 +658,8 @@ td input { width: 120px; min-height: 38px; }
         </ul>
       </div>
       <div class="hero__arches">
-        <figure class="arch arch--big"><img src="img/samarqand.jpg" width="1200" height="1800" data-i-alt="alt_skd" alt="Samarqand: Registon maydonidagi Tillakori madrasasi"></figure>
-        <figure class="arch arch--small"><img src="img/buxoro.jpg" width="1200" height="1800" data-i-alt="alt_bhk" alt="Buxoro: Poi Kalon majmuasidagi koshinli gumbaz"></figure>
+        <figure class="arch arch--big"><img src="img/samarqand.webp" width="720" height="1080" fetchpriority="high" decoding="async" data-i-alt="alt_skd" alt="Samarqand: Registon maydonidagi Tillakori madrasasi"></figure>
+        <figure class="arch arch--small"><img src="img/buxoro.webp" width="720" height="1080" decoding="async" data-i-alt="alt_bhk" alt="Buxoro: Poi Kalon majmuasidagi koshinli gumbaz"></figure>
       </div>
     </div>
     <div class="ikat" aria-hidden="true"></div>
@@ -674,7 +674,7 @@ td input { width: 120px; min-height: 38px; }
   </section>
 
   <section class="kabinet" id="kabinet" aria-labelledby="kab-h">
-    <img class="kabinet__bg" src="img/xiva-naqsh.jpg" width="2400" height="1350" loading="lazy" alt="">
+    <img class="kabinet__bg" src="img/xiva-naqsh.webp" width="1600" height="900" loading="lazy" alt="">
     <div class="wrap">
       <div class="kabinet__head">
         <h2 id="kab-h" data-i="kab_h">Sayohat kabineti</h2>
@@ -739,7 +739,7 @@ td input { width: 120px; min-height: 38px; }
                 <div class="full"><button class="btn" type="submit" id="b-submit" data-i="b_submit">Bronni yuborish</button></div>
               </form>
               <aside class="summary" aria-live="polite">
-                <button class="zoom" type="button" id="sum-zoom" data-zoom="skd" data-i-al="zoom_al" aria-label="Rasmni kattalashtirish"><img id="sum-img" src="img/k-samarqand.jpg" width="960" height="720" alt=""><span data-i="zoom">Kattalashtirish</span></button>
+                <button class="zoom" type="button" id="sum-zoom" data-zoom="skd" data-i-al="zoom_al" aria-label="Rasmni kattalashtirish"><img id="sum-img" src="img/k-samarqand.webp" width="640" height="480" alt=""><span data-i="zoom">Kattalashtirish</span></button>
                 <div><b id="sum-name" style="font:600 1.3rem/1.2 var(--display)">Samarqand</b><div class="tour__meta" id="sum-how"></div></div>
                 <dl>
                   <div><dt data-i="sum_pp">Kishi boshiga</dt><dd class="num" id="sum-per"></dd></div>
@@ -902,7 +902,7 @@ td input { width: 120px; min-height: 38px; }
 
 <dialog class="viewer" id="viewer" aria-labelledby="v-name">
   <div class="viewer__in">
-    <img id="v-img" alt="" width="1200" height="1800">
+    <img id="v-img" alt="" width="720" height="1080">
     <div class="viewer__body">
       <h3 id="v-name"></h3>
       <div class="tour__meta" id="v-meta"></div>
@@ -933,6 +933,7 @@ td input { width: 120px; min-height: 38px; }
     <h3 id="a-me-name"></h3>
     <p class="auth__why" id="a-me-mail"></p>
     <p class="auth__why" id="a-me-role" hidden data-i="admin_role">Siz agentlik adminisiz: kelgan bronlar, narxlar va SEO sizga ochiq.</p>
+    <div id="a-verify" hidden><p class="auth__why" id="a-verify-t"></p><button type="button" class="link" id="a-resend" data-i="auth_resend">Xatni qayta yuborish</button></div>
     <div class="ctrls"><button class="btn" type="button" id="a-mine" data-i="see_mine">Bronlarim</button><button class="btn btn--ghost" type="button" id="a-out" data-i="logout">Chiqish</button></div>
   </div>
   <button class="viewer__x" type="button" id="auth-x" data-i-al="close" aria-label="Yopish">×</button>
@@ -981,6 +982,9 @@ td input { width: 120px; min-height: 38px; }
       auth_err_domain: 'Bu sayt manzili Firebase’da hali ruxsat etilmagan.', auth_err_off: 'Bu kirish usuli hali yoqilmagan.', auth_err: 'Kirib bo‘lmadi. Qayta urinib ko‘ring.',
       mine_login: 'Bronlaringiz kabinetingizda saqlanadi. Ko‘rish uchun kiring: istalgan telefon yoki kompyuterdan ham ko‘rinadi.',
       admin_role: 'Siz agentlik adminisiz: kelgan bronlar, narxlar va SEO sizga ochiq.',
+      auth_admin: 'Admin kirishi. Agentlik Gmail’i bilan kiring: “Google bilan kirish” yoki email va parol.',
+      auth_verify: 'Email hali tasdiqlanmagan. {email} manziliga xat yubordik: undagi havolani bosing va shu sahifaga qayting. Xat “Spam” papkasiga ham tushishi mumkin.',
+      auth_resend: 'Xatni qayta yuborish', auth_resent: 'Xat qayta yuborildi.',
       notif_on: 'Brauzer xabarnomalarini yoqish', notif_ok: 'Xabarnomalar yoqildi: sahifa ochiq tursa, yangi bron haqida kompyuter yoki telefon xabar beradi.',
       seo_btn_al: 'SEO va sozlamalar', lang_label: 'Til', mode_day: 'Kun', mode_night: 'Tun', mode_to_day: 'Kun rejimiga o‘tish', mode_to_night: 'Tun rejimiga o‘tish',
       h1a: 'O‘zbekiston bo‘ylab', h1b: 'sayohatlar',
@@ -1080,6 +1084,9 @@ td input { width: 120px; min-height: 38px; }
       auth_err_domain: 'Адрес этого сайта ещё не разрешён в Firebase.', auth_err_off: 'Этот способ входа ещё не включён.', auth_err: 'Не удалось войти. Попробуйте ещё раз.',
       mine_login: 'Ваши брони хранятся в личном кабинете. Войдите, чтобы их увидеть: они доступны с любого телефона или компьютера.',
       admin_role: 'Вы администратор агентства: вам открыты входящие брони, цены и SEO.',
+      auth_admin: 'Вход администратора. Войдите через Gmail агентства: «Войти через Google» или email и пароль.',
+      auth_verify: 'Email ещё не подтверждён. Мы отправили письмо на {email}: нажмите ссылку в нём и вернитесь на эту страницу. Письмо может попасть в «Спам».',
+      auth_resend: 'Отправить письмо ещё раз', auth_resent: 'Письмо отправлено ещё раз.',
       notif_on: 'Включить уведомления браузера', notif_ok: 'Уведомления включены: пока страница открыта, о новой брони сообщит компьютер или телефон.',
       seo_btn_al: 'SEO и настройки', lang_label: 'Язык', mode_day: 'День', mode_night: 'Ночь', mode_to_day: 'Включить дневной режим', mode_to_night: 'Включить ночной режим',
       h1a: 'Путешествия по', h1b: 'Узбекистану',
@@ -1179,6 +1186,9 @@ td input { width: 120px; min-height: 38px; }
       auth_err_domain: 'This site address isn’t allowed in Firebase yet.', auth_err_off: 'This sign-in method isn’t turned on yet.', auth_err: 'Couldn’t sign in. Try again.',
       mine_login: 'Your bookings live in your account. Sign in to see them from any phone or computer.',
       admin_role: 'You’re the agency admin: incoming bookings, prices and SEO are open to you.',
+      auth_admin: 'Admin sign-in. Use the agency’s Gmail: “Sign in with Google” or email and password.',
+      auth_verify: 'Your email isn’t confirmed yet. We sent a message to {email}: open the link in it and come back to this page. Check Spam too.',
+      auth_resend: 'Send the email again', auth_resent: 'Sent again.',
       notif_on: 'Turn on browser notifications', notif_ok: 'Notifications are on: while the page is open, your computer or phone will tell you about new bookings.',
       seo_btn_al: 'SEO & settings', lang_label: 'Language', mode_day: 'Day', mode_night: 'Night', mode_to_day: 'Switch to day mode', mode_to_night: 'Switch to night mode',
       h1a: 'Travel across', h1b: 'Uzbekistan',
@@ -1406,7 +1416,7 @@ td input { width: 120px; min-height: 38px; }
     if (!LANGS.includes(l) || l === lang) return;
     lang = l; state.seoLang = l;
     try { localStorage.setItem('ufq-lang', l); } catch (e) {}
-    applyStatic(); rerenderAll(); renderAdmin(); seoForm(); renderSeo(); renderInfoPreview();
+    applyStatic(); rerenderAll(); renderAdmin(); seoForm(); renderSeo(); renderInfoPreview(); renderAuth();
     $('panel-title').textContent = panelTitle(state.tab);
   }
   const panelTitle = tab => t(I18N.uz['title_' + tab] ? 'title_' + tab : 'tab_' + tab);
@@ -1467,7 +1477,7 @@ td input { width: 120px; min-height: 38px; }
   /* ---------- Arcade ---------- */
   function renderArcade() {
     $('arcade').innerHTML = active().map(d => { const x = tourText(d.id); return `<li><button class="gate" type="button" data-go="${d.id}">
-        <span class="arch"><img src="img/${d.img}.jpg" width="1200" height="1800" loading="lazy" alt="${esc(x.name)}"></span>
+        <span class="arch"><img src="img/${d.img}.webp" width="720" height="1080" loading="lazy" decoding="async" alt="${esc(x.name)}"></span>
         <span class="gate__name">${esc(x.name)}</span>
         <span class="gate__meta num">${nightsWord(P(d).n)} · ${t('from', { price: som(perPerson(d)) })}</span></button></li>`; }).join('');
   }
@@ -1525,7 +1535,7 @@ td input { width: 120px; min-height: 38px; }
     $('cards').innerHTML = list.map(({ d, s }) => {
       const pp = perPerson(d), x = tourText(d.id);
       return `<article class="tour">
-        <button class="zoom" type="button" data-zoom="${d.id}" aria-label="${esc(t('zoom_of', { name: x.name }))}"><img src="img/k-${d.img}.jpg" width="960" height="720" loading="lazy" alt="${esc(x.name)}"></button>
+        <button class="zoom" type="button" data-zoom="${d.id}" aria-label="${esc(t('zoom_of', { name: x.name }))}"><img src="img/k-${d.img}.webp" width="640" height="480" loading="lazy" decoding="async" alt="${esc(x.name)}"></button>
         <div class="tour__body">
           <h4 class="tour__name">${esc(x.name)}</h4>
           <div class="tour__meta">${esc(x.region)} · ${nightsWord(P(d).n)} · ${esc(x.how)}</div>
@@ -1582,7 +1592,7 @@ td input { width: 120px; min-height: 38px; }
   function renderBookSummary() {
     const c = bookCalc(), date = $('b-date').value, x = tourText(c.d.id);
     const m = date ? new Date(date).getMonth() : state.m, s = season(c.d, m);
-    $('sum-img').src = 'img/k-' + c.d.img + '.jpg';
+    $('sum-img').src = 'img/k-' + c.d.img + '.webp';
     $('sum-img').alt = x.name;
     $('sum-zoom').dataset.zoom = c.d.id;
     document.querySelectorAll('#pickrow [data-pick]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.pick === c.d.id)));
@@ -1599,22 +1609,29 @@ td input { width: 120px; min-height: 38px; }
 
   function renderPickrow() {
     $('pickrow').innerHTML = active().map(d =>
-      `<button type="button" data-pick="${d.id}" aria-pressed="false"><img src="img/k-${d.img}.jpg" width="960" height="720" loading="lazy" alt="">${esc(tourText(d.id).name)}</button>`).join('');
+      `<button type="button" data-pick="${d.id}" aria-pressed="false"><img src="img/k-${d.img}.webp" width="640" height="480" loading="lazy" decoding="async" alt="">${esc(tourText(d.id).name)}</button>`).join('');
   }
   $('pickrow').addEventListener('click', e => { const b = e.target.closest('[data-pick]'); if (b) choose(b.dataset.pick); });
 
-  /* A card photo that fails falls back to the full-size picture of the same place */
+  /* A light WebP photo that fails (old browser, missing file) falls back to the JPEG of the same picture */
   document.addEventListener('error', e => {
     const x = e.target;
-    if (x && x.tagName === 'IMG' && /\/k-[a-z-]+\.jpg/.test(x.src)) x.src = x.src.replace('/k-', '/');
+    if (x && x.tagName === 'IMG' && /\/img\/[a-z-]+\.webp$/.test(x.src)) x.src = x.src.replace(/\.webp$/, '.jpg');
   }, true);
 
-  /* Photo viewer */
-  const viewer = $('viewer');
+  /* Photo viewer: the thumbnail already on screen shows at once, the large photo replaces it when it arrives */
+  const viewer = $('viewer'), bigPhoto = {};
+  const loadBig = img => bigPhoto[img] || (bigPhoto[img] = new Promise(ok => {
+    const im = new Image(); im.onload = () => ok(im.src); im.onerror = () => ok(null); im.src = 'img/' + img + '.webp';
+  }));
+  ['pointerover', 'touchstart', 'focusin'].forEach(ev => document.addEventListener(ev, e => {
+    const z = e.target.closest && e.target.closest('[data-zoom]'); if (z && byId[z.dataset.zoom]) loadBig(byId[z.dataset.zoom].img);
+  }, { passive: true }));
   function openViewer(id) {
     const d = byId[id]; if (!d) return;
     const s = season(d, state.m), pp = perPerson(d), x = tourText(id);
-    $('v-img').src = 'img/' + d.img + '.jpg'; $('v-img').alt = x.name;
+    $('v-img').src = 'img/k-' + d.img + '.webp'; $('v-img').alt = x.name;
+    loadBig(d.img).then(src => { if (src && $('v-book').dataset.id === id) $('v-img').src = src; });
     $('v-name').textContent = x.name;
     $('v-meta').textContent = x.region + ' · ' + nightsWord(P(d).n) + ' · ' + x.how;
     $('v-text').textContent = x.text;
@@ -1701,7 +1718,7 @@ td input { width: 120px; min-height: 38px; }
     if (!api) { $('mine').innerHTML = `<div class="empty">${esc(t('mine_nostore'))}<button class="btn" type="button" data-open="bron">${esc(t('btn_book'))}</button></div>`; return; }
     if (!mine.length) { $('mine').innerHTML = `<div class="empty">${esc(t('mine_empty'))}<button class="btn" type="button" data-open="bron">${esc(t('btn_book'))}</button></div>`; return; }
     $('mine').innerHTML = mine.map(b => `<div class="bk">
-      <img src="img/k-${byId[b.tour] ? byId[b.tour].img : 'samarqand'}.jpg" alt="">
+      <img src="img/k-${byId[b.tour] ? byId[b.tour].img : 'samarqand'}.webp" alt="">
       <div><div class="bk__t">${esc(byId[b.tour] ? tourText(b.tour).name : b.tourName)} · ${esc(b.id)}</div>
         <div class="bk__m num">${fmtDate(b.date)}, ${nightsWord(b.nights)}, ${peopleWord(b.adults + (b.kids || 0))} · ${som(b.total)}</div></div>
       <div class="ctrls">${statusChip(b.status)}
@@ -2076,8 +2093,9 @@ td input { width: 120px; min-height: 38px; }
     document.querySelectorAll('[data-admin]').forEach(el => el.hidden = !on);
     $('bell').hidden = !on;
     if (!on && ['bronlar', 'tahrir', 'seo'].includes(state.tab)) openTab('turlar');
-    if (on && isOwner && /^#(seo|sozlamalar)$/.test(location.hash)) {   // direct links for the owner
-      goKabinet('seo');
+    if (on && isOwner && /^#(admin|seo|sozlamalar)$/.test(location.hash)) {   // direct links for the owner
+      if (authD.open) closeAuth();
+      goKabinet(location.hash === '#admin' ? 'bronlar' : 'seo');
       if (location.hash === '#seo') document.querySelector('#set-tabs [data-set="seo"]').click();
     }
   }
@@ -2100,7 +2118,7 @@ td input { width: 120px; min-height: 38px; }
     A.onAuthStateChanged(auth, async u => {
       fb.subs.forEach(stop => stop()); fb.subs = [];
       fb.user = u; uid = u ? u.uid : null; mine = []; all = []; seen = null;
-      isAdmin = isOwner = false; showAdmin(false);
+      isAdmin = isOwner = false; fb.adminOn = false; showAdmin(false);
       api = u ? {
         save: async b => {
           await F.setDoc(F.doc(fs, 'bookings', b.id), { ...b, uid: u.uid });
@@ -2119,19 +2137,49 @@ td input { width: 120px; min-height: 38px; }
         if (!$('b-name').value) $('b-name').value = p.name || u.displayName || '';
         if (!$('b-phone').value && p.phone) $('b-phone').value = p.phone;
       }).catch(() => {});
-      // Only the agency's admin account may read this document (see firestore.rules)
+      // A password account gets a confirmation mail once: until the address is confirmed it cannot be the admin
+      if (needsVerify(u) && !recentlySent(u)) sendVerify(u).catch(() => {});
+      await checkAdmin(u);
+      if (fb.user !== u) return;
+      if (pendingBook) { pendingBook = false; closeAuth(); openTab('bron'); $('book-form').requestSubmit(); }
+      else if (!isAdmin && adminLink()) openAuth(t('auth_admin'));
+    });
+    // The admin link (…/#admin) opens the sign-in straight away for someone who is not signed in yet
+    auth.authStateReady().then(() => { if (!auth.currentUser && adminLink()) openAuth(t('auth_admin')); });
+
+    async function checkAdmin(u) {
+      // Only the agency's admin accounts may read this document (see firestore.rules)
       try { await F.getDoc(F.doc(fs, 'adminCheck', 'me')); isAdmin = isOwner = true; } catch (e) { isAdmin = isOwner = false; }
       if (fb.user !== u) return;
       renderAuth();
-      if (isAdmin) {
-        showAdmin(true);
+      if (isAdmin && !fb.adminOn) {
+        fb.adminOn = true; showAdmin(true);
         fb.subs.push(F.onSnapshot(F.query(F.collection(fs, 'bookings'), F.orderBy('createdAt', 'desc'), F.limit(500)), qs =>
           onBookings({ docs: qs.docs.map(d => ({ id: d.id, data: () => ({ items: [d.data()] }) })), metadata: qs.metadata }), onErr));
         $('notif-btn').hidden = !('Notification' in window) || Notification.permission === 'granted';
         renderAdmin();
       }
-      if (pendingBook) { pendingBook = false; closeAuth(); openTab('bron'); $('book-form').requestSubmit(); }
-    });
+    }
+    // Coming back from the confirmation mail: refresh the account, and with a fresh token the admin check passes
+    async function recheck() {
+      const u = fb.user;
+      if (!needsVerify(u)) return;
+      try { await u.reload(); } catch (e) { return; }
+      if (fb.user !== u || !u.emailVerified) return;
+      await u.getIdToken(true);
+      renderAuth(); checkAdmin(u);
+    }
+    addEventListener('focus', recheck);
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) recheck(); });
+  }
+  const adminLink = () => /^#(admin|seo|sozlamalar)$/.test(location.hash);
+  const needsVerify = u => !!(u && u.email && !u.emailVerified && u.providerData.some(p => p.providerId === 'password'));
+  const recentlySent = u => { try { return !!localStorage.getItem('ufq-verify-' + u.uid); } catch (e) { return false; } };   // more only by the button
+  async function sendVerify(u) {
+    fb.auth.languageCode = lang;
+    try { await fb.A.sendEmailVerification(u, { url: location.origin + location.pathname }); }
+    catch (e) { if (e && e.code === 'auth/unauthorized-continue-uri') await fb.A.sendEmailVerification(u); else throw e; }
+    try { localStorage.setItem('ufq-verify-' + u.uid, Date.now()); } catch (e) {}
   }
 
   /* Sign-in dialog */
@@ -2161,6 +2209,7 @@ td input { width: 120px; min-height: 38px; }
       btn.setAttribute('aria-label', name);
       $('a-me-name').textContent = name; $('a-me-mail').textContent = u.email || '';
       $('a-me-role').hidden = !isAdmin;
+      $('a-verify').hidden = !needsVerify(u); $('a-verify-t').textContent = t('auth_verify', { email: u.email || '' });
     } else {
       btn.querySelector('span').dataset.i = 'login'; btn.querySelector('span').textContent = t('login');
       btn.removeAttribute('aria-label');
@@ -2222,6 +2271,12 @@ td input { width: 120px; min-height: 38px; }
   });
   $('a-out').addEventListener('click', async () => { closeAuth(); if (fb) await fb.A.signOut(fb.auth); });
   $('a-mine').addEventListener('click', () => { closeAuth(); goKabinet('mening'); });
+  $('a-resend').addEventListener('click', async () => {
+    const b = $('a-resend'); if (!fb || !fb.user) return;
+    b.disabled = true;
+    try { await sendVerify(fb.user); b.textContent = t('auth_resent'); } catch (x) { b.textContent = authError(x); }
+    setTimeout(() => { b.disabled = false; b.textContent = t('auth_resend'); }, 30000);
+  });
   document.addEventListener('click', e => { if (e.target.closest('[data-auth]')) openAuth(); });
   $('notif-btn').addEventListener('click', async () => {
     try { const p = await Notification.requestPermission(); if (p === 'granted') { $('notif-btn').hidden = true; $('admin-toast').textContent = t('notif_ok'); } } catch (e) {}
