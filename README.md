@@ -11,8 +11,8 @@ Hisoblar va bronlar Firebase’da (loyiha `ufq-sayt`) saqlanadi, shuning uchun i
    “Yangi” bronini o‘zi bekor qila oladi.
 
 ## Agentlik egasi (admin)
-1. Saytdagi **Kirish** tugmasini bosing va **Google bilan kirish** orqali `abdusattorovshohjahon61@gmail.com` hisobi bilan kiring.
-   Shu hisob admin hisoblanadi; boshqa hech kim admin bo‘lolmaydi.
+1. Saytdagi **Kirish** tugmasini bosing va **Google bilan kirish** orqali Firebase loyihasi ochilgan Gmail hisobingiz bilan kiring.
+   Admin hisobi Firestore qoidasida yozilgan; boshqa hech kim admin bo‘lolmaydi.
 2. Kabinetda **Kelgan bronlar** paydo bo‘ladi: barcha mijozlarning bronlari, telefon va email bilan.
    Mijozga qo‘ng‘iroq qilgach **Tasdiqlash** yoki **Bekor qilish** ni bosing, mijoz buni darhol ko‘radi.
 3. Yuqori burchakdagi **SEO** tugmasi: agentlik nomi, telefon, manzil, Telegram, narxlar va uch tildagi SEO matnlari.
