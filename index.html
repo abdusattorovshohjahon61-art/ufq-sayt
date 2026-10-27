@@ -836,7 +836,7 @@ td input { width: 120px; min-height: 38px; }
                 <div class="pv-label" data-i="serp_h">Google qidiruvida shunday ko‘rinadi</div>
                 <div class="serp"><div class="serp__url" id="serp-url"></div><div class="serp__title" id="serp-title"></div><div class="serp__desc" id="serp-desc"></div></div>
                 <div class="pv-label" data-i="og_h">Telegram va Facebook’da ulashganda</div>
-                <div class="og og--row"><img id="og-img" alt="" width="960" height="720"><div><small id="og-host"></small><b id="og-title"></b><span id="og-desc"></span></div></div>
+                <div class="og og--row"><img id="og-img" alt="" width="640" height="480" loading="lazy"><div><small id="og-host"></small><b id="og-title"></b><span id="og-desc"></span></div></div>
                 <p class="note" data-i="seo_note"></p>
               </aside>
             </div>
@@ -1963,7 +1963,7 @@ td input { width: 120px; min-height: 38px; }
     $('serp-url').textContent = host + ' › ' + state.seoLang;
     $('serp-title').textContent = tl > 60 ? v.title.slice(0, 58) + '…' : v.title || t('no_title');
     $('serp-desc').textContent = dl > 160 ? v.description.slice(0, 157) + '…' : v.description || t('no_desc');
-    $('og-img').src = 'img/k-' + (seoDraft.image || 'samarqand') + '.jpg';
+    $('og-img').src = 'img/k-' + (seoDraft.image || 'samarqand') + '.webp';   // preview only: shared links still use the JPEG
     $('og-host').textContent = host; $('og-title').textContent = v.title;
   }
   $('seo-form').addEventListener('input', renderSeo);
