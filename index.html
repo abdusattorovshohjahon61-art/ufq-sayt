@@ -185,6 +185,22 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .mode { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 12px; border: 1px solid var(--bar-line); border-radius: 999px; background: none; color: inherit; cursor: pointer; font-size: var(--step-small); }
 .mode svg { width: 18px; height: 18px; color: var(--gold); }
 .seo-btn { border-color: var(--gold); font-weight: 600; }
+.auth-btn img { width: 22px; height: 22px; border-radius: 50%; }
+.auth-btn span { max-width: 9em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* Sign-in dialog */
+.authd { width: min(440px, calc(100vw - 32px)); }
+.auth { display: grid; gap: 16px; padding: 30px 26px 26px; }
+.auth h3 { font: 600 1.6rem/1.15 var(--display); padding-right: 40px; }
+.auth__why { font-size: var(--step-small); color: var(--glass-muted); }
+.auth__form { display: grid; gap: 14px; }
+.auth input { width: 100%; min-height: 46px; padding: 0 14px; border-radius: 12px; background: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.24); color: var(--glass-ink); }
+.gbtn { background: #fff; color: #1f1f1f; width: 100%; }
+@media (hover: hover) { .gbtn:hover { background: #f1f1f1; } }
+.auth__or { display: flex; align-items: center; gap: 12px; font-size: var(--step-small); color: var(--glass-muted); }
+.auth__or::before, .auth__or::after { content: ""; flex: 1; height: 1px; background: rgba(255, 255, 255, 0.2); }
+.auth__links { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; font-size: var(--step-small); }
+.auth__links .link { background: none; border: 0; padding: 0; cursor: pointer; color: var(--glass-ink); text-decoration-color: rgba(255, 255, 255, 0.4); }
 @media (hover: hover) { .langs button:not([aria-pressed="true"]):hover, .mode:hover { background: rgba(127, 127, 127, 0.14); } }
 
 /* ---------- Hero: peshtoq ---------- */
@@ -573,7 +589,10 @@ td input { width: 120px; min-height: 38px; }
 }
 @media (max-width: 430px) {
   .bar .btn { display: none; }
+  .bar { gap: 6px; }
   .bar__mark { font-size: 19px; }
+  .langs button { min-width: 30px; padding: 0 6px; }
+  .mode.seo-btn span { display: none; }
 }
 </style>
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}[hidden]{display:none!important}</style>
@@ -592,6 +611,7 @@ td input { width: 120px; min-height: 38px; }
     <symbol id="i-inbox" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M3 13l3-8h12l3 8v6H3v-6zm0 0h5l1 3h6l1-3h5"/></symbol>
     <symbol id="i-coins" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></symbol>
     <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></symbol>
     <symbol id="i-bell" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M6 17V11a6 6 0 0 1 12 0v6l2 2H4l2-2zM10 21h4"/></symbol>
     <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
     <symbol id="i-moon" viewBox="0 0 24 24"><path fill="currentColor" d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></symbol>
@@ -614,6 +634,7 @@ td input { width: 120px; min-height: 38px; }
   </div>
   <button class="mode" type="button" id="mode"><svg aria-hidden="true"><use href="#i-moon"/></svg><span>Tun</span></button>
   <a class="btn" href="#kabinet" data-open="bron" data-i="btn_book">Bron qilish</a>
+  <button class="mode auth-btn" type="button" id="auth-btn" hidden><svg aria-hidden="true"><use href="#i-user"/></svg><span data-i="login">Kirish</span></button>
   <button class="mode seo-btn" type="button" id="seo-btn" data-owner hidden data-i-al="seo_btn_al" aria-label="SEO va sozlamalar"><svg aria-hidden="true"><use href="#i-gear"/></svg><span>SEO</span></button>
 </header>
 
@@ -737,6 +758,7 @@ td input { width: 120px; min-height: 38px; }
 
           <div class="panel" id="p-bronlar" role="tabpanel" hidden>
             <p class="admin-note" data-i="admin_note">Bu bo‘limni faqat siz ko‘rasiz.</p>
+            <div class="ctrls" style="margin-bottom:16px"><button class="btn btn--ghost" type="button" id="notif-btn" hidden data-i="notif_on">Brauzer xabarnomalarini yoqish</button></div>
             <div class="tiles tiles--4" id="kpi"></div>
             <div class="chips" id="status-chips" role="group"></div>
             <div class="table-wrap">
@@ -892,6 +914,29 @@ td input { width: 120px; min-height: 38px; }
   </div>
   <button class="viewer__x" type="button" id="v-close" data-i-al="close" aria-label="Yopish">×</button>
 </dialog>
+<dialog class="viewer authd" id="auth" aria-labelledby="auth-h">
+  <div class="auth" id="auth-out">
+    <h3 id="auth-h" data-i="auth_in_h">Kabinetga kirish</h3>
+    <p class="auth__why" id="auth-why" hidden></p>
+    <button class="btn gbtn" type="button" id="auth-google"><svg viewBox="0 0 48 48" width="20" height="20" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9 3.5l6.7-6.7C35.6 2.4 30.2 0 24 0 14.6 0 6.6 5.4 2.7 13.3l7.8 6C12.4 13.6 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.7c-.6 3-2.3 5.5-4.8 7.2l7.5 5.8c4.4-4 7.1-10 7.1-17.5z"/><path fill="#FBBC05" d="M10.5 28.7c-.5-1.5-.8-3-.8-4.7s.3-3.2.8-4.7l-7.8-6C1 16.6 0 20.2 0 24s1 7.4 2.7 10.7l7.8-6z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.5-5.8c-2.1 1.4-4.8 2.3-8.4 2.3-6.3 0-11.6-4.1-13.5-9.8l-7.8 6C6.6 42.6 14.6 48 24 48z"/></svg><span data-i="auth_google">Google bilan kirish</span></button>
+    <div class="auth__or"><span data-i="auth_or">yoki</span></div>
+    <form id="auth-form" class="auth__form" novalidate>
+      <div class="field" id="a-name-f" hidden><label for="a-name" data-i="auth_name">Ismingiz</label><input id="a-name" autocomplete="name" maxlength="60"></div>
+      <div class="field"><label for="a-email" data-i="auth_email">Email</label><input id="a-email" type="email" autocomplete="email" maxlength="120"></div>
+      <div class="field"><label for="a-pass" data-i="auth_pass">Parol</label><input id="a-pass" type="password" autocomplete="current-password" maxlength="80"></div>
+      <p class="err" id="a-err" role="alert"></p>
+      <button class="btn" type="submit" id="a-submit" data-i="auth_submit_in">Kirish</button>
+    </form>
+    <div class="auth__links"><button type="button" class="link" id="a-switch" data-i="auth_to_up">Hisobingiz yo‘qmi? Ro‘yxatdan o‘ting</button><button type="button" class="link" id="a-forgot" data-i="auth_forgot">Parolni unutdingizmi?</button></div>
+  </div>
+  <div class="auth" id="auth-in" hidden>
+    <h3 id="a-me-name"></h3>
+    <p class="auth__why" id="a-me-mail"></p>
+    <p class="auth__why" id="a-me-role" hidden data-i="admin_role">Siz agentlik adminisiz: kelgan bronlar, narxlar va SEO sizga ochiq.</p>
+    <div class="ctrls"><button class="btn" type="button" id="a-mine" data-i="see_mine">Bronlarim</button><button class="btn btn--ghost" type="button" id="a-out" data-i="logout">Chiqish</button></div>
+  </div>
+  <button class="viewer__x" type="button" id="auth-x" data-i-al="close" aria-label="Yopish">×</button>
+</dialog>
 <div class="alerts" id="alerts" aria-live="polite"></div>
 <button class="bell" type="button" id="bell" hidden><svg aria-hidden="true"><use href="#i-bell"/></svg><span data-i="tab_bronlar">Kelgan bronlar</span><span class="badge" id="bell-count" hidden>0</span></button>
 
@@ -900,7 +945,7 @@ td input { width: 120px; min-height: 38px; }
   /* ---------- Settings ----------
      BOOKING_URL: Google Apps Script veb-ilovasi manzili (GitHub Pages’da). claude.ai ichida bronlar artifact bazasida saqlanadi.
      NAME, PHONE, ADDRESS, HOURS, TELEGRAM: agentlik ma’lumotlari. claude.ai’da ularni “Sozlamalar va SEO” bo‘limidan o‘zgartirasiz. */
-  const CONFIG = /*CONFIG*/{"BOOKING_URL": "", "NAME": "Ufq", "PHONE": "", "ADDRESS": "", "HOURS": "", "TELEGRAM": ""}/*/CONFIG*/;
+  const CONFIG = /*CONFIG*/{"BOOKING_URL": "", "NAME": "Ufq", "PHONE": "", "ADDRESS": "", "HOURS": "", "TELEGRAM": "", "FIREBASE": {"apiKey": "AIzaSyD0ghCcVPN1Yiyn4qeYhxBzFElVKZc4y4M", "authDomain": "ufq-sayt.firebaseapp.com", "projectId": "ufq-sayt", "storageBucket": "ufq-sayt.firebasestorage.app", "messagingSenderId": "852716748695", "appId": "1:852716748695:web:dcdf889a2122b785ddced2"}}/*/CONFIG*/;
 
   /* ---------- Ornament tiles ---------- */
   function star(cx, cy, R) {
@@ -927,6 +972,16 @@ td input { width: 120px; min-height: 38px; }
   const I18N = {
     uz: {
       nav_dest: 'Manzillar', nav_kab: 'Kabinet', nav_faq: 'Savollar', nav_contact: 'Aloqa', btn_book: 'Bron qilish',
+      login: 'Kirish', logout: 'Chiqish', auth_in_h: 'Kabinetga kirish', auth_up_h: 'Ro‘yxatdan o‘tish', auth_google: 'Google bilan kirish', auth_or: 'yoki',
+      auth_name: 'Ismingiz', auth_email: 'Email', auth_pass: 'Parol (kamida 6 belgi)', auth_submit_in: 'Kirish', auth_submit_up: 'Ro‘yxatdan o‘tish',
+      auth_to_up: 'Hisobingiz yo‘qmi? Ro‘yxatdan o‘ting', auth_to_in: 'Hisobingiz bormi? Kiring', auth_forgot: 'Parolni unutdingizmi?',
+      auth_reset_sent: 'Parolni tiklash havolasi {email} manziliga yuborildi.', auth_need: 'Bron qilish va uning holatini kuzatish uchun kabinetga kiring. Kirgach bron o‘zi yuboriladi.',
+      auth_err_email: 'Emailni to‘g‘ri yozing.', auth_err_pass: 'Parol kamida 6 belgidan iborat bo‘lsin.', auth_err_wrong: 'Email yoki parol noto‘g‘ri.',
+      auth_err_exists: 'Bu email bilan hisob bor. “Kirish”ni tanlang.', auth_err_net: 'Internet bilan aloqa yo‘q.', auth_err_name: 'Ismingizni yozing.',
+      auth_err_domain: 'Bu sayt manzili Firebase’da hali ruxsat etilmagan.', auth_err_off: 'Bu kirish usuli hali yoqilmagan.', auth_err: 'Kirib bo‘lmadi. Qayta urinib ko‘ring.',
+      mine_login: 'Bronlaringiz kabinetingizda saqlanadi. Ko‘rish uchun kiring: istalgan telefon yoki kompyuterdan ham ko‘rinadi.',
+      admin_role: 'Siz agentlik adminisiz: kelgan bronlar, narxlar va SEO sizga ochiq.',
+      notif_on: 'Brauzer xabarnomalarini yoqish', notif_ok: 'Xabarnomalar yoqildi: sahifa ochiq tursa, yangi bron haqida kompyuter yoki telefon xabar beradi.',
       seo_btn_al: 'SEO va sozlamalar', lang_label: 'Til', mode_day: 'Kun', mode_night: 'Tun', mode_to_day: 'Kun rejimiga o‘tish', mode_to_night: 'Tun rejimiga o‘tish',
       h1a: 'O‘zbekiston bo‘ylab', h1b: 'sayohatlar',
       hero_lead: 'Toshkentdan Samarqand, Buxoro, Xiva va yana beshta manzilga ichki turlar. Poyezd, mehmonxona, gid va muzey chiptalari bitta narxda.',
@@ -1016,6 +1071,16 @@ td input { width: 120px; min-height: 38px; }
     },
     ru: {
       nav_dest: 'Направления', nav_kab: 'Кабинет', nav_faq: 'Вопросы', nav_contact: 'Контакты', btn_book: 'Забронировать',
+      login: 'Войти', logout: 'Выйти', auth_in_h: 'Вход в кабинет', auth_up_h: 'Регистрация', auth_google: 'Войти через Google', auth_or: 'или',
+      auth_name: 'Ваше имя', auth_email: 'Email', auth_pass: 'Пароль (не меньше 6 символов)', auth_submit_in: 'Войти', auth_submit_up: 'Зарегистрироваться',
+      auth_to_up: 'Нет аккаунта? Зарегистрируйтесь', auth_to_in: 'Уже есть аккаунт? Войдите', auth_forgot: 'Забыли пароль?',
+      auth_reset_sent: 'Ссылка для сброса пароля отправлена на {email}.', auth_need: 'Войдите, чтобы забронировать и следить за статусом. После входа бронь отправится сама.',
+      auth_err_email: 'Проверьте email.', auth_err_pass: 'Пароль должен быть не короче 6 символов.', auth_err_wrong: 'Неверный email или пароль.',
+      auth_err_exists: 'Аккаунт с таким email уже есть. Нажмите «Войти».', auth_err_net: 'Нет связи с интернетом.', auth_err_name: 'Напишите ваше имя.',
+      auth_err_domain: 'Адрес этого сайта ещё не разрешён в Firebase.', auth_err_off: 'Этот способ входа ещё не включён.', auth_err: 'Не удалось войти. Попробуйте ещё раз.',
+      mine_login: 'Ваши брони хранятся в личном кабинете. Войдите, чтобы их увидеть: они доступны с любого телефона или компьютера.',
+      admin_role: 'Вы администратор агентства: вам открыты входящие брони, цены и SEO.',
+      notif_on: 'Включить уведомления браузера', notif_ok: 'Уведомления включены: пока страница открыта, о новой брони сообщит компьютер или телефон.',
       seo_btn_al: 'SEO и настройки', lang_label: 'Язык', mode_day: 'День', mode_night: 'Ночь', mode_to_day: 'Включить дневной режим', mode_to_night: 'Включить ночной режим',
       h1a: 'Путешествия по', h1b: 'Узбекистану',
       hero_lead: 'Туры из Ташкента в Самарканд, Бухару, Хиву и ещё пять мест. Поезд, отель, гид и билеты в музеи по одной цене.',
@@ -1105,6 +1170,16 @@ td input { width: 120px; min-height: 38px; }
     },
     en: {
       nav_dest: 'Destinations', nav_kab: 'Dashboard', nav_faq: 'FAQ', nav_contact: 'Contact', btn_book: 'Book now',
+      login: 'Sign in', logout: 'Sign out', auth_in_h: 'Sign in to your account', auth_up_h: 'Create an account', auth_google: 'Continue with Google', auth_or: 'or',
+      auth_name: 'Your name', auth_email: 'Email', auth_pass: 'Password (at least 6 characters)', auth_submit_in: 'Sign in', auth_submit_up: 'Create account',
+      auth_to_up: 'No account? Create one', auth_to_in: 'Have an account? Sign in', auth_forgot: 'Forgot your password?',
+      auth_reset_sent: 'A reset link is on its way to {email}.', auth_need: 'Sign in to book and follow your booking’s status. Your booking is sent as soon as you’re in.',
+      auth_err_email: 'Check the email address.', auth_err_pass: 'The password needs at least 6 characters.', auth_err_wrong: 'Wrong email or password.',
+      auth_err_exists: 'There’s already an account with this email. Choose “Sign in”.', auth_err_net: 'No internet connection.', auth_err_name: 'Enter your name.',
+      auth_err_domain: 'This site address isn’t allowed in Firebase yet.', auth_err_off: 'This sign-in method isn’t turned on yet.', auth_err: 'Couldn’t sign in. Try again.',
+      mine_login: 'Your bookings live in your account. Sign in to see them from any phone or computer.',
+      admin_role: 'You’re the agency admin: incoming bookings, prices and SEO are open to you.',
+      notif_on: 'Turn on browser notifications', notif_ok: 'Notifications are on: while the page is open, your computer or phone will tell you about new bookings.',
       seo_btn_al: 'SEO & settings', lang_label: 'Language', mode_day: 'Day', mode_night: 'Night', mode_to_day: 'Switch to day mode', mode_to_night: 'Switch to night mode',
       h1a: 'Travel across', h1b: 'Uzbekistan',
       hero_lead: 'Tours from Tashkent to Samarkand, Bukhara, Khiva and five more places. Train, hotel, guide and museum tickets for one price.',
@@ -1500,7 +1575,7 @@ td input { width: 120px; min-height: 38px; }
   $('b-date').min = today.toISOString().slice(0, 10);
   function bookCalc() {
     const d = byId[$('b-tour').value] || active()[0];
-    const n = clamp(+$('b-nights').value || P(d).n, 1, 14), ad = clamp(+$('b-adults').value || 1, 1, 15), kd = clamp(+$('b-kids').value || 0, 0, 10);
+    const n = clamp(Math.round(+$('b-nights').value) || P(d).n, 1, 14), ad = clamp(Math.round(+$('b-adults').value) || 1, 1, 15), kd = clamp(Math.round(+$('b-kids').value) || 0, 0, 10);
     const pp = perPerson(d, n);
     return { d, n, ad, kd, pp, total: pp * ad + pp * 0.5 * kd };
   }
@@ -1565,6 +1640,7 @@ td input { width: 120px; min-height: 38px; }
 
   /* ---------- Store (claude.ai db, Google Sheets on GitHub Pages, or a local stand-in on localhost) ---------- */
   let db = null, uid = null, isAdmin = false, isOwner = false, userNs = null;
+  let fb = null, pendingBook = false;   // Firebase (public site): { A, F, auth, fs, user, subs }
   let api = null;           // { save(booking), cancel(id) } for whichever store this page reached
   const queue = new Map();
   const serial = (key, fn) => { const p = (queue.get(key) || Promise.resolve()).then(fn, fn); queue.set(key, p.catch(() => {})); return p; };
@@ -1572,14 +1648,17 @@ td input { width: 120px; min-height: 38px; }
   $('book-form').addEventListener('submit', async e => {
     e.preventDefault();
     const err = $('b-err'); err.textContent = '';
-    const c = bookCalc(), name = $('b-name').value.trim(), phone = $('b-phone').value.trim(), date = $('b-date').value;
+    const c = bookCalc(), name = $('b-name').value.trim().slice(0, 60), phone = $('b-phone').value.trim().replace(/\s+/g, ' '), date = $('b-date').value;
     if (!date) { err.textContent = t('err_date'); $('b-date').focus(); return; }
     if (date < $('b-date').min) { err.textContent = t('err_date_min'); $('b-date').focus(); return; }
     if (name.length < 2) { err.textContent = t('err_name'); $('b-name').focus(); return; }
     if (!phoneOk(phone)) { err.textContent = t('err_phone'); $('b-phone').focus(); return; }
+    // On the public site a booking belongs to an account: sign in first, then the form sends itself
+    if (fb && !fb.user) { pendingBook = true; openAuth(t('auth_need')); return; }
     const b = { id: 'UFQ-' + Date.now().toString(36).slice(-5).toUpperCase(), tour: c.d.id, tourName: TT.uz[c.d.id][0], date, nights: c.n,
       adults: c.ad, kids: c.kd, total: Math.round(c.total), name, phone, note: $('b-note').value.trim().slice(0, 400),
       lang, status: 'yangi', createdAt: Date.now() };
+    if (fb) b.email = (fb.user.email || '').slice(0, 120);
     const btn = $('b-submit'); btn.disabled = true; btn.textContent = t('b_sending');
     try {
       if (!api) throw { code: 'no_store' };
@@ -1618,6 +1697,7 @@ td input { width: 120px; min-height: 38px; }
   function renderMine() {
     const badge = $('mine-count');
     badge.hidden = !mine.length; badge.textContent = mine.length;
+    if (fb && !fb.user) { $('mine').innerHTML = `<div class="empty">${esc(t('mine_login'))}<button class="btn" type="button" data-auth>${esc(t('login'))}</button></div>`; return; }
     if (!api) { $('mine').innerHTML = `<div class="empty">${esc(t('mine_nostore'))}<button class="btn" type="button" data-open="bron">${esc(t('btn_book'))}</button></div>`; return; }
     if (!mine.length) { $('mine').innerHTML = `<div class="empty">${esc(t('mine_empty'))}<button class="btn" type="button" data-open="bron">${esc(t('btn_book'))}</button></div>`; return; }
     $('mine').innerHTML = mine.map(b => `<div class="bk">
@@ -1632,6 +1712,8 @@ td input { width: 120px; min-height: 38px; }
     api.cancel(c.dataset.cancel).catch(() => { $('dash-status').textContent = t('cancel_fail') + (info.phone ? t('call_us', { phone: fmtPhone(info.phone) }) : t('tell_agency')); });
   });
   function changeStatus(owner, id, status) {
+    // Firebase keeps one document per booking (its id), so a status change is one field update
+    if (fb) return fb.F.updateDoc(fb.F.doc(fb.fs, 'bookings', owner), { status, updatedAt: Date.now() });
     return serial('bookings/' + owner, async () => {
       const ref = db.doc('bookings/' + owner), s = await ref.get();
       if (!s.exists) return;
@@ -1656,7 +1738,7 @@ td input { width: 120px; min-height: 38px; }
     const rows = all.filter(b => state.statusFilter === 'all' || b.status === state.statusFilter).sort((a, b) => b.createdAt - a.createdAt);
     $('admin-rows').innerHTML = rows.length ? rows.map(b => `<tr>
       <td class="num">${new Date(b.createdAt).toLocaleDateString('ru-RU')}<br><span class="tour__meta">${esc(b.id)}</span></td>
-      <td><b>${esc(b.name)}</b><br><button class="link num" type="button" data-tel="${esc(b.phone)}" style="background:none;border:0;padding:0;color:inherit;cursor:copy">${esc(b.phone)}</button>${b.note ? `<br><span class="tour__meta">${esc(b.note)}</span>` : ''}<div class="who" data-who="${esc(b.owner)}"></div></td>
+      <td><b>${esc(b.name)}</b><br><button class="link num" type="button" data-tel="${esc(b.phone)}" style="background:none;border:0;padding:0;color:inherit;cursor:copy">${esc(b.phone)}</button>${b.note ? `<br><span class="tour__meta">${esc(b.note)}</span>` : ''}<div class="who" data-who="${esc(b.owner)}">${b.email ? `<span>${esc(t('account', { name: b.email }))}</span>` : ''}</div></td>
       <td>${esc(byId[b.tour] ? tourText(b.tour).name : b.tourName)}<br><span class="tour__meta">${nightsWord(b.nights)}</span></td>
       <td class="num">${fmtDate(b.date)}</td>
       <td class="r num">${b.adults}${b.kids ? ' + ' + b.kids : ''}</td>
@@ -1733,6 +1815,10 @@ td input { width: 120px; min-height: 38px; }
         fresh.slice(0, 3).forEach(b => alertBox(t('alert_new_t', { name: b.name }),
           (byId[b.tour] ? tourText(b.tour).name : b.tourName) + ', ' + fmtDate(b.date) + ', ' + peopleWord(b.adults + (b.kids || 0)) + ', ' + som(b.total) + '. Tel: ' + b.phone, t('alert_see')));
         if (fresh.length) chime();
+        // A system notification reaches the owner even when this tab is in the background
+        if (fresh.length && 'Notification' in window && Notification.permission === 'granted' && document.hidden) {
+          try { const b = fresh[0]; new Notification(t('alert_new_t', { name: b.name }), { body: (byId[b.tour] ? tourText(b.tour).name : b.tourName) + ', ' + fmtDate(b.date) + ', ' + som(b.total), icon: 'favicon.svg' }); } catch (e) {}
+        }
       } else {
         const since = lastSeen();
         const missed = all.filter(b => b.status === 'yangi' && b.createdAt > since);
@@ -1968,10 +2054,185 @@ td input { width: 120px; min-height: 38px; }
     };
   }
 
+  /* Shared site data (prices, agency details, SEO): the same three documents on every store */
+  function watchSite(onErr) {
+    db.doc('site/prices').onSnapshot(s => { prices = s.exists ? (s.data().tours || {}) : {}; rerenderAll(); }, onErr);
+    db.doc('site/info').onSnapshot(s => {
+      if (s.exists) { const v = s.data(); info = { name: v.name || 'Ufq', phone: v.phone || '', address: v.address || '', hours: v.hours || '', telegram: v.telegram || '' }; }
+      applyInfo(); if (state.tab !== 'seo') infoForm();
+    }, onErr);
+    db.doc('site/seo').onSnapshot(s => {
+      const v = s.exists ? s.data() : {};
+      const merged = JSON.parse(JSON.stringify(DEFAULT_SEO));
+      if (v.title) merged.uz = { title: v.title, description: v.description || '', keyword: v.keyword || '', keywords: v.keywords || '' };  // older single-language save
+      LANGS.forEach(l => { if (v[l]) merged[l] = { ...merged[l], ...v[l] }; });
+      if (v.url != null) merged.url = v.url; if (v.image) merged.image = v.image;
+      seo = merged; applySeo();
+      if (state.tab !== 'seo') { seoDraft = JSON.parse(JSON.stringify(seo)); seoForm(); renderSeo(); }
+    }, onErr);
+  }
+  function showAdmin(on) {
+    document.querySelectorAll('[data-owner]').forEach(el => el.hidden = !(on && isOwner));
+    document.querySelectorAll('[data-admin]').forEach(el => el.hidden = !on);
+    $('bell').hidden = !on;
+    if (!on && ['bronlar', 'tahrir', 'seo'].includes(state.tab)) openTab('turlar');
+    if (on && isOwner && /^#(seo|sozlamalar)$/.test(location.hash)) {   // direct links for the owner
+      goKabinet('seo');
+      if (location.hash === '#seo') document.querySelector('#set-tabs [data-set="seo"]').click();
+    }
+  }
+
+  /* ---------- Public site: Firebase accounts and database ---------- */
+  async function firebaseConnect() {
+    const V = 'https://www.gstatic.com/firebasejs/10.12.2/';
+    const [appM, A, F] = await Promise.all([import(V + 'firebase-app.js'), import(V + 'firebase-auth.js'), import(V + 'firebase-firestore.js')]);
+    const app = appM.initializeApp(CONFIG.FIREBASE);
+    const auth = A.getAuth(app), fs = F.getFirestore(app);
+    fb = { A, F, auth, fs, user: null, subs: [] };
+    // The same doc()/onSnapshot() surface the claude.ai store offers, for the shared site documents
+    const wrap = s => ({ id: s.id, exists: s.exists(), data: () => s.data(), metadata: s.metadata });
+    db = { doc: path => { const r = F.doc(fs, path); return {
+      get: async () => wrap(await F.getDoc(r)), set: data => F.setDoc(r, data),
+      onSnapshot: (next, err) => F.onSnapshot(r, s => next(wrap(s)), err) }; } };
+    const onErr = () => { $('dash-status').textContent = t('db_lost'); };
+    watchSite(onErr);
+    $('auth-btn').hidden = false;
+    A.onAuthStateChanged(auth, async u => {
+      fb.subs.forEach(stop => stop()); fb.subs = [];
+      fb.user = u; uid = u ? u.uid : null; mine = []; all = []; seen = null;
+      isAdmin = isOwner = false; showAdmin(false);
+      api = u ? {
+        save: async b => {
+          await F.setDoc(F.doc(fs, 'bookings', b.id), { ...b, uid: u.uid });
+          F.setDoc(F.doc(fs, 'users', u.uid), { name: b.name, phone: b.phone }, { merge: true }).catch(() => {});
+        },
+        cancel: id => F.updateDoc(F.doc(fs, 'bookings', id), { status: 'bekor', updatedAt: Date.now() })
+      } : null;
+      renderAuth(); renderMine();
+      if (!u) return;
+      fb.subs.push(F.onSnapshot(F.query(F.collection(fs, 'bookings'), F.where('uid', '==', u.uid)), qs => {
+        mine = qs.docs.map(d => d.data()).sort((a, b) => b.createdAt - a.createdAt); renderMine();
+      }, onErr));
+      // Fill the booking form from the profile saved with the last booking
+      F.getDoc(F.doc(fs, 'users', u.uid)).then(s => {
+        const p = s.exists() ? s.data() : {};
+        if (!$('b-name').value) $('b-name').value = p.name || u.displayName || '';
+        if (!$('b-phone').value && p.phone) $('b-phone').value = p.phone;
+      }).catch(() => {});
+      // Only the agency's admin account may read this document (see firestore.rules)
+      try { await F.getDoc(F.doc(fs, 'adminCheck', 'me')); isAdmin = isOwner = true; } catch (e) { isAdmin = isOwner = false; }
+      if (fb.user !== u) return;
+      renderAuth();
+      if (isAdmin) {
+        showAdmin(true);
+        fb.subs.push(F.onSnapshot(F.query(F.collection(fs, 'bookings'), F.orderBy('createdAt', 'desc'), F.limit(500)), qs =>
+          onBookings({ docs: qs.docs.map(d => ({ id: d.id, data: () => ({ items: [d.data()] }) })), metadata: qs.metadata }), onErr));
+        $('notif-btn').hidden = !('Notification' in window) || Notification.permission === 'granted';
+        renderAdmin();
+      }
+      if (pendingBook) { pendingBook = false; closeAuth(); openTab('bron'); $('book-form').requestSubmit(); }
+    });
+  }
+
+  /* Sign-in dialog */
+  const authD = $('auth');
+  let authMode = 'in';
+  function setAuthMode(m) {
+    authMode = m;
+    $('auth-h').dataset.i = m === 'up' ? 'auth_up_h' : 'auth_in_h'; $('auth-h').textContent = t($('auth-h').dataset.i);
+    $('a-submit').dataset.i = m === 'up' ? 'auth_submit_up' : 'auth_submit_in'; $('a-submit').textContent = t($('a-submit').dataset.i);
+    $('a-switch').dataset.i = m === 'up' ? 'auth_to_in' : 'auth_to_up'; $('a-switch').textContent = t($('a-switch').dataset.i);
+    $('a-name-f').hidden = m !== 'up'; $('a-forgot').hidden = m === 'up';
+    $('a-pass').autocomplete = m === 'up' ? 'new-password' : 'current-password';
+    $('a-err').textContent = '';
+  }
+  function openAuth(why) {
+    $('auth-why').textContent = why || ''; $('auth-why').hidden = !why;
+    renderAuth();
+    if (authD.showModal) { if (!authD.open) authD.showModal(); } else authD.setAttribute('open', '');
+  }
+  function closeAuth() { if (authD.close) authD.close(); else authD.removeAttribute('open'); }
+  function renderAuth() {
+    const u = fb && fb.user, btn = $('auth-btn');
+    $('auth-out').hidden = !!u; $('auth-in').hidden = !u;
+    if (u) {
+      const name = u.displayName || (u.email || '').split('@')[0];
+      btn.querySelector('span').removeAttribute('data-i'); btn.querySelector('span').textContent = name;
+      btn.setAttribute('aria-label', name);
+      $('a-me-name').textContent = name; $('a-me-mail').textContent = u.email || '';
+      $('a-me-role').hidden = !isAdmin;
+    } else {
+      btn.querySelector('span').dataset.i = 'login'; btn.querySelector('span').textContent = t('login');
+      btn.removeAttribute('aria-label');
+    }
+  }
+  const authError = e => {
+    const c = (e && e.code) || '';
+    if (c === 'auth/popup-closed-by-user' || c === 'auth/cancelled-popup-request') return '';
+    return t(c === 'auth/invalid-email' || c === 'auth/missing-email' ? 'auth_err_email'
+      : c === 'auth/weak-password' || c === 'auth/missing-password' ? 'auth_err_pass'
+      : ['auth/invalid-credential', 'auth/wrong-password', 'auth/user-not-found', 'auth/invalid-login-credentials'].includes(c) ? 'auth_err_wrong'
+      : c === 'auth/email-already-in-use' ? 'auth_err_exists'
+      : c === 'auth/network-request-failed' ? 'auth_err_net'
+      : c === 'auth/unauthorized-domain' ? 'auth_err_domain'
+      : c === 'auth/operation-not-allowed' ? 'auth_err_off' : 'auth_err');
+  };
+  $('auth-btn').addEventListener('click', () => openAuth());
+  $('auth-x').addEventListener('click', () => { pendingBook = false; closeAuth(); });
+  authD.addEventListener('click', e => { if (e.target === authD) { pendingBook = false; closeAuth(); } });
+  $('a-switch').addEventListener('click', () => setAuthMode(authMode === 'up' ? 'in' : 'up'));
+  $('auth-google').addEventListener('click', async () => {
+    if (!fb) return;
+    $('a-err').textContent = '';
+    try {
+      fb.auth.languageCode = lang;
+      await fb.A.signInWithPopup(fb.auth, new fb.A.GoogleAuthProvider());
+      if (!pendingBook) closeAuth();
+    } catch (e) {
+      if (e && e.code === 'auth/popup-blocked') { fb.A.signInWithRedirect(fb.auth, new fb.A.GoogleAuthProvider()); return; }
+      $('a-err').textContent = authError(e);
+    }
+  });
+  $('auth-form').addEventListener('submit', async e => {
+    e.preventDefault();
+    if (!fb) return;
+    const email = $('a-email').value.trim(), pass = $('a-pass').value, name = $('a-name').value.trim();
+    $('a-err').textContent = '';
+    if (authMode === 'up' && name.length < 2) { $('a-err').textContent = t('auth_err_name'); $('a-name').focus(); return; }
+    const btn = $('a-submit'); btn.disabled = true;
+    try {
+      if (authMode === 'up') {
+        const cred = await fb.A.createUserWithEmailAndPassword(fb.auth, email, pass);
+        await fb.A.updateProfile(cred.user, { displayName: name.slice(0, 60) });
+        renderAuth();
+      } else {
+        await fb.A.signInWithEmailAndPassword(fb.auth, email, pass);
+      }
+      $('a-pass').value = '';
+      if (!pendingBook) closeAuth();
+    } catch (x) { $('a-err').textContent = authError(x); }
+    finally { btn.disabled = false; }
+  });
+  $('a-forgot').addEventListener('click', async () => {
+    if (!fb) return;
+    const email = $('a-email').value.trim();
+    if (!email) { $('a-err').textContent = t('auth_err_email'); $('a-email').focus(); return; }
+    try { fb.auth.languageCode = lang; await fb.A.sendPasswordResetEmail(fb.auth, email); $('a-err').textContent = t('auth_reset_sent', { email }); }
+    catch (x) { $('a-err').textContent = authError(x); }
+  });
+  $('a-out').addEventListener('click', async () => { closeAuth(); if (fb) await fb.A.signOut(fb.auth); });
+  $('a-mine').addEventListener('click', () => { closeAuth(); goKabinet('mening'); });
+  document.addEventListener('click', e => { if (e.target.closest('[data-auth]')) openAuth(); });
+  $('notif-btn').addEventListener('click', async () => {
+    try { const p = await Notification.requestPermission(); if (p === 'granted') { $('notif-btn').hidden = true; $('admin-toast').textContent = t('notif_ok'); } } catch (e) {}
+  });
+
   async function connect() {
     let user = null;
     if (window.claude && window.claude.use) {
       [db, user] = await Promise.all([window.claude.use('db'), window.claude.use('user')]);
+    } else if (CONFIG.FIREBASE && CONFIG.FIREBASE.apiKey) {
+      return firebaseConnect();
     } else if (CONFIG.BOOKING_URL) {
       api = sheetsApi(); api.start(); return;
     } else if (/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) {
@@ -1996,31 +2257,12 @@ td input { width: 120px; min-height: 38px; }
       cancel: id => changeStatus(uid, id, 'bekor')
     };
     const onErr = () => { $('dash-status').textContent = t('db_lost'); };
-    db.doc('site/prices').onSnapshot(s => { prices = s.exists ? (s.data().tours || {}) : {}; rerenderAll(); }, onErr);
-    db.doc('site/info').onSnapshot(s => {
-      if (s.exists) { const v = s.data(); info = { name: v.name || 'Ufq', phone: v.phone || '', address: v.address || '', hours: v.hours || '', telegram: v.telegram || '' }; }
-      applyInfo(); if (state.tab !== 'seo') infoForm();
-    }, onErr);
-    db.doc('site/seo').onSnapshot(s => {
-      const v = s.exists ? s.data() : {};
-      const merged = JSON.parse(JSON.stringify(DEFAULT_SEO));
-      if (v.title) merged.uz = { title: v.title, description: v.description || '', keyword: v.keyword || '', keywords: v.keywords || '' };  // older single-language save
-      LANGS.forEach(l => { if (v[l]) merged[l] = { ...merged[l], ...v[l] }; });
-      if (v.url != null) merged.url = v.url; if (v.image) merged.image = v.image;
-      seo = merged; applySeo();
-      if (state.tab !== 'seo') { seoDraft = JSON.parse(JSON.stringify(seo)); seoForm(); renderSeo(); }
-    }, onErr);
+    watchSite(onErr);
     if (uid) db.doc('bookings/' + uid).onSnapshot(s => { mine = s.exists ? (s.data().items || []) : []; renderMine(); }, onErr);
     renderMine();
     // The settings and SEO panel is for the artifact's owner alone, not for editors it is shared with
-    document.querySelectorAll('[data-owner]').forEach(el => el.hidden = !isOwner);
-    // Direct links for the owner: #sozlamalar opens agency details, #seo opens the SEO view
-    if (isOwner && /^#(seo|sozlamalar)$/.test(location.hash)) {
-      goKabinet('seo');
-      if (location.hash === '#seo') document.querySelector('#set-tabs [data-set="seo"]').click();
-    }
+    showAdmin(isAdmin);
     if (isAdmin) {
-      document.querySelectorAll('[data-admin]').forEach(el => el.hidden = false);
       db.collection('bookings').onSnapshot(onBookings, onErr);
       renderAdmin();
     }
